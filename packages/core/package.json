@@ -1,0 +1,17 @@
+{
+  "name": "@chromatika/core",
+  "version": "0.0.0",
+  "description": "core color generation",
+  "repository": "tkofh/chromatika",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint --ext \".js,.ts\" --fix --ignore-path ../../.gitignore .",
+    "format": "prettier --write \"./(src|tests)/**/*.ts\""
+  },
+  "devDependencies": {
+    "@tkofh/eslint-config": "^0.2.0",
+    "@tkofh/prettier-config": "^0.1.0",
+    "eslint": "^8.11.0",
+    "prettier": "^2.6.0"
+  }
+}
