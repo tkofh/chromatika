@@ -1,0 +1,38 @@
+{
+  "name": "@chromatika/splines",
+  "version": "0.0.0",
+  "description": "Bezier curve implementation for Chromatika",
+  "author": "Tim Morris <timthewebguy@gmail.com>",
+  "homepage": "https://github.com/tkofh/chromatika#readme",
+  "license": "MIT",
+  "main": "src/index.ts",
+  "directories": {
+    "lib": "src",
+    "test": "__tests__"
+  },
+  "files": [
+    "src"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tkofh/chromatika.git"
+  },
+  "scripts": {
+    "build": "unbuild",
+    "test": "vitest run"
+  },
+  "bugs": {
+    "url": "https://github.com/tkofh/chromatika/issues"
+  },
+  "dependencies": {
+    "@chromatika/shared": "0.0.0"
+  },
+  "devDependencies": {
+    "@vitest/ui": "^0.7.11",
+    "unbuild": "^0.7.2",
+    "vitest": "^0.7.11"
+  }
+}
