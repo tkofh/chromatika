@@ -1,5 +1,3 @@
-export { getQuadraticRoots } from './math'
-
 export type {
   PointComponent,
   Point,
