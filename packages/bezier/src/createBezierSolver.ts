@@ -10,10 +10,7 @@ interface CreateBezierOptions {
 const DEFAULT_TOTAL_LUT_RESOLUTION = 512
 const DEFAULT_PRECISION = 4
 
-export const createBezierSolver: SplineFactory = (
-  points: Points,
-  options?: CreateBezierOptions
-) => {
+export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, options) => {
   if (points.length < 4) {
     throw new Error('At least one cubic segment must be provided')
   }

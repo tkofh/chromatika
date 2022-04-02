@@ -1,5 +1,5 @@
 {
-  "name": "@chromatika/splines",
+  "name": "@chromatika/bezier",
   "version": "0.0.0",
   "description": "Bezier curve implementation for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",

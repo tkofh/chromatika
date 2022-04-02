@@ -4,4 +4,4 @@ export interface Spline {
   solve: (x: number) => number
 }
 
-export type SplineFactory = (points: Points) => Spline
+export type SplineFactory<Options = never> = (points: Points, options?: Options) => Spline
