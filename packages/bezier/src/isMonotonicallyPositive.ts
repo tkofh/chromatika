@@ -1,3 +1,5 @@
+import { quadraticRoots } from '@chromatika/utils'
+
 /**
  * isMonotonicallyPositive ensures a cubic bezier-curve passes the vertical line test
  *
@@ -36,31 +38,7 @@ export const isMonotonicallyPositive = (
   // Check for local extrema within the normalized 0 to 1 range
   // An extrema indicates that the x velocity changes sign,
   // and since we know the curve starts out positive, a change indicates that the curve goes negative
-  let rootA: number | undefined
-  let rootB: number | undefined
-
-  // if both a and c are 0, then neither the standard nor Muller's form of the formula will work
-  if (a !== 0 || c !== 0) {
-    // in both forms, we need to ensure we don't take the square root of a negative number
-    const root = b ** 2 - 4 * a * c
-    if (root >= 0) {
-      const sqrt = Math.sqrt(root)
-
-      // if a is not 0, we can use the standard form
-      if (a !== 0) {
-        rootA = (-b + sqrt) / (2 * a)
-        rootB = (-b - sqrt) / (2 * a)
-      } else {
-        // otherwise, we can use Muller's form
-        if (b + sqrt !== 0) {
-          rootA = (-2 * c) / (b + sqrt)
-        }
-        if (b - sqrt !== 0) {
-          rootB = (-2 * c) / (b - sqrt)
-        }
-      }
-    }
-  }
+  const [rootA, rootB] = quadraticRoots(a, b, c)
 
   // if there are no roots, or there is only one root (which indicates the sign changes for one point only),
   // we don't need to consider the extrema

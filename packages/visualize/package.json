@@ -1,7 +1,7 @@
 {
-  "name": "@chromatika/utils",
+  "name": "@chromatika/visualize",
   "version": "0.0.0",
-  "description": "Utilities for Chromatika",
+  "description": "Visualization utilities for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
@@ -28,9 +28,14 @@
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
+  "dependencies": {
+    "@chromatika/types": "0.0.0",
+    "@chromatika/utils": "0.0.0"
+  },
   "devDependencies": {
-    "@vitest/ui": "^0.8.1",
+    "@chromatika/bezier": "0.0.0",
+    "@vitest/ui": "^0.8.2",
     "unbuild": "^0.7.2",
-    "vitest": "^0.8.1"
+    "vitest": "^0.8.2"
   }
 }

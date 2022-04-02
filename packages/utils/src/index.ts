@@ -1,1 +1,1 @@
-export { clamp, lerp, normalize, remap, roundTo } from './math'
+export { clamp, lerp, normalize, quadraticRoots, remap, roundTo } from './math'

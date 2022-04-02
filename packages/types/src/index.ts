@@ -5,8 +5,8 @@ export type {
   Points,
   CubicPointComponents,
   CubicPoints,
-  QuadraticPointComponents,
-  QuadraticPoints,
 } from './points'
 
 export type { Spline, SplineFactory } from './splines'
+
+export type { Rect } from './shapes'

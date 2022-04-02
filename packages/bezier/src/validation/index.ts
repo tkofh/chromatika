@@ -1,1 +1,0 @@
-export { isMonotonicallyPositive } from './isMonotonicallyPositive'

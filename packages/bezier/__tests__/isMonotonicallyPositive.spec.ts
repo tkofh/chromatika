@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { isMonotonicallyPositive } from '../src/validation'
+import { isMonotonicallyPositive } from '../src/isMonotonicallyPositive'
 
 describe('isMonotonicallyPositive', () => {
   test('it returns true for a monotonically positive curve', () => {

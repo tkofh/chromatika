@@ -1568,6 +1568,13 @@
   dependencies:
     sirv "^2.0.2"
 
+"@vitest/ui@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@vitest/ui/-/ui-0.8.2.tgz#e5d23ae2705eceea465bf3b6f8d510a9929ba217"
+  integrity sha512-P6r3C9/Uxbkj+NOSom4YfVbMX5j3zlI/i1TKA8B4bMqHG1PqR40uFv9O0VydEiHqGrxQ/oo8yAgOP1cjOeEsYw==
+  dependencies:
+    sirv "^2.0.2"
+
 JSONStream@^1.0.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/JSONStream/-/JSONStream-1.3.5.tgz#3208c1f08d3a4d99261ab64f92302bc15e111ca0"
@@ -6265,6 +6272,19 @@ vitest@^0.8.1:
   version "0.8.1"
   resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.8.1.tgz#a1bd5b680553731af0330bdd84463b6ec668f89c"
   integrity sha512-8HUyc9io1UInZTUKJWTgPG5fMEqd86IlMCjn2CEjGjli55M7iUJiiMwns9W21wKs6DMrRs2lu89X6rbfVvF53A==
+  dependencies:
+    "@types/chai" "^4.3.0"
+    "@types/chai-subset" "^1.3.3"
+    chai "^4.3.6"
+    local-pkg "^0.4.1"
+    tinypool "^0.1.2"
+    tinyspy "^0.3.0"
+    vite "^2.8.6"
+
+vitest@^0.8.2:
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/vitest/-/vitest-0.8.2.tgz#3c3ab6b7a534df909775972aa767c49900e32a43"
+  integrity sha512-dTFDJl2F3pkWy1tcE3M29LasklhgtP7M88kT7AJcAurX7nCl/eWu1PQeSzjzWQyUbDq2p8jqdoLETd7MDeibcA==
   dependencies:
     "@types/chai" "^4.3.0"
     "@types/chai-subset" "^1.3.3"

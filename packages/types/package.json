@@ -1,13 +1,15 @@
 {
-  "name": "@chromatika/shared",
+  "name": "@chromatika/types",
   "version": "0.0.0",
-  "description": "Shared types and utilities for Chromatika. Not meant for public consumption.",
+  "description": "Shared types for Chromatika.",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
   "type": "module",
   "types": "./dist/index.d.ts",
   "exports": "./dist/index.mjs",
+  "main": "./dist/index.mjs",
+  "module": "./dist/index.mjs",
   "files": [
     "dist"
   ],
@@ -19,15 +21,12 @@
     "url": "git+https://github.com/tkofh/chromatika.git"
   },
   "scripts": {
-    "build": "unbuild",
-    "test": "vitest run"
+    "build": "unbuild"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.7.11",
-    "unbuild": "^0.7.0",
-    "vitest": "^0.7.11"
+    "unbuild": "^0.7.0"
   }
 }

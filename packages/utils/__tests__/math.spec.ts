@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { clamp, lerp, normalize, remap, roundTo } from '../src'
+import { clamp, lerp, normalize, quadraticRoots, remap, roundTo } from '../src'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -73,6 +73,20 @@ describe('normalize', () => {
   test('it extrapolates an inverted range', () => {
     expect(normalize(-15, 0, -10)).toBe(1.5)
     expect(normalize(5, 0, -10)).toBe(-0.5)
+  })
+})
+
+describe('quadraticRoots', () => {
+  test('it returns no roots where a and c are both zero', () => {
+    expect(quadraticRoots(0, 0, 0)).toStrictEqual([])
+  })
+
+  test('it returns no roots where the determinant is zero', () => {
+    expect(quadraticRoots(1, 0, 1)).toStrictEqual([])
+  })
+
+  test('it returns the real roots of a quadratic equation', () => {
+    expect(quadraticRoots(-1, 1, 0)).toEqual([0, 1])
   })
 })
 

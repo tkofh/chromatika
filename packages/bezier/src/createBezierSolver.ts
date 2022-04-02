@@ -1,6 +1,6 @@
-import { CubicPoints, Points, SplineFactory } from '@chromatika/shared'
+import { CubicPoints, Points, SplineFactory } from '@chromatika/types'
 import { remap, roundTo } from '@chromatika/utils'
-import { isMonotonicallyPositive } from './validation'
+import { isMonotonicallyPositive } from './isMonotonicallyPositive'
 
 interface CreateBezierOptions {
   totalLUTResolution?: number
@@ -19,6 +19,8 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
     throw new Error('Invalid number of points provided (must have 3n+1 points)')
   }
 
+  const precision = options?.precision ?? DEFAULT_PRECISION
+
   const min = points[0][0]
   const max = points[points.length - 1][0]
 
@@ -32,8 +34,6 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
   // due to rounding, this may end up as only an approximation
   const totalLUTResolution =
     (options?.totalLUTResolution ?? DEFAULT_TOTAL_LUT_RESOLUTION) - (fixedPointCount * 2 - 1)
-
-  const precision = options?.precision ?? DEFAULT_PRECISION
 
   const segments: CubicPoints[] = []
   const lookUpTables = new Map<CubicPoints, Points>()
