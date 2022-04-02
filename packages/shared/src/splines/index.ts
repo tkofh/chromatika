@@ -1,1 +1,1 @@
-export type { SplineSolver, SplineSolverFactory } from './types'
+export type { Spline, SplineFactory } from './types'

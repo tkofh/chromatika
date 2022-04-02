@@ -8,5 +8,3 @@ export type {
   PointComponents,
   Points,
 } from './types'
-export { toCubicSegments } from './toCubicSegments'
-export { unzipPoints, unzipCubicPoints, unzipQuadraticPoints } from './unzipPoints'

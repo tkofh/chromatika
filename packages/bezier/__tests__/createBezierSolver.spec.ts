@@ -1,19 +1,16 @@
 import { describe, test, expect } from 'vitest'
 import { createBezierSolver } from '../src'
-import { InvalidBezierError } from '../src/errors'
 
 describe('createBezierSolver', () => {
-  test('it throws InvalidBezierError when an invalid number of points are passed', () => {
-    expect(() => createBezierSolver([])).toThrowError(
-      new InvalidBezierError('Invalid number of points (input must have 3n+1 points)')
-    )
+  test('it throws when an invalid number of points are passed', () => {
+    expect(() => createBezierSolver([])).toThrowError('At least one cubic segment must be provided')
 
     expect(() =>
       createBezierSolver([
         [0, 0],
         [0, 1],
       ])
-    ).toThrowError(new InvalidBezierError('Invalid number of points (input must have 3n+1 points)'))
+    ).toThrowError('At least one cubic segment must be provided')
 
     expect(() =>
       createBezierSolver([
@@ -23,10 +20,10 @@ describe('createBezierSolver', () => {
         [0, 3],
         [0, 4],
       ])
-    ).toThrowError(new InvalidBezierError('Invalid number of points (input must have 3n+1 points)'))
+    ).toThrowError('Invalid number of points provided (must have 3n+1 points)')
   })
 
-  test('it throws InvalidBezierError when a negative-x curve is passed', () => {
+  test('it throws when a negative-x curve is passed', () => {
     expect(() =>
       createBezierSolver([
         [0, 0],
@@ -35,14 +32,43 @@ describe('createBezierSolver', () => {
         [0, 1],
       ])
     ).toThrowError(
-      new InvalidBezierError(
-        `Curve Segment ${JSON.stringify([
-          [0, 0],
-          [1, 0],
-          [1, 1],
-          [0, 1],
-        ])} fails the vertical line test (more than one y value at a given x)`
-      )
+      `Curve ${[
+        [0, 0],
+        [1, 0],
+        [1, 1],
+        [0, 1],
+      ].join(', ')} returns more than one y value at some x value`
     )
+  })
+
+  test('it produces a curve solver from one segment', () => {
+    const { solve } = createBezierSolver([
+      [0, 0],
+      [1, 0],
+      [0, 1],
+      [1, 1],
+    ])
+
+    expect(solve(0)).toBe(0)
+    expect(solve(1)).toBe(1)
+    expect(solve(0.5)).toBe(0.5)
+  })
+
+  test('it produces a curve solver from multiple segments', () => {
+    const { solve } = createBezierSolver([
+      [0, 0],
+      [0, 0.5],
+      [0.5, 0],
+      [0.5, 0.5],
+      [0.5, 1],
+      [1, 0.5],
+      [1, 1],
+    ])
+
+    expect(solve(0)).toBe(0)
+    expect(solve(0.25)).toBe(0.25)
+    expect(solve(0.5)).toBe(0.5)
+    expect(solve(0.75)).toBe(0.75)
+    expect(solve(1)).toBe(1)
   })
 })

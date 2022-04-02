@@ -8,6 +8,5 @@ export type {
   QuadraticPointComponents,
   QuadraticPoints,
 } from './points'
-export { toCubicSegments, unzipPoints, unzipQuadraticPoints, unzipCubicPoints } from './points'
 
-export type { SplineSolver, SplineSolverFactory } from './splines'
+export type { Spline, SplineFactory } from './splines'

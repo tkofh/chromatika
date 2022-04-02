@@ -1,8 +1,20 @@
-import { CubicPointComponents } from '@chromatika/shared'
-
-export const isMonotonicallyPositive = (points: CubicPointComponents): boolean => {
-  const [x0, x1, x2, x3] = points
-
+/**
+ * isMonotonicallyPositive ensures a cubic bezier-curve passes the vertical line test
+ *
+ * it ensures the curve does not start and end in the same place, that the first derivative of the curve starts positive,
+ * and that there are no local extrema along the first derivative (indicating that the curve doubles back)
+ *
+ * @param x0
+ * @param x1
+ * @param x2
+ * @param x3
+ */
+export const isMonotonicallyPositive = (
+  x0: number,
+  x1: number,
+  x2: number,
+  x3: number
+): boolean => {
   // Ensure the curve's start and end points are not at the same position
   if (x0 === x3) {
     return false
@@ -24,7 +36,8 @@ export const isMonotonicallyPositive = (points: CubicPointComponents): boolean =
   // Check for local extrema within the normalized 0 to 1 range
   // An extrema indicates that the x velocity changes sign,
   // and since we know the curve starts out positive, a change indicates that the curve goes negative
-  const extrema: number[] = []
+  let rootA: number | undefined
+  let rootB: number | undefined
 
   // if both a and c are 0, then neither the standard nor Muller's form of the formula will work
   if (a !== 0 || c !== 0) {
@@ -35,23 +48,29 @@ export const isMonotonicallyPositive = (points: CubicPointComponents): boolean =
 
       // if a is not 0, we can use the standard form
       if (a !== 0) {
-        extrema.push((-b + sqrt) / (2 * a))
-        extrema.push((-b - sqrt) / (2 * a))
+        rootA = (-b + sqrt) / (2 * a)
+        rootB = (-b - sqrt) / (2 * a)
       } else {
         // otherwise, we can use Muller's form
         if (b + sqrt !== 0) {
-          extrema.push((-2 * c) / (b + sqrt))
+          rootA = (-2 * c) / (b + sqrt)
         }
         if (b - sqrt !== 0) {
-          extrema.push((-2 * c) / (b - sqrt))
+          rootB = (-2 * c) / (b - sqrt)
         }
       }
     }
   }
 
-  for (const extreme of extrema) {
-    // Some extrema can exist outside the 0 to 1 range, but they don't matter here
-    if (extreme >= 0 && extreme <= 1) {
+  // if there are no roots, or there is only one root (which indicates the sign changes for one point only),
+  // we don't need to consider the extrema
+  if (rootA !== rootB) {
+    // otherwise, check each one for fitting inside the (0, 1) range
+    if (rootA !== undefined && rootA > 0 && rootA < 1) {
+      return false
+    }
+
+    if (rootB !== undefined && rootB > 0 && rootB < 1) {
       return false
     }
   }

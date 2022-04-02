@@ -1,1 +1,0 @@
-export { InvalidBezierError } from './InvalidBezierError'
