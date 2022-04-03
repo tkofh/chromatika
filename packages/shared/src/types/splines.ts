@@ -1,4 +1,4 @@
-import { Points } from '../points'
+import { Points } from './points'
 
 export interface Spline {
   solve: (x: number) => number

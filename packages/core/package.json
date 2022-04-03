@@ -1,15 +1,20 @@
 {
-  "name": "@chromatika/types",
+  "name": "@chromatika/core",
   "version": "0.0.0",
-  "description": "Shared types for Chromatika.",
+  "description": "Generate colors with curves",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "exports": "./dist/index.mjs",
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -21,12 +26,12 @@
     "url": "git+https://github.com/tkofh/chromatika.git"
   },
   "scripts": {
-    "build": "unbuild"
+    "build": "tsup"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "devDependencies": {
-    "unbuild": "^0.7.0"
+    "tsup": "5.12.4"
   }
 }

@@ -1,8 +1,11 @@
 export type {
   PointComponent,
   Point,
-  CubicPointComponents,
-  CubicPoints,
   PointComponents,
   Points,
+  CubicPointComponents,
+  CubicPoints,
+  Spline,
+  SplineFactory,
+  Rect,
 } from './types'

@@ -5,11 +5,16 @@
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
-  "type": "module",
-  "types": "./dist/index.d.ts",
-  "exports": "./dist/index.mjs",
-  "main": "./dist/index.mjs",
+  "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.js",
+      "import": "./dist/index.mjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "files": [
     "dist"
   ],
@@ -21,21 +26,20 @@
     "url": "git+https://github.com/tkofh/chromatika.git"
   },
   "scripts": {
-    "build": "unbuild",
-    "test": "vitest run",
-    "test:watch": "vitest"
+    "build": "tsup",
+    "test": "vitest run"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "dependencies": {
-    "@chromatika/types": "0.0.0",
+    "@chromatika/shared": "0.0.0",
     "@chromatika/utils": "0.0.0"
   },
   "devDependencies": {
     "@chromatika/bezier": "0.0.0",
     "@vitest/ui": "^0.8.2",
-    "unbuild": "^0.7.2",
+    "tsup": "5.12.4",
     "vitest": "^0.8.2"
   }
 }

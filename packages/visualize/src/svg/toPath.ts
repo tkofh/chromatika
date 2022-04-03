@@ -1,4 +1,4 @@
-import { Points, Spline, Rect } from '@chromatika/types'
+import { Points, Spline, Rect } from '@chromatika/shared'
 import { remap, roundTo } from '@chromatika/utils'
 import { getBoundingBox } from '../utils/getBoundingBox'
 

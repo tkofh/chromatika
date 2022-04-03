@@ -1,7 +1,7 @@
 {
-  "name": "@chromatika/utils",
+  "name": "@chromatika/shared",
   "version": "0.0.0",
-  "description": "Utilities for Chromatika",
+  "description": "Shared code for Chromatika. Not meant for public consumption.",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
@@ -26,15 +26,12 @@
     "url": "git+https://github.com/tkofh/chromatika.git"
   },
   "scripts": {
-    "build": "tsup",
-    "test": "vitest run"
+    "build": "tsup"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.8.1",
-    "tsup": "5.12.4",
-    "vitest": "^0.8.1"
+    "tsup": "5.12.4"
   }
 }

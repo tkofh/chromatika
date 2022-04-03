@@ -1,4 +1,4 @@
-import { Points, Rect } from '@chromatika/types'
+import { Points, Rect } from '@chromatika/shared'
 
 export const getBoundingBox = (points: Points): Rect => {
   if (points.length === 0) {

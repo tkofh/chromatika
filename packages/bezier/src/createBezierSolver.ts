@@ -1,4 +1,4 @@
-import { CubicPoints, Points, SplineFactory } from '@chromatika/types'
+import { CubicPoints, Points, SplineFactory } from '@chromatika/shared'
 import { remap, roundTo } from '@chromatika/utils'
 import { isMonotonicallyPositive } from './isMonotonicallyPositive'
 
