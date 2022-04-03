@@ -18,7 +18,6 @@ describe('toPath', () => {
       { top: 0, left: 0, bottom: 100, right: 100 }
     )
 
-    expect(path).toBeTypeOf('string')
     expect(path.startsWith('M 0 100')).toBe(true)
     expect(path.endsWith('L 100 0')).toBe(true)
   })
