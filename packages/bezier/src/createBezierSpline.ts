@@ -12,7 +12,7 @@ interface CreateBezierOptions {
 const DEFAULT_TOTAL_LUT_RESOLUTION = 512
 const DEFAULT_PRECISION = 4
 
-export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, options) => {
+export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, options) => {
   if (points.length < 4) {
     throw new Error('At least one cubic segment must be provided')
   }
@@ -76,8 +76,13 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
 
     const dy = getDerivativeInfo(segment[0][1], segment[1][1], segment[2][1], segment[3][1])
 
-    for (const root of dy.roots) {
-      extremaCandidates.push(solveCubicBezier(root, segment))
+    // just like with the x derivative, we want to ignore situations where
+    // 1) there are no roots (roots[0] and roots[1] are undefined) and
+    // 2) both roots are the same value (meaning the sign changes for one point only, and is thus not an extrema we care about)
+    if (dy.roots[0] !== dy.roots[1]) {
+      for (const root of dy.roots) {
+        extremaCandidates.push(solveCubicBezier(root, segment))
+      }
     }
     extremaCandidates.push(segment[3])
   }
@@ -176,5 +181,6 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
     solve,
     extrema,
     boundingBox,
+    precision,
   }
 }

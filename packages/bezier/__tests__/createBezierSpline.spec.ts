@@ -1,21 +1,21 @@
 import { describe, test, expect } from 'vitest'
 // import { toPath } from '@chromatika/visualize'
 import { Points } from '@chromatika/shared'
-import { createBezierSolver } from '../src'
+import { createBezierSpline } from '../src'
 
 describe('createBezierSolver', () => {
   test('it throws when an invalid number of points are passed', () => {
-    expect(() => createBezierSolver([])).toThrowError('At least one cubic segment must be provided')
+    expect(() => createBezierSpline([])).toThrowError('At least one cubic segment must be provided')
 
     expect(() =>
-      createBezierSolver([
+      createBezierSpline([
         [0, 0],
         [0, 1],
       ])
     ).toThrowError('At least one cubic segment must be provided')
 
     expect(() =>
-      createBezierSolver([
+      createBezierSpline([
         [0, 0],
         [0, 1],
         [0, 2],
@@ -27,7 +27,7 @@ describe('createBezierSolver', () => {
 
   test('it throws when a negative-x curve is passed', () => {
     expect(() =>
-      createBezierSolver([
+      createBezierSpline([
         [0, 0],
         [1, 0],
         [1, 1],
@@ -44,7 +44,7 @@ describe('createBezierSolver', () => {
   })
 
   test('it produces a curve solver from one segment', () => {
-    const { solve } = createBezierSolver([
+    const { solve } = createBezierSpline([
       [0, 0],
       [1, 0],
       [0, 1],
@@ -57,7 +57,7 @@ describe('createBezierSolver', () => {
   })
 
   test('it produces a curve solver from multiple segments', () => {
-    const { solve } = createBezierSolver([
+    const { solve } = createBezierSpline([
       [0, 0],
       [0, 0.5],
       [0.5, 0],
@@ -76,7 +76,7 @@ describe('createBezierSolver', () => {
 
   test('it calculates the bounding box', () => {
     expect(
-      createBezierSolver([
+      createBezierSpline([
         [0, 0],
         [1, 0],
         [0, 1],
@@ -90,7 +90,7 @@ describe('createBezierSolver', () => {
     })
 
     expect(
-      createBezierSolver(
+      createBezierSpline(
         [
           [0, 0],
           [0, 10],
@@ -103,18 +103,32 @@ describe('createBezierSolver', () => {
   })
 
   test('it calculates the extrema of one segment', () => {
-    const points: Points = [
-      [0, 0],
-      [0, 10],
-      [1, -9],
-      [1, 1],
-    ]
-    const { extrema } = createBezierSolver(points, { precision: 2 })
+    const spline1 = createBezierSpline(
+      [
+        [0, 0],
+        [0, 10],
+        [1, -9],
+        [1, 1],
+      ],
+      { precision: 2 }
+    )
 
-    expect(extrema).toStrictEqual([
+    expect(spline1.extrema).toStrictEqual([
       [0, 0],
       [0.13, 3.01],
       [0.87, -2.01],
+      [1, 1],
+    ])
+
+    const spline2 = createBezierSpline([
+      [0, 0],
+      [0, 1],
+      [1, 0],
+      [1, 1],
+    ])
+
+    expect(spline2.extrema).toStrictEqual([
+      [0, 0],
       [1, 1],
     ])
   })
@@ -129,7 +143,7 @@ describe('createBezierSolver', () => {
       [1, -9],
       [1, 1],
     ]
-    const { extrema } = createBezierSolver(points, { precision: 2 })
+    const { extrema } = createBezierSpline(points, { precision: 2 })
 
     expect(extrema).toStrictEqual([
       [0, 0],
@@ -137,11 +151,5 @@ describe('createBezierSolver', () => {
       [0.75, -6.56],
       [1, 1],
     ])
-
-    // expect(extrema).toHaveLength(4)
-    // expect(extrema[0]).toStrictEqual(points[0])
-    // expect(extrema[1]).toStrictEqual([0.13, 3.01])
-    // expect(extrema[2]).toStrictEqual([0.87, -2.01])
-    // expect(extrema[3]).toStrictEqual(points[3])
   })
 })

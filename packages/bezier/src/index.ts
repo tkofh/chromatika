@@ -1,1 +1,1 @@
-export { createBezierSolver } from './createBezierSolver'
+export { createBezierSpline } from './createBezierSpline'
