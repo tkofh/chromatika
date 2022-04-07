@@ -6,13 +6,13 @@ describe('toPath', () => {
   test('it produces a path string', () => {
     const path = toPath(
       createBezierSolver([
-        [0, 0],
-        [0.3, 0],
-        [0.2, 0.6],
-        [0.5, 0.5],
-        [0.8, 0.4],
-        [0.7, 1],
-        [1, 1],
+        [10, 20],
+        [10.3, 20],
+        [10.2, 20.6],
+        [10.5, 20.5],
+        [10.8, 20.4],
+        [10.7, 21],
+        [11, 21],
       ]),
       100,
       { top: 0, left: 0, bottom: 100, right: 100 }
