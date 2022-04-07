@@ -1,6 +1,8 @@
-import { CubicPoints, Points, SplineFactory } from '@chromatika/shared'
+import { CubicPoints, Points, SplineFactory, Rect, Point } from '@chromatika/shared'
 import { remap, roundTo } from '@chromatika/utils'
-import { isMonotonicallyPositive } from './isMonotonicallyPositive'
+import { createLookUpTable } from './createLookUpTable'
+import { getDerivativeInfo } from './getDerivativeInfo'
+import { solveCubicBezier } from './solvieCubicBezier'
 
 interface CreateBezierOptions {
   totalLUTResolution?: number
@@ -21,11 +23,11 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
 
   const precision = options?.precision ?? DEFAULT_PRECISION
 
-  const min = points[0][0]
-  const max = points[points.length - 1][0]
+  const maxX = points[points.length - 1][0]
+  const minX = points[0][0]
 
   // total distance along the x-axis this curve travels
-  const totalRange = max - min
+  const totalRange = maxX - minX
 
   // number of points that sit along the curve
   const fixedPointCount = (points.length - 1) / 3
@@ -38,6 +40,8 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
   const segments: CubicPoints[] = []
   const lookUpTables = new Map<CubicPoints, Points>()
 
+  const extremaCandidates: Points = []
+
   const resultCache = new Map<number, number>()
 
   for (let i = 0; i < fixedPointCount; i++) {
@@ -48,7 +52,9 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
       points[i * 3 + 3],
     ]
 
-    if (!isMonotonicallyPositive(segment[0][0], segment[1][0], segment[2][0], segment[3][0])) {
+    const dx = getDerivativeInfo(segment[0][0], segment[1][0], segment[2][0], segment[3][0])
+
+    if (dx.y0 < 0 || dx.roots[0] !== dx.roots[1]) {
       throw new Error(`Curve ${segment.join(', ')} returns more than one y value at some x value`)
     }
 
@@ -57,39 +63,78 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
     resultCache.set(segment[0][0], segment[0][1])
     resultCache.set(segment[3][0], segment[3][1])
 
-    const lutResolution = Math.ceil(
-      remap(segment[3][0] - segment[0][0], 0, totalRange, 0, totalLUTResolution)
+    const lookUpTable = createLookUpTable(
+      segment,
+      Math.ceil(remap(segment[3][0] - segment[0][0], 0, totalRange, 0, totalLUTResolution))
     )
 
-    const lookUpTable: Points = []
-
-    lookUpTable.push(segment[0])
-
-    for (let j = 0; j < lutResolution; j++) {
-      const t = (j + 1) / (lutResolution + 1)
-
-      lookUpTable.push([
-        segment[0][0] * (-(t * t * t) + 3 * t * t - 3 * t + 1) +
-          segment[1][0] * (3 * t * t * t - 6 * t * t + 3 * t) +
-          segment[2][0] * (-3 * t * t * t + 3 * t * t) +
-          segment[3][0] * t * t * t,
-        segment[0][1] * (-(t * t * t) + 3 * t * t - 3 * t + 1) +
-          segment[1][1] * (3 * t * t * t - 6 * t * t + 3 * t) +
-          segment[2][1] * (-3 * t * t * t + 3 * t * t) +
-          segment[3][1] * t * t * t,
-      ])
-    }
-    lookUpTable.push(segment[3])
-
     lookUpTables.set(segment, lookUpTable)
+
+    if (i === 0) {
+      extremaCandidates.push(segment[0])
+    }
+
+    const dy = getDerivativeInfo(segment[0][1], segment[1][1], segment[2][1], segment[3][1])
+
+    for (const root of dy.roots) {
+      extremaCandidates.push(solveCubicBezier(root, segment))
+    }
+    extremaCandidates.push(segment[3])
+  }
+
+  const extrema: Points = []
+  const boundingBox: Rect = {
+    top: -Infinity,
+    left: minX,
+    bottom: Infinity,
+    right: maxX,
+  }
+
+  for (let i = 0; i < extremaCandidates.length; i++) {
+    let isExtrema = false
+
+    // the first point, the second point, and the final point will always be extrema
+    if (i === 0 || i === 1 || i === extremaCandidates.length - 1) {
+      isExtrema = true
+    } else {
+      // the previous extrema is a minima if the point before it has a greater y value
+      const previousIsMinima = extrema[extrema.length - 2][1] > extrema[extrema.length - 1][1]
+
+      // the current point is an extrema if it is
+      // - greater than the next point if the previous is a minima, or
+      // - less than the next point if the previous is a maxima
+      const currentIsExtrema = previousIsMinima
+        ? extremaCandidates[i + 1][1] < extremaCandidates[i][1]
+        : extremaCandidates[i + 1][1] > extremaCandidates[i][1]
+
+      if (currentIsExtrema) {
+        isExtrema = true
+      }
+    }
+
+    if (isExtrema) {
+      const extreme: Point = [
+        roundTo(extremaCandidates[i][0], precision),
+        roundTo(extremaCandidates[i][1], precision),
+      ]
+
+      extrema.push(extreme)
+
+      if (extreme[1] > boundingBox.top) {
+        boundingBox.top = extreme[1]
+      }
+      if (extreme[1] < boundingBox.bottom) {
+        boundingBox.bottom = extreme[1]
+      }
+    }
   }
 
   const solve = (x: number): number => {
-    if (x < min) {
-      throw new Error(`Cannot solve curve at ${x} because curve is undefined below ${min}`)
+    if (x < minX) {
+      throw new Error(`Cannot solve curve at ${x} because curve is undefined below ${minX}`)
     }
-    if (x > max) {
-      throw new Error(`Cannot solve curve at ${x} because curve is undefined above ${max}`)
+    if (x > maxX) {
+      throw new Error(`Cannot solve curve at ${x} because curve is undefined above ${maxX}`)
     }
 
     if (resultCache.has(x)) {
@@ -129,5 +174,7 @@ export const createBezierSolver: SplineFactory<CreateBezierOptions> = (points, o
 
   return {
     solve,
+    extrema,
+    boundingBox,
   }
 }
