@@ -1,6 +1,6 @@
-import { CubicPoints, Points, SplineFactory, Rect, Point } from '@chromatika/shared'
+import { CubicPoints, Points, SplineFactory, Point, Rect } from '@chromatika/shared'
 import { remap, roundTo } from '@chromatika/utils'
-import { createLookUpTable } from './createLookUpTable'
+import { createLookUpTable, LookUpTable } from './createLookUpTable'
 import { getDerivativeInfo } from './getDerivativeInfo'
 import { solveCubicBezier } from './solvieCubicBezier'
 
@@ -23,11 +23,8 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
 
   const precision = options?.precision ?? DEFAULT_PRECISION
 
-  const maxX = points[points.length - 1][0]
-  const minX = points[0][0]
-
-  // total distance along the x-axis this curve travels
-  const totalRange = maxX - minX
+  const splineMaxX = points[points.length - 1][0]
+  const splineMinX = points[0][0]
 
   // number of points that sit along the curve
   const fixedPointCount = (points.length - 1) / 3
@@ -38,7 +35,7 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
     (options?.totalLUTResolution ?? DEFAULT_TOTAL_LUT_RESOLUTION) - (fixedPointCount * 2 - 1)
 
   const segments: CubicPoints[] = []
-  const lookUpTables = new Map<CubicPoints, Points>()
+  const lookUpTables = new Map<CubicPoints, LookUpTable>()
 
   const extremaCandidates: Points = []
 
@@ -54,7 +51,7 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
 
     const dx = getDerivativeInfo(segment[0][0], segment[1][0], segment[2][0], segment[3][0])
 
-    if (dx.y0 < 0 || dx.roots[0] !== dx.roots[1]) {
+    if (dx.y0 < 0 || dx.roots.length > 0) {
       throw new Error(`Curve ${segment.join(', ')} returns more than one y value at some x value`)
     }
 
@@ -65,7 +62,9 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
 
     const lookUpTable = createLookUpTable(
       segment,
-      Math.ceil(remap(segment[3][0] - segment[0][0], 0, totalRange, 0, totalLUTResolution))
+      Math.ceil(
+        remap(segment[3][0] - segment[0][0], 0, splineMaxX - splineMinX, 0, totalLUTResolution)
+      )
     )
 
     lookUpTables.set(segment, lookUpTable)
@@ -79,21 +78,16 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
     // just like with the x derivative, we want to ignore situations where
     // 1) there are no roots (roots[0] and roots[1] are undefined) and
     // 2) both roots are the same value (meaning the sign changes for one point only, and is thus not an extrema we care about)
-    if (dy.roots[0] !== dy.roots[1]) {
-      for (const root of dy.roots) {
-        extremaCandidates.push(solveCubicBezier(root, segment))
-      }
+    for (const root of dy.roots) {
+      extremaCandidates.push(solveCubicBezier(root, segment))
     }
+
     extremaCandidates.push(segment[3])
   }
 
   const extrema: Points = []
-  const boundingBox: Rect = {
-    top: -Infinity,
-    left: minX,
-    bottom: Infinity,
-    right: maxX,
-  }
+  let splineMaxY = -Infinity
+  let splineMinY = Infinity
 
   for (let i = 0; i < extremaCandidates.length; i++) {
     let isExtrema = false
@@ -125,28 +119,35 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
 
       extrema.push(extreme)
 
-      if (extreme[1] > boundingBox.top) {
-        boundingBox.top = extreme[1]
+      if (extreme[1] > splineMaxY) {
+        splineMaxY = extreme[1]
       }
-      if (extreme[1] < boundingBox.bottom) {
-        boundingBox.bottom = extreme[1]
+      if (extreme[1] < splineMinY) {
+        splineMinY = extreme[1]
       }
     }
   }
 
+  const boundingBox: Rect = {
+    top: splineMaxY,
+    right: splineMaxX,
+    bottom: splineMinY,
+    left: splineMinX,
+  }
+
   const solve = (x: number): number => {
-    if (x < minX) {
-      throw new Error(`Cannot solve curve at ${x} because curve is undefined below ${minX}`)
+    if (x < splineMinX) {
+      throw new Error(`Cannot solve curve at ${x} because curve is undefined below ${splineMinX}`)
     }
-    if (x > maxX) {
-      throw new Error(`Cannot solve curve at ${x} because curve is undefined above ${maxX}`)
+    if (x > splineMaxX) {
+      throw new Error(`Cannot solve curve at ${x} because curve is undefined above ${splineMaxX}`)
     }
 
     if (resultCache.has(x)) {
       return resultCache.get(x)!
     }
 
-    let lookUpTable!: Points
+    let lookUpTable!: LookUpTable
     for (const segment of segments) {
       if (x > segment[0][0] && x < segment[3][0]) {
         lookUpTable = lookUpTables.get(segment)!
@@ -154,9 +155,9 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
     }
 
     let output!: number
-    for (let i = 0; i < lookUpTable.length - 1; i++) {
-      const start = lookUpTable[i]
-      const end = lookUpTable[i + 1]
+    for (let i = 0; i < lookUpTable.points.length - 1; i++) {
+      const start = lookUpTable.points[i]
+      const end = lookUpTable.points[i + 1]
 
       if (x === start[0]) {
         output = start[1]
@@ -165,20 +166,72 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
         output = end[1]
         break
       } else if (x > start[0] && x < end[0]) {
-        output = remap(x, start[0], end[0], start[1], end[1])
+        output = remap(x, start[0], end[0], start[1], end[1], true, precision)
         break
       }
     }
-
-    output = roundTo(output, precision)
 
     resultCache.set(x, output)
 
     return output
   }
 
+  const solveInverse = (y: number, minX = splineMinX, maxX = splineMaxX): number => {
+    if (y < splineMinY) {
+      throw new Error(`Cannot solve curve at ${y} because curve is undefined below ${splineMinY}`)
+    }
+    if (y > splineMaxY) {
+      throw new Error(`Cannot solve curve at ${y} because curve is undefined above ${splineMaxY}`)
+    }
+
+    let output!: number
+    for (const segment of segments) {
+      // first check if a segment is worth considering. it must have some overlap with our input x range
+      if (segment[0][0] <= maxX && segment[3][0] >= minX) {
+        const lookUpTable = lookUpTables.get(segment)!
+
+        // next, determine if the associated look up table includes the y value we're looking for
+        if (lookUpTable.bounds.bottom <= y && lookUpTable.bounds.top >= y) {
+          for (let i = 0; i < lookUpTable.points.length - 1; i++) {
+            const start = lookUpTable.points[i]
+            const end = lookUpTable.points[i + 1]
+
+            if ((start[0] === minX || start[1] === maxX) && start[1] === y) {
+              output = start[0]
+              break
+            } else if ((end[0] === minX || end[0] === maxX) && end[1] === y) {
+              output = end[0]
+              break
+            } else if (start[0] <= maxX && end[0] >= minX) {
+              const lutSegYMin = Math.min(start[1], end[1])
+              const lutSegYMax = Math.max(start[1], end[1])
+              if (y > lutSegYMin && y < lutSegYMax) {
+                const x = remap(y, start[1], end[1], start[0], end[0])
+                if (x >= minX && x <= maxX) {
+                  output = x
+                  break
+                }
+              }
+            }
+          }
+
+          if (output !== undefined) {
+            break
+          }
+        }
+      }
+    }
+
+    output = roundTo(output, precision)
+
+    resultCache.set(output, y)
+
+    return output
+  }
+
   return {
     solve,
+    solveInverse,
     extrema,
     boundingBox,
     precision,

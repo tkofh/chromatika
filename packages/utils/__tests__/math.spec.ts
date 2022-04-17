@@ -119,12 +119,12 @@ describe('remap', () => {
 
 describe('roundTo', () => {
   test('it throws for invalid precisions', () => {
-    expect(() => roundTo(10, 0)).toThrow()
     expect(() => roundTo(10, 0.1)).toThrow()
     expect(() => roundTo(10, -10)).toThrow()
   })
 
   test('it rounds to the given precision', () => {
+    expect(roundTo(1.23456, 0)).toBe(1)
     expect(roundTo(1.23456, 1)).toBe(1.2)
     expect(roundTo(1.23456, 2)).toBe(1.23)
     expect(roundTo(1.23456, 3)).toBe(1.235)

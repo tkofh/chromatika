@@ -15,13 +15,20 @@ export const getDerivativeInfo = (
   const b = 6 * x0 - 12 * x1 + 6 * x2
   const c = -3 * x0 + 3 * x1
 
-  const roots: number[] = []
+  let roots: number[] = []
   for (const root of quadraticRoots(a, b, c)) {
     if (root !== undefined && root > 0 && root < 1) {
       roots.push(root)
     }
   }
-  roots.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+
+  if (roots.length > 0) {
+    if (roots[0] === roots[1]) {
+      roots = []
+    } else {
+      roots.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+    }
+  }
 
   return {
     y0: c,

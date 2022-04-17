@@ -1,6 +1,6 @@
 import { describe, test, expect } from 'vitest'
-// import { toPath } from '@chromatika/visualize'
 import { Points } from '@chromatika/shared'
+import { roundTo } from '@chromatika/utils'
 import { createBezierSpline } from '../src'
 
 describe('createBezierSolver', () => {
@@ -72,6 +72,39 @@ describe('createBezierSolver', () => {
     expect(solve(0.5)).toBe(0.5)
     expect(solve(0.75)).toBe(0.75)
     expect(solve(1)).toBe(1)
+  })
+
+  test('it produces a curve inverse solver from one segment', () => {
+    const { solve, solveInverse, precision } = createBezierSpline([
+      [0, 0],
+      [0, 10],
+      [1, -9],
+      [1, 1],
+    ])
+
+    expect(roundTo(solve(0.0217), precision - 1)).toBe(2)
+    expect(solveInverse(2, 0)).toBe(0.0217)
+
+    expect(roundTo(solve(0.326), precision - 1)).toBe(2)
+    expect(solveInverse(2, 0.22)).toBe(0.326)
+  })
+
+  test('it produces a curve inverse solver from multiple segments', () => {
+    const { solve, solveInverse, precision } = createBezierSpline([
+      [0, 0],
+      [0, 10],
+      [0.5, 10],
+      [0.5, 0.5],
+      [0.5, -9],
+      [1, -9],
+      [1, 1],
+    ])
+
+    expect(roundTo(solve(0.0074), precision - 2)).toBe(2)
+    expect(solveInverse(2, 0)).toBe(0.0074)
+
+    expect(roundTo(solve(0.4955), precision - 2)).toBe(2)
+    expect(solveInverse(2, 0.0075)).toBe(0.4955)
   })
 
   test('it calculates the bounding box', () => {
