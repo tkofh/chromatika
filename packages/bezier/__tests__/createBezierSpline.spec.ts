@@ -75,19 +75,30 @@ describe('createBezierSolver', () => {
   })
 
   test('it produces a curve inverse solver from one segment', () => {
-    const { solve, solveInverse, precision } = createBezierSpline([
+    const spline1 = createBezierSpline([
       [0, 0],
       [0, 10],
       [1, -9],
       [1, 1],
     ])
 
-    expect(roundTo(solve(0.0217), precision - 1)).toBe(2)
-    expect(solveInverse(2, 0)).toBe(0.0217)
+    expect(roundTo(spline1.solve(0.0217), spline1.precision - 1)).toBe(2)
+    expect(spline1.solveInverse(2, 0)).toBe(0.0217)
 
-    expect(roundTo(solve(0.326), precision - 1)).toBe(2)
-    expect(solveInverse(2, 0.22)).toBe(0.326)
+    expect(roundTo(spline1.solve(0.326), spline1.precision - 1)).toBe(2)
+    expect(spline1.solveInverse(2, 0.22)).toBe(0.326)
+
+    const spline2 = createBezierSpline([
+      [0, 0],
+      [0, 0.5],
+      [1, 0.5],
+      [1, 1],
+    ])
+
+    expect(spline2.solveInverse(0.5)).toBe(0.5)
   })
+
+  // test('the inverse solver works at points where the slope is zero', () => {})
 
   test('it produces a curve inverse solver from multiple segments', () => {
     const { solve, solveInverse, precision } = createBezierSpline([

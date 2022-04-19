@@ -196,10 +196,10 @@ export const createBezierSpline: SplineFactory<CreateBezierOptions> = (points, o
             const start = lookUpTable.points[i]
             const end = lookUpTable.points[i + 1]
 
-            if ((start[0] === minX || start[1] === maxX) && start[1] === y) {
+            if (start[1] === y) {
               output = start[0]
               break
-            } else if ((end[0] === minX || end[0] === maxX) && end[1] === y) {
+            } else if (end[1] === y) {
               output = end[0]
               break
             } else if (start[0] <= maxX && end[0] >= minX) {
