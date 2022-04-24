@@ -6,6 +6,7 @@ export type {
   CubicPointComponents,
   CubicPoints,
   Spline,
-  SplineFactory,
   Rect,
 } from './types'
+
+export { warnDev } from './utils'

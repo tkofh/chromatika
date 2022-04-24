@@ -9,4 +9,4 @@ export type {
 
 export type { Rect } from './shapes'
 
-export type { Spline, SplineFactory } from './splines'
+export type { Spline } from './splines'

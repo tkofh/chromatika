@@ -26,7 +26,7 @@ export const getDerivativeInfo = (
     if (roots[0] === roots[1]) {
       roots = []
     } else {
-      roots.sort((a, b) => (a < b ? -1 : a > b ? 1 : 0))
+      roots.sort((a, b) => a - b)
     }
   }
 
