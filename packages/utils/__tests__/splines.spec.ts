@@ -1,7 +1,9 @@
+// noinspection ES6PreferShortImport
+
 import { describe, test, expect } from 'vitest'
-import { createBezierSpline } from '@chromatika/bezier'
 import { Rect } from '@chromatika/shared'
-import { remapSpline } from '../src'
+import { createBezierSpline } from '../../bezier/src/createBezierSpline'
+import { remapSpline, getSplineThresholds, roundTo } from '../src'
 
 describe('remapSpline', () => {
   test('it remaps a spline', () => {
@@ -27,5 +29,26 @@ describe('remapSpline', () => {
     expect(remapped.solve(20)).toBe(20)
 
     expect(remapped.solveInverse(10, 10, 20)).toBe(10)
+  })
+})
+
+describe('getSplineThresholds', () => {
+  test('it finds spline thresholds', () => {
+    const spline = createBezierSpline([
+      [0, 220],
+      [0.2, 320],
+      [0.8, 140],
+      [1, 240],
+    ])
+
+    const inputPrecision = 2
+    const outputPrecision = 0
+
+    const thresholds = getSplineThresholds(spline, inputPrecision, outputPrecision)
+
+    for (const threshold of thresholds) {
+      const rangeMidpoint = roundTo((threshold.start + threshold.end) * 0.5, inputPrecision + 1)
+      expect(roundTo(spline.solve(rangeMidpoint)!, outputPrecision)).toBe(threshold.value)
+    }
   })
 })

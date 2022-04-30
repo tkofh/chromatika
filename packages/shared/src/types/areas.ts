@@ -5,8 +5,8 @@ export interface Rect {
   minX: number
 }
 
-export interface Range {
+export interface Range<T> {
   start: number
   end: number
-  value: number
+  value: T
 }
