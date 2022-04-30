@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { clamp, lerp, normalize, quadraticRoots, remap, roundTo } from '../src'
+import { clamp, lerp, mod, normalize, quadraticRoots, remap, roundTo } from '../src'
 
 describe('clamp', () => {
   test('it clamps ', () => {
@@ -45,6 +45,31 @@ describe('lerp', () => {
   test('it extrapolates an inverted range', () => {
     expect(lerp(1.5, 0, -10, false)).toBe(-15)
     expect(lerp(-0.5, 0, -10, false)).toBe(5)
+  })
+})
+
+describe('mod', () => {
+  test('it throws for 0 range', () => {
+    expect(() => mod(5, 0, 0)).toThrow('Cannot mod a range of 0, min must be less than max')
+  })
+
+  test('it throws for inverted range', () => {
+    expect(() => mod(5, 0, -1)).toThrow('Cannot mod an inverted range, min must be less than max')
+  })
+
+  test('it returns value within range', () => {
+    expect(mod(1, 0, 2)).toBe(1)
+    expect(mod(10, 5, 20)).toBe(10)
+  })
+
+  test('it mods value above range', () => {
+    expect(mod(10, 0, 3)).toBe(1)
+    expect(mod(10, 0, 4)).toBe(2)
+  })
+
+  test('it mods value below range', () => {
+    expect(mod(2, 10, 20)).toBe(12)
+    expect(mod(3, 6, 9)).toBe(6)
   })
 })
 

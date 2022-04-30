@@ -1,5 +1,6 @@
 export { clamp } from './clamp'
 export { lerp } from './lerp'
+export { mod } from './mod'
 export { normalize } from './normalize'
 export { quadraticRoots } from './quadraticRoots'
 export { remap } from './remap'
