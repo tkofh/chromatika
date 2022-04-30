@@ -1,5 +1,5 @@
 import { describe, test, expect } from 'vitest'
-import { createBezierSpline } from '@chromatika/bezier'
+import { createBezierSpline } from '../../bezier/src'
 import { toPath } from '../src'
 
 describe('toPath', () => {
