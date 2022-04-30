@@ -6,6 +6,7 @@ export type {
   CubicPointComponents,
   CubicPoints,
   Spline,
+  Range,
   Rect,
 } from './types'
 

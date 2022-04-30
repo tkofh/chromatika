@@ -1,5 +1,5 @@
 import { Points } from './points'
-import { Rect } from './shapes'
+import { Rect } from './areas'
 
 export interface Spline {
   solve: (x: number) => number | undefined

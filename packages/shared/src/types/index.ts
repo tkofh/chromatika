@@ -7,6 +7,6 @@ export type {
   CubicPoints,
 } from './points'
 
-export type { Rect } from './shapes'
+export type { Rect, Range } from './areas'
 
 export type { Spline } from './splines'
