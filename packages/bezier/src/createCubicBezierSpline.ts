@@ -100,10 +100,10 @@ export const createCubicBezierSpline = (
   const extrema: Points = []
 
   const boundingBox: Rect = {
-    top: Math.max(p0y, p3y),
-    left: p0x,
-    bottom: Math.min(p0y, p3y),
-    right: p3x,
+    maxY: Math.max(p0y, p3y),
+    minX: p0x,
+    minY: Math.min(p0y, p3y),
+    maxX: p3x,
   }
 
   extrema.push([p0x, p0y])
@@ -130,11 +130,11 @@ export const createCubicBezierSpline = (
     if (ry < Math.min(p0y, p3y) || ry > Math.max(p0y, p3y)) {
       extrema.push([rx, ry])
 
-      if (ry < boundingBox.bottom) {
-        boundingBox.bottom = ry
+      if (ry < boundingBox.minY) {
+        boundingBox.minY = ry
       }
-      if (ry > boundingBox.top) {
-        boundingBox.top = ry
+      if (ry > boundingBox.maxY) {
+        boundingBox.maxY = ry
       }
     }
 
@@ -161,22 +161,22 @@ export const createCubicBezierSpline = (
     if (r1y < Math.min(p0y, r2y) || r1y > Math.max(p0y, r2y)) {
       extrema.push([r1x, r1y])
 
-      if (r1y < boundingBox.bottom) {
-        boundingBox.bottom = r1y
+      if (r1y < boundingBox.minY) {
+        boundingBox.minY = r1y
       }
-      if (r1y > boundingBox.top) {
-        boundingBox.top = r1y
+      if (r1y > boundingBox.maxY) {
+        boundingBox.maxY = r1y
       }
     }
 
     if (r2y < Math.min(r1y, p3y) || r2y > Math.max(r1y, p3y)) {
       extrema.push([r2x, r2y])
 
-      if (r2y < boundingBox.bottom) {
-        boundingBox.bottom = r2y
+      if (r2y < boundingBox.minY) {
+        boundingBox.minY = r2y
       }
-      if (r2y > boundingBox.top) {
-        boundingBox.top = r2y
+      if (r2y > boundingBox.maxY) {
+        boundingBox.maxY = r2y
       }
     }
 
@@ -218,10 +218,10 @@ export const createCubicBezierSpline = (
 
     if (resultCache.has(input)) {
       output = resultCache.get(input)!
-    } else if (input < boundingBox.left) {
-      warnDev(`Cannot solve curve at ${x} because curve is undefined below ${boundingBox.left}`)
-    } else if (input > boundingBox.right) {
-      warnDev(`Cannot solve curve at ${x} because curve is undefined above ${boundingBox.right}`)
+    } else if (input < boundingBox.minX) {
+      warnDev(`Cannot solve curve at ${x} because curve is undefined below ${boundingBox.minX}`)
+    } else if (input > boundingBox.maxX) {
+      warnDev(`Cannot solve curve at ${x} because curve is undefined above ${boundingBox.maxX}`)
     } else {
       for (let i = 0; i < lutSize - 1; i++) {
         if (input >= lutX[i] && input <= lutX[i + 1]) {
@@ -243,20 +243,20 @@ export const createCubicBezierSpline = (
 
   const solveInverse = (
     y: number,
-    minX = boundingBox.left,
-    maxX = boundingBox.right
+    minX = boundingBox.minX,
+    maxX = boundingBox.maxX
   ): number | undefined => {
     const input = roundTo(y, outputPrecision)
 
     let output: number | undefined
 
-    if (input < boundingBox.bottom) {
+    if (input < boundingBox.minY) {
       warnDev(
-        `Cannot inverse solve curve at ${y} because curve is undefined below ${boundingBox.bottom}`
+        `Cannot inverse solve curve at ${y} because curve is undefined below ${boundingBox.minY}`
       )
-    } else if (input > boundingBox.top) {
+    } else if (input > boundingBox.maxY) {
       warnDev(
-        `Cannot inverse solve curve at ${y} because curve is undefined above ${boundingBox.top}`
+        `Cannot inverse solve curve at ${y} because curve is undefined above ${boundingBox.maxY}`
       )
     } else {
       for (let i = 0; i < lutY.length - 1; i++) {

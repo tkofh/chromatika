@@ -44,7 +44,7 @@ export const createBezierSpline = (points: Points, options?: CreateBezierSplineO
 
   const children: Spline[] = []
   const extremaCandidates: Points = []
-  const boundingBox: Rect = { top: -Infinity, bottom: Infinity, left: Infinity, right: -Infinity }
+  const boundingBox: Rect = { maxY: -Infinity, minY: Infinity, minX: Infinity, maxX: -Infinity }
 
   for (let i = 0; i < fixedPointCount; i++) {
     const child = createCubicBezierSpline(
@@ -63,17 +63,17 @@ export const createBezierSpline = (points: Points, options?: CreateBezierSplineO
       extremaCandidates.push(...child.extrema.slice(1))
     }
 
-    if (child.boundingBox.top > boundingBox.top) {
-      boundingBox.top = child.boundingBox.top
+    if (child.boundingBox.maxY > boundingBox.maxY) {
+      boundingBox.maxY = child.boundingBox.maxY
     }
-    if (child.boundingBox.right > boundingBox.right) {
-      boundingBox.right = child.boundingBox.right
+    if (child.boundingBox.maxX > boundingBox.maxX) {
+      boundingBox.maxX = child.boundingBox.maxX
     }
-    if (child.boundingBox.bottom < boundingBox.bottom) {
-      boundingBox.bottom = child.boundingBox.bottom
+    if (child.boundingBox.minY < boundingBox.minY) {
+      boundingBox.minY = child.boundingBox.minY
     }
-    if (child.boundingBox.left < boundingBox.left) {
-      boundingBox.left = child.boundingBox.left
+    if (child.boundingBox.minX < boundingBox.minX) {
+      boundingBox.minX = child.boundingBox.minX
     }
   }
 
@@ -100,13 +100,13 @@ export const createBezierSpline = (points: Points, options?: CreateBezierSplineO
 
     let output: number | undefined
 
-    if (input < boundingBox.left) {
-      warnDev(`Cannot solve curve at ${x} because curve is undefined below ${boundingBox.left}`)
-    } else if (input > boundingBox.right) {
-      warnDev(`Cannot solve curve at ${x} because curve is undefined above ${boundingBox.right}`)
+    if (input < boundingBox.minX) {
+      warnDev(`Cannot solve curve at ${x} because curve is undefined below ${boundingBox.minX}`)
+    } else if (input > boundingBox.maxX) {
+      warnDev(`Cannot solve curve at ${x} because curve is undefined above ${boundingBox.maxX}`)
     } else {
       for (const child of children) {
-        if (input >= child.boundingBox.left && input <= child.boundingBox.right) {
+        if (input >= child.boundingBox.minX && input <= child.boundingBox.maxX) {
           output = child.solve(input)
           if (output !== undefined) {
             break
@@ -120,28 +120,28 @@ export const createBezierSpline = (points: Points, options?: CreateBezierSplineO
 
   const solveInverse = (
     y: number,
-    minX = boundingBox.left,
-    maxX = boundingBox.right
+    minX = boundingBox.minX,
+    maxX = boundingBox.maxX
   ): number | undefined => {
     const input = roundTo(y, outputPrecision)
 
     let output: number | undefined
 
-    if (input < boundingBox.bottom) {
+    if (input < boundingBox.minY) {
       warnDev(
-        `Cannot inverse solve curve at ${y} because curve is undefined below ${boundingBox.bottom}`
+        `Cannot inverse solve curve at ${y} because curve is undefined below ${boundingBox.minY}`
       )
-    } else if (input > boundingBox.top) {
+    } else if (input > boundingBox.maxY) {
       warnDev(
-        `Cannot inverse solve curve at ${y} because curve is undefined above ${boundingBox.top}`
+        `Cannot inverse solve curve at ${y} because curve is undefined above ${boundingBox.maxY}`
       )
     } else {
       for (const child of children) {
         if (
-          child.boundingBox.left <= maxX &&
-          child.boundingBox.right >= minX &&
-          input <= child.boundingBox.top &&
-          input >= child.boundingBox.bottom
+          child.boundingBox.minX <= maxX &&
+          child.boundingBox.maxX >= minX &&
+          input <= child.boundingBox.maxY &&
+          input >= child.boundingBox.minY
         ) {
           output = child.solveInverse(input, minX, maxX)
           if (output !== undefined) {

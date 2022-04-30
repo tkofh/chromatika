@@ -41,7 +41,7 @@ describe('createBezierSolver', () => {
       ],
       { precision: 2 }
     )
-    expect(spline.boundingBox).toStrictEqual({ top: 3.81, bottom: -2.81, left: 0, right: 1 })
+    expect(spline.boundingBox).toStrictEqual({ maxY: 3.81, minY: -2.81, minX: 0, maxX: 1 })
     expect(spline.extrema).toStrictEqual([
       [0, 0],
       [0.26, 3.81],
@@ -71,7 +71,7 @@ describe('createBezierSolver', () => {
     }
   })
 
-  test.only('it respects solveInverse min/max x', () => {
+  test('it respects solveInverse min/max x', () => {
     const spline = createBezierSpline(
       [
         [0, 0],

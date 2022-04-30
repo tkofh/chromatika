@@ -29,7 +29,7 @@ describe('createCubicBezierSpline', () => {
         [0, 0],
         [1, 1],
       ])
-      expect(spline.boundingBox).toStrictEqual({ top: 1, bottom: 0, left: 0, right: 1 })
+      expect(spline.boundingBox).toStrictEqual({ maxY: 1, minY: 0, minX: 0, maxX: 1 })
     })
     test('it calculates bounding box and extrema for curve with local y extrema but no global y extrema', () => {
       const spline = createCubicBezierSpline(
@@ -47,7 +47,7 @@ describe('createCubicBezierSpline', () => {
         [0.75, 0.28],
         [1, 1],
       ])
-      expect(spline.boundingBox).toStrictEqual({ top: 1, left: 0, right: 1, bottom: 0 })
+      expect(spline.boundingBox).toStrictEqual({ maxY: 1, minX: 0, maxX: 1, minY: 0 })
     })
     test('it calculates bounding box and extrema for curve with global y extrema', () => {
       const spline = createCubicBezierSpline(
@@ -67,7 +67,7 @@ describe('createCubicBezierSpline', () => {
         [0.79, -0.57],
         [1, 1],
       ])
-      expect(spline.boundingBox).toStrictEqual({ top: 1.57, left: 0, bottom: -0.57, right: 1 })
+      expect(spline.boundingBox).toStrictEqual({ maxY: 1.57, minX: 0, minY: -0.57, maxX: 1 })
     })
   })
   describe('solver and inverse solver', () => {
