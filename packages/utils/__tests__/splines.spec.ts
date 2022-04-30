@@ -12,7 +12,7 @@ describe('remapSpline', () => {
       [1, 1],
     ])
 
-    const target: Rect = { top: 20, left: 10, bottom: 10, right: 20 }
+    const target: Rect = { maxY: 20, minX: 10, minY: 10, maxX: 20 }
 
     const remapped = remapSpline(spline, target)
 
@@ -21,5 +21,11 @@ describe('remapSpline', () => {
       [10, 10],
       [20, 20],
     ])
+
+    expect(remapped.solve(10)).toBe(10)
+    expect(remapped.solve(15)).toBe(15)
+    expect(remapped.solve(20)).toBe(20)
+
+    expect(remapped.solveInverse(10, 10, 20)).toBe(10)
   })
 })
