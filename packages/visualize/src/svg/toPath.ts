@@ -5,9 +5,9 @@ export const toPath = (spline: Spline, resolution: number, remapTo?: Rect): stri
   const points: Points = []
 
   for (let i = 0; i < resolution; i++) {
-    const x = remap(i, 0, resolution - 1, spline.boundingBox.left, spline.boundingBox.right)
+    const x = remap(i, 0, resolution - 1, spline.boundingBox.minX, spline.boundingBox.maxX)
 
-    points.push([x, spline.solve(x)])
+    points.push([x, spline.solve(x)!])
   }
 
   const pathCommands: string[] = []
@@ -20,10 +20,10 @@ export const toPath = (spline: Spline, resolution: number, remapTo?: Rect): stri
       pathY = roundTo(
         remap(
           point[1],
-          spline.boundingBox.bottom,
-          spline.boundingBox.top,
-          spline.boundingBox.top,
-          spline.boundingBox.bottom
+          spline.boundingBox.minY,
+          spline.boundingBox.maxY,
+          spline.boundingBox.maxY,
+          spline.boundingBox.minY
         ),
         2
       )
@@ -31,20 +31,20 @@ export const toPath = (spline: Spline, resolution: number, remapTo?: Rect): stri
       pathX = roundTo(
         remap(
           point[0],
-          spline.boundingBox.left,
-          spline.boundingBox.right,
-          remapTo.left,
-          remapTo.right
+          spline.boundingBox.minX,
+          spline.boundingBox.maxX,
+          remapTo.minX,
+          remapTo.maxX
         ),
         2
       )
       pathY = roundTo(
         remap(
           point[1],
-          spline.boundingBox.bottom,
-          spline.boundingBox.top,
-          remapTo.bottom,
-          remapTo.top
+          spline.boundingBox.minY,
+          spline.boundingBox.maxY,
+          remapTo.minY,
+          remapTo.maxY
         ),
         2
       )

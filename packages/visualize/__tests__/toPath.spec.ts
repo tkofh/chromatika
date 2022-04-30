@@ -1,11 +1,11 @@
 import { describe, test, expect } from 'vitest'
-import { createBezierSolver } from '@chromatika/bezier'
+import { createBezierSpline } from '@chromatika/bezier'
 import { toPath } from '../src'
 
 describe('toPath', () => {
   test('it produces a path string', () => {
     const path = toPath(
-      createBezierSolver([
+      createBezierSpline([
         [10, 20],
         [10.3, 20],
         [10.2, 20.6],
@@ -15,7 +15,7 @@ describe('toPath', () => {
         [11, 21],
       ]),
       100,
-      { top: 0, left: 0, bottom: 100, right: 100 }
+      { maxY: 0, minX: 0, minY: 100, maxX: 100 }
     )
 
     expect(path.startsWith('M 0 100')).toBe(true)
