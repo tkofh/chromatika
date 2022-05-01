@@ -7,13 +7,13 @@
   "license": "MIT",
   "sideEffects": false,
   "type": "module",
-  "main": "./dist/index.js",
-  "module": "./dist/index.mjs",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "require": "./dist/index.js",
-      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
       "types": "./dist/index.d.ts"
     }
   },
@@ -39,6 +39,7 @@
     "@chromatika/utils": "0.0.0"
   },
   "devDependencies": {
+    "@chromatika/bezier": "0.0.0",
     "@vitest/ui": "^0.8.2",
     "tsup": "5.12.4",
     "vitest": "^0.8.2"
