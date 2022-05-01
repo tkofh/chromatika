@@ -3,7 +3,7 @@
 import { describe, test, expect } from 'vitest'
 import { Rect } from '@chromatika/shared'
 import { createBezierSpline } from '../../bezier/src/createBezierSpline'
-import { remapSpline, getSplineThresholds, roundTo } from '../src'
+import { remapSpline, getSplineThresholds, roundTo, lerp } from '../src'
 
 describe('remapSpline', () => {
   test('it remaps a spline', () => {
@@ -41,13 +41,32 @@ describe('getSplineThresholds', () => {
       [1, 240],
     ])
 
-    const inputPrecision = 2
+    const inputPrecision = 3
     const outputPrecision = 0
 
     const thresholds = getSplineThresholds(spline, inputPrecision, outputPrecision)
 
     for (const threshold of thresholds) {
-      const rangeMidpoint = roundTo((threshold.start + threshold.end) * 0.5, inputPrecision + 1)
+      const rangeMidpoint = roundTo(lerp(0.5, threshold.start, threshold.end), inputPrecision + 1)
+      expect(roundTo(spline.solve(rangeMidpoint)!, outputPrecision)).toBe(threshold.value)
+    }
+  })
+
+  test('it finds spline thresholds when extrema are collapsed due to rounding', () => {
+    const spline = createBezierSpline([
+      [0, 95],
+      [0.1, 100],
+      [0.5, 10],
+      [1, 18],
+    ])
+
+    const inputPrecision = 3
+    const outputPrecision = 0
+
+    const thresholds = getSplineThresholds(spline, inputPrecision, outputPrecision)
+
+    for (const threshold of thresholds) {
+      const rangeMidpoint = roundTo(lerp(0.5, threshold.start, threshold.end), inputPrecision + 1)
       expect(roundTo(spline.solve(rangeMidpoint)!, outputPrecision)).toBe(threshold.value)
     }
   })

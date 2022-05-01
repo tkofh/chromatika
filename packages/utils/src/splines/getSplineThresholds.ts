@@ -18,25 +18,30 @@ export const getSplineThresholds = (
     const endY = roundTo(spline.extrema[i + 1][1], effectiveOutputPrecision)
 
     const rangeYCount = Math.abs(endY - startY) * Math.pow(10, effectiveOutputPrecision)
-    const rangeYStep = roundTo((endY - startY) / rangeYCount, effectiveOutputPrecision)
-    const rangeYHalfStep = rangeYStep * 0.5
 
-    for (let s = 0; s <= rangeYCount; s++) {
-      const currentY = startY + s * rangeYStep
+    if (rangeYCount === 0) {
+      ranges.push({ start: startX, end: endX, value: startY })
+    } else {
+      const rangeYStep = roundTo((endY - startY) / rangeYCount, effectiveOutputPrecision)
+      const rangeYHalfStep = rangeYStep * 0.5
 
-      const rangeStart =
-        s === 0
-          ? startX
-          : roundTo(spline.solveInverse(currentY - rangeYHalfStep, startX, endX)!, inputPrecision)
+      for (let s = 0; s <= rangeYCount; s++) {
+        const currentY = startY + s * rangeYStep
 
-      const rangeEnd =
-        s === rangeYCount
-          ? endX
-          : roundTo(spline.solveInverse(currentY + rangeYHalfStep, startX, endX)!, inputPrecision)
+        const rangeStart =
+          s === 0
+            ? startX
+            : roundTo(spline.solveInverse(currentY - rangeYHalfStep, startX, endX)!, inputPrecision)
 
-      if (rangeStart !== rangeEnd) {
-        const range: Range<number> = { start: rangeStart, end: rangeEnd, value: currentY }
-        ranges.push(range)
+        const rangeEnd =
+          s === rangeYCount
+            ? endX
+            : roundTo(spline.solveInverse(currentY + rangeYHalfStep, startX, endX)!, inputPrecision)
+
+        if (rangeStart !== rangeEnd) {
+          const range: Range<number> = { start: rangeStart, end: rangeEnd, value: currentY }
+          ranges.push(range)
+        }
       }
     }
   }
