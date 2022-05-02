@@ -1,5 +1,5 @@
 {
-  "name": "@chromatika/shared",
+  "name": "@chromatika/types",
   "version": "0.0.0",
   "description": "Shared code for Chromatika. Not meant for public consumption.",
   "author": "Tim Morris <timthewebguy@gmail.com>",

@@ -10,3 +10,5 @@ export type {
 export type { Rect, Range } from './areas'
 
 export type { Spline } from './splines'
+
+export type { Color, ColorScale } from './color'

@@ -1,7 +1,7 @@
 // noinspection ES6PreferShortImport
 
 import { describe, test, expect } from 'vitest'
-import { Rect } from '@chromatika/shared'
+import { Rect } from '@chromatika/types'
 import { createBezierSpline } from '../../bezier/src/createBezierSpline'
 import { remapSpline, getSplineThresholds, roundTo, lerp } from '../src'
 

@@ -1,4 +1,4 @@
-import { Points, Rect, Spline, warnDev } from '@chromatika/shared'
+import { Points, Rect, Spline, warnDev } from '@chromatika/types'
 import { roundTo } from '@chromatika/utils'
 import { DEFAULT_LUT_RESOLUTION, DEFAULT_PRECISION } from './constants'
 import { createCubicBezierSpline } from './createCubicBezierSpline'

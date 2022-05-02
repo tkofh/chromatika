@@ -1,4 +1,4 @@
-import { CubicPoints, Points, Rect, Spline, warnDev } from '@chromatika/shared'
+import { CubicPoints, Points, Rect, Spline, warnDev } from '@chromatika/types'
 import { remap, roundTo } from '@chromatika/utils'
 import { getDerivativeInfo } from './getDerivativeInfo'
 import { DEFAULT_LUT_RESOLUTION, DEFAULT_PRECISION } from './constants'

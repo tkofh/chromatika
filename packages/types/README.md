@@ -1,3 +1,3 @@
-# `@chromatika/shared`
+# `@chromatika/types`
 
 > Shared types for Chromatika.

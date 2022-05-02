@@ -35,7 +35,7 @@
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "dependencies": {
-    "@chromatika/shared": "0.0.0",
+    "@chromatika/types": "0.0.0",
     "@chromatika/utils": "0.0.0"
   },
   "devDependencies": {
