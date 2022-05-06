@@ -1,4 +1,5 @@
 import { RGB } from '@chromatika/types'
+import { assertHue, assertNormalized } from '../util'
 
 /**
  *  Converts the HSL form of a color to the RGB form of the same color.
@@ -11,23 +12,9 @@ import { RGB } from '@chromatika/types'
  * @param lightness Lightness component of the color to convert. Must be normalized (greater than or equal to 0, less than or equal to 1).
  */
 export const convertHSLToRGB = (hue: number, saturation: number, lightness: number): RGB => {
-  if (hue < 0 || hue >= 360) {
-    throw new Error(
-      `Invalid Hue input: ${hue}. Hue must be greater than or equal to 0, and less than 360`
-    )
-  }
-
-  if (saturation < 0 || saturation > 1) {
-    throw new Error(
-      `Invalid Saturation input: ${saturation}. Saturation must be greater than or equal to 0 and less than or equal to 1. Did you normalize it?`
-    )
-  }
-
-  if (lightness < 0 || lightness > 1) {
-    throw new Error(
-      `Invalid Lightness input: ${lightness}. Lightness must be greater than or equal to 0 and less than or equal to 1. (Did you normalize it?)`
-    )
-  }
+  assertHue(hue)
+  assertNormalized(saturation, 'Saturation')
+  assertNormalized(lightness, 'Lightness')
 
   // Source: https://www.rapidtables.com/convert/color/hsl-to-rgb.html
 

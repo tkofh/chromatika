@@ -1,4 +1,4 @@
-export { convertHSLToRGB } from './convertHSLToRGB'
-export { convertRGBToHSL } from './convertRGBToHSL'
-export { getContrastRatio } from './getContrastRatio'
-export { getRelativeLuminance } from './getRelativeLuminance'
+export { convertRGBToHSL, convertHSLToRGB } from './convert'
+export { getRelativeLuminance, getContrastRatio } from './inspect'
+export { parseRGBString, parseHexString } from './parse'
+export { getHexString, getHSLString, getRGBString } from './stringify'

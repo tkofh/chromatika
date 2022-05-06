@@ -1,5 +1,5 @@
 import { HSL } from '@chromatika/types'
-
+import { assertNormalized } from '../util'
 /**
  * Converts the RGB form of a color to the HSL form of the same color.
  *
@@ -10,23 +10,9 @@ import { HSL } from '@chromatika/types'
  * @param blue Blue component of the color to convert. Must be normalized (greater than or equal to 0, less than or equal to 1)
  */
 export const convertRGBToHSL = (red: number, green: number, blue: number): HSL => {
-  if (red < 0 || red > 1) {
-    throw new Error(
-      `Invalid Red input: ${red}. Red must be greater than or equal to 0 and less than or equal to 1. Did you normalize it?`
-    )
-  }
-
-  if (green < 0 || green > 1) {
-    throw new Error(
-      `Invalid Green input: ${green}. Green must be greater than or equal to 0 and less than or equal to 1. Did you normalize it?`
-    )
-  }
-
-  if (blue < 0 || blue > 1) {
-    throw new Error(
-      `Invalid Blue input: ${blue}. Blue must be greater than or equal to 0 and less than or equal to 1. Did you normalize it?`
-    )
-  }
+  assertNormalized(red, 'Red')
+  assertNormalized(green, 'Green')
+  assertNormalized(blue, 'Blue')
 
   // Source: https://www.rapidtables.com/convert/color/rgb-to-hsl.html
 
