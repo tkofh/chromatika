@@ -1,19 +1,4 @@
-interface HSL {
-  /**
-   * Hue component of the HSL form of a color. Represented in degrees (Greater than or equal to 0, less than to 360).
-   */
-  readonly hue: number
-
-  /**
-   * Saturation component of the HSL form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
-   */
-  readonly saturation: number
-
-  /**
-   * Lightness component of the HSL form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
-   */
-  readonly lightness: number
-}
+import { HSL } from '@chromatika/types'
 
 /**
  * Converts the RGB form of a color to the HSL form of the same color.

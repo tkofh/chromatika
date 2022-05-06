@@ -1,31 +1,68 @@
 import { Range } from './areas'
 
-export interface Color {
-  perceivedBrightness: number
+export interface RGB {
+  /**
+   * Red component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
+   */
+  readonly red: number
 
-  hsl: string
-  hue: number
-  saturation: number
-  lightness: number
+  /**
+   * Green component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
+   */
+  readonly green: number
 
-  rgb: string
-  red: number
-  green: number
-  blue: number
-
-  hex: string
+  /**
+   * Blue component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
+   */
+  readonly blue: number
 }
 
+export interface HSL {
+  /**
+   * Hue component of the HSL form of a color. Represented in degrees (Greater than or equal to 0, less than to 360).
+   */
+  readonly hue: number
+
+  /**
+   * Saturation component of the HSL form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
+   */
+  readonly saturation: number
+
+  /**
+   * Lightness component of the HSL form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
+   */
+  readonly lightness: number
+}
+
+export interface Color extends HSL, RGB {
+  readonly perceivedBrightness: number
+
+  readonly hsl: string
+
+  readonly rgb: string
+
+  readonly hex: string
+}
+
+export type ColorInput = RGB | HSL | string | number
+
+export type ContrastRatio = 'AA' | 'AAA' | number
+
+export type ScanTarget = 'before' | 'after' | 'nearest' | 'furthest'
+
 export interface ColorScale {
-  colors: Array<Range<Color>>
-  uniqueColor: Set<Color>
+  readonly colors: ReadonlyArray<Range<Color>>
+  readonly uniqueColor: ReadonlySet<Color>
 
-  at: (x: number) => Color
+  readonly at: (x: number) => Color
 
-  aaBefore: (x: number) => Color | undefined
-  aaAfter: (x: number) => Color | undefined
-  aaNearest: (x: number) => Color | undefined
-  aaaBefore: (x: number) => Color | undefined
-  aaaAfter: (x: number) => Color | undefined
-  aaaNearest: (x: number) => Color | undefined
+  readonly has: (value: ColorInput) => boolean
+
+  readonly rangeFor: (value: ColorInput) => Range<Color> | undefined
+
+  readonly ratioFrom: (
+    value: ColorInput,
+    ratio: ContrastRatio,
+    scan: ScanTarget
+  ) => Color | undefined
 }

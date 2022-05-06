@@ -34,6 +34,9 @@
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
+  "dependencies": {
+    "@chromatika/types": "0.0.0"
+  },
   "devDependencies": {
     "@vitest/ui": "^0.7.11",
     "tsup": "5.12.3",

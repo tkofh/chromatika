@@ -1,19 +1,4 @@
-interface RGB {
-  /**
-   * Red component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
-   */
-  readonly red: number
-
-  /**
-   * Green component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
-   */
-  readonly green: number
-
-  /**
-   * Blue component of the RGB form of a color. Normalized (Greater than or equal to 0, less than or equal to 1).
-   */
-  readonly blue: number
-}
+import { RGB } from '@chromatika/types'
 
 /**
  *  Converts the HSL form of a color to the RGB form of the same color.
