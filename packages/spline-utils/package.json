@@ -1,7 +1,7 @@
 {
-  "name": "@chromatika/visualize",
+  "name": "@chromatika/spline-utils",
   "version": "0.0.0",
-  "description": "Visualization utilities for Chromatika",
+  "description": "Spline Utilities for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
@@ -35,13 +35,13 @@
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "dependencies": {
-    "@chromatika/types": "0.0.0",
-    "@chromatika/math": "0.0.0"
+    "@chromatika/math": "0.0.0",
+    "@chromatika/types": "0.0.0"
   },
   "devDependencies": {
     "@chromatika/bezier": "0.0.0",
-    "@vitest/ui": "^0.8.2",
+    "@vitest/ui": "^0.8.1",
     "tsup": "5.12.4",
-    "vitest": "^0.8.2"
+    "vitest": "^0.8.1"
   }
 }

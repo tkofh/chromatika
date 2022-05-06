@@ -41,7 +41,7 @@
     "vitest": "^0.9.3"
   },
   "dependencies": {
-    "@chromatika/types": "0.0.0",
-    "@chromatika/utils": "0.0.0"
+    "@chromatika/spline-utils": "0.0.0",
+    "@chromatika/types": "0.0.0"
   }
 }

@@ -1,4 +1,5 @@
-import { getSplineThresholds, mod, clamp } from '@chromatika/utils'
+import { mod, clamp } from '@chromatika/math'
+import { getSplineThresholds } from '@chromatika/spline-utils'
 import { Spline, Range } from '@chromatika/types'
 
 interface CreateHSLScaleOptions {

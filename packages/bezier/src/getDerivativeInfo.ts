@@ -1,4 +1,4 @@
-import { quadraticRoots } from '@chromatika/utils'
+import { quadraticRoots } from '@chromatika/math'
 
 interface DerivativeInfo {
   y0: number

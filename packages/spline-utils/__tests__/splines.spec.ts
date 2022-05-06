@@ -1,9 +1,8 @@
-// noinspection ES6PreferShortImport
-
 import { describe, test, expect } from 'vitest'
 import { Rect } from '@chromatika/types'
-import { createBezierSpline } from '../../bezier/src/createBezierSpline'
-import { remapSpline, getSplineThresholds, roundTo, lerp } from '../src'
+import { roundTo, lerp } from '@chromatika/math'
+import { createBezierSpline } from '@chromatika/bezier'
+import { remapSpline, getSplineThresholds } from '../src'
 
 describe('remapSpline', () => {
   test('it remaps a spline', () => {

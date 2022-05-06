@@ -1,5 +1,5 @@
 import { Spline, Range } from '@chromatika/types'
-import { roundTo } from '../math'
+import { roundTo } from '@chromatika/math'
 
 export const getSplineThresholds = (
   spline: Spline,

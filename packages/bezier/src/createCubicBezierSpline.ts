@@ -1,5 +1,6 @@
-import { CubicPoints, Points, Rect, Spline, warnDev } from '@chromatika/types'
-import { remap, roundTo } from '@chromatika/utils'
+import { CubicPoints, Points, Rect, Spline } from '@chromatika/types'
+import { remap, roundTo } from '@chromatika/math'
+import { warnDev } from '@chromatika/dx'
 import { getDerivativeInfo } from './getDerivativeInfo'
 import { DEFAULT_LUT_RESOLUTION, DEFAULT_PRECISION } from './constants'
 import { createCubicBezierSolver } from './createCubicBezierSolver'

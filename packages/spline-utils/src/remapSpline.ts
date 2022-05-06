@@ -1,5 +1,5 @@
 import { Points, Rect, Spline } from '@chromatika/types'
-import { remap, roundTo } from '../math'
+import { remap, roundTo } from '@chromatika/math'
 
 export const remapSpline = (spline: Spline, target: Rect): Spline => {
   const extrema: Points = []
