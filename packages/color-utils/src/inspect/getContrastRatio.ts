@@ -1,5 +1,5 @@
 /**
- * Returns the contrast ratio between 1 and 21 between two colors' luminance values
+ * Returns the contrast ratio between 1 and 21 between two colors' luminance values.
  *
  * @param luminanceA
  * @param luminanceB

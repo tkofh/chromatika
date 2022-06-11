@@ -9,9 +9,9 @@ describe('parseHexString', () => {
       blue: 0,
     })
     expect(parseHexString('#fff')).toStrictEqual({
-      red: 1,
-      green: 1,
-      blue: 1,
+      red: 255,
+      green: 255,
+      blue: 255,
     })
   })
 
@@ -22,9 +22,9 @@ describe('parseHexString', () => {
       blue: 0,
     })
     expect(parseHexString('#ffffff')).toStrictEqual({
-      red: 1,
-      green: 1,
-      blue: 1,
+      red: 255,
+      green: 255,
+      blue: 255,
     })
   })
 
@@ -68,9 +68,9 @@ describe('parseRGBString', () => {
       blue: 0,
     })
     expect(parseRGBString('rgb(255,255,255)')).toStrictEqual({
-      red: 1,
-      green: 1,
-      blue: 1,
+      red: 255,
+      green: 255,
+      blue: 255,
     })
   })
 

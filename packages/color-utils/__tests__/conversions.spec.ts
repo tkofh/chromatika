@@ -7,30 +7,30 @@ test('hsl to rgb', () => {
     green: 0,
     blue: 0,
   })
-  expect(convertHSLToRGB(0, 0, 1)).toStrictEqual({
-    red: 1,
-    green: 1,
-    blue: 1,
+  expect(convertHSLToRGB(0, 0, 100)).toStrictEqual({
+    red: 255,
+    green: 255,
+    blue: 255,
   })
-  expect(convertHSLToRGB(0, 0, 0.5)).toStrictEqual({
-    red: 0.5,
-    green: 0.5,
-    blue: 0.5,
+  expect(convertHSLToRGB(0, 0, 50)).toStrictEqual({
+    red: 128,
+    green: 128,
+    blue: 128,
   })
-  expect(convertHSLToRGB(0, 1, 0.5)).toStrictEqual({
-    red: 1,
+  expect(convertHSLToRGB(0, 100, 50)).toStrictEqual({
+    red: 255,
     green: 0,
     blue: 0,
   })
-  expect(convertHSLToRGB(120, 1, 0.5)).toStrictEqual({
+  expect(convertHSLToRGB(120, 100, 50)).toStrictEqual({
     red: 0,
-    green: 1,
+    green: 255,
     blue: 0,
   })
-  expect(convertHSLToRGB(240, 1, 0.5)).toStrictEqual({
+  expect(convertHSLToRGB(240, 100, 50)).toStrictEqual({
     red: 0,
     green: 0,
-    blue: 1,
+    blue: 255,
   })
 })
 
@@ -40,29 +40,29 @@ test('rgb to hsl', () => {
     saturation: 0,
     lightness: 0,
   })
-  expect(convertRGBToHSL(1, 1, 1)).toStrictEqual({
+  expect(convertRGBToHSL(255, 255, 255)).toStrictEqual({
     hue: 0,
     saturation: 0,
-    lightness: 1,
+    lightness: 100,
   })
-  expect(convertRGBToHSL(0.5, 0.5, 0.5)).toStrictEqual({
+  expect(convertRGBToHSL(128, 128, 128)).toStrictEqual({
     hue: 0,
     saturation: 0,
-    lightness: 0.5,
+    lightness: 50,
   })
-  expect(convertRGBToHSL(1, 0, 0)).toStrictEqual({
+  expect(convertRGBToHSL(255, 0, 0)).toStrictEqual({
     hue: 0,
-    saturation: 1,
-    lightness: 0.5,
+    saturation: 100,
+    lightness: 50,
   })
-  expect(convertRGBToHSL(0, 1, 0)).toStrictEqual({
+  expect(convertRGBToHSL(0, 255, 0)).toStrictEqual({
     hue: 120,
-    saturation: 1,
-    lightness: 0.5,
+    saturation: 100,
+    lightness: 50,
   })
-  expect(convertRGBToHSL(0, 0, 1)).toStrictEqual({
+  expect(convertRGBToHSL(0, 0, 255)).toStrictEqual({
     hue: 240,
-    saturation: 1,
-    lightness: 0.5,
+    saturation: 100,
+    lightness: 50,
   })
 })

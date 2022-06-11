@@ -1,40 +1,44 @@
 import { HSL } from '@chromatika/types'
-import { assertNormalized } from '../util'
+import { assertRGBInput } from '../assertions'
+
 /**
  * Converts the RGB form of a color to the HSL form of the same color.
  *
- * Red, Green, and Blue should be normalized, being greater than or equal to 0 and less than or equal to 1
+ * Red, Green, and Blue should be integers greater than or equal to 0, less than or equal to 255.
  *
- * @param red Red component of the color to convert. Must be normalized (greater than or equal to 0, less than or equal to 1)
- * @param green Green component of the color to convert. Must be normalized (greater than or equal to 0, less than or equal to 1)
- * @param blue Blue component of the color to convert. Must be normalized (greater than or equal to 0, less than or equal to 1)
+ * @param red Red component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param green Green component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param blue Blue component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
  */
 export const convertRGBToHSL = (red: number, green: number, blue: number): HSL => {
-  assertNormalized(red, 'Red')
-  assertNormalized(green, 'Green')
-  assertNormalized(blue, 'Blue')
+  assertRGBInput(red, green, blue)
 
   // Source: https://www.rapidtables.com/convert/color/rgb-to-hsl.html
 
-  const cMin = Math.min(red, green, blue)
-  const cMax = Math.max(red, green, blue)
+  const r = red / 255
+  const g = green / 255
+  const b = blue / 255
 
-  const delta = cMax - cMin
+  const cMin = Math.min(r, g, b)
+  const cMax = Math.max(r, g, b)
+
+  const cDelta = cMax - cMin
+  const cMean = (cMin + cMax) * 0.5
 
   let hue!: number
-  if (delta === 0) {
+  if (cDelta === 0) {
     hue = 0
-  } else if (cMax === red) {
-    hue = (((green - blue) / delta) % 6) * 60
-  } else if (cMax === green) {
-    hue = ((blue - red) / delta + 2) * 60
+  } else if (cMax === r) {
+    hue = (((g - b) / cDelta) % 6) * 60
+  } else if (cMax === g) {
+    hue = ((b - r) / cDelta + 2) * 60
   } else {
-    hue = ((red - green) / delta + 4) * 60
+    hue = ((r - g) / cDelta + 4) * 60
   }
 
-  const lightness = (cMax + cMin) / 2
+  const lightness = Math.round(cMean * 100)
 
-  const saturation = delta === 0 ? 0 : delta / (1 - Math.abs(2 * lightness - 1))
+  const saturation = (cDelta === 0 ? 0 : cDelta / (1 - Math.abs(2 * cMean - 1))) * 100
 
   return {
     hue,
