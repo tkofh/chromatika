@@ -2,10 +2,10 @@ import { RGB } from '@chromatika/types'
 import { assertHSLInput } from '../assertions'
 
 /**
- *  Converts the HSL form of a color to the RGB form of the same color.
+ * Converts the HSL form of a color to the RGB form of the same color.
  *
- *  Hue should be in degrees, being an integer greater than or equal to 0 and less than 360.
- *  Saturation and Lightness should be greater than or equal to 0, less than or equal to 100.
+ * Hue should be in degrees, being an integer greater than or equal to 0 and less than 360.
+ * Saturation and Lightness should be greater than or equal to 0, less than or equal to 100.
  *
  * @param hue Hue component of the color to convert. Must be greater than or equal to 0, and less than 360.
  * @param saturation Saturation component of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
