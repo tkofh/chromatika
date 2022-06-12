@@ -30,6 +30,7 @@
   "scripts": {
     "build": "tsup",
     "test": "vitest run",
+    "test:watch": "vitest watch",
     "test:ui": "vitest --ui"
   },
   "bugs": {
@@ -40,8 +41,8 @@
     "@chromatika/types": "0.0.0"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.7.11",
-    "tsup": "5.12.3",
-    "vitest": "^0.7.11"
+    "@vitest/ui": "^0.11.0",
+    "tsup": "^5.12.7",
+    "vitest": "^0.11.0"
   }
 }

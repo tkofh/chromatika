@@ -1,7 +1,7 @@
-import { test, expect } from 'vitest'
+import { test } from 'vitest'
 import { convertHSLToRGB, convertRGBToHSL } from '../src'
 
-test('hsl to rgb', () => {
+test('hsl to rgb', ({ expect }) => {
   expect(convertHSLToRGB(0, 0, 0)).toStrictEqual({
     red: 0,
     green: 0,
@@ -34,7 +34,7 @@ test('hsl to rgb', () => {
   })
 })
 
-test('rgb to hsl', () => {
+test('rgb to hsl', ({ expect }) => {
   expect(convertRGBToHSL(0, 0, 0)).toStrictEqual({
     hue: 0,
     saturation: 0,

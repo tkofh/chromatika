@@ -1,4 +1,4 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test } from 'vitest'
 import { Color } from '@chromatika/types'
 import { createColorFromHSL, createColorFromRGB } from '../src'
 
@@ -42,7 +42,7 @@ const BLACK: Color = {
 }
 
 describe('createColorFromHSL', () => {
-  test('it creates colors', () => {
+  test('it creates colors', ({ expect }) => {
     expect(createColorFromHSL(0, 0, 100)).toStrictEqual(WHITE)
     expect(createColorFromHSL(0, 0, 50)).toStrictEqual(GREY)
     expect(createColorFromHSL(0, 0, 0)).toStrictEqual(BLACK)
@@ -50,7 +50,7 @@ describe('createColorFromHSL', () => {
 })
 
 describe('createColorFromRGB', () => {
-  test('it creates colors', () => {
+  test('it creates colors', ({ expect }) => {
     expect(createColorFromRGB(255, 255, 255)).toStrictEqual(WHITE)
     expect(createColorFromRGB(128, 128, 128)).toStrictEqual(GREY)
     expect(createColorFromRGB(0, 0, 0)).toStrictEqual(BLACK)

@@ -1,8 +1,8 @@
-import { describe, test, expect } from 'vitest'
+import { describe, test } from 'vitest'
 import { parseHexString, parseRGBString } from '../src/'
 
 describe('parseHexString', () => {
-  test('it parses a shorthand hex string', () => {
+  test('it parses a shorthand hex string', ({ expect }) => {
     expect(parseHexString('#000')).toStrictEqual({
       red: 0,
       green: 0,
@@ -15,7 +15,7 @@ describe('parseHexString', () => {
     })
   })
 
-  test('it parses a expanded hex string', () => {
+  test('it parses a expanded hex string', ({ expect }) => {
     expect(parseHexString('#000000')).toStrictEqual({
       red: 0,
       green: 0,
@@ -28,7 +28,7 @@ describe('parseHexString', () => {
     })
   })
 
-  test('it throws for invalid hex strings', () => {
+  test('it throws for invalid hex strings', ({ expect }) => {
     expect(() => parseHexString('#00')).toThrowError(
       'Invalid hex code input #00: Please use a valid hex code (including the # at the start)'
     )
@@ -46,7 +46,7 @@ describe('parseHexString', () => {
     )
   })
 
-  test("it normalizes and doesn't normalize properly", () => {
+  test("it normalizes and doesn't normalize properly", ({ expect }) => {
     expect(parseHexString('#fff', true)).toStrictEqual({
       red: 1,
       green: 1,
@@ -61,7 +61,7 @@ describe('parseHexString', () => {
 })
 
 describe('parseRGBString', () => {
-  test('it parses a rgb string', () => {
+  test('it parses a rgb string', ({ expect }) => {
     expect(parseRGBString('rgb(0, 0, 0)')).toStrictEqual({
       red: 0,
       green: 0,
@@ -74,7 +74,7 @@ describe('parseRGBString', () => {
     })
   })
 
-  test('it throws for invalid rgb strings', () => {
+  test('it throws for invalid rgb strings', ({ expect }) => {
     expect(() => parseRGBString('hello world')).toThrowError(
       'Invalid RGB hello world: Input must be a valid CSS RGB String'
     )
@@ -88,7 +88,7 @@ describe('parseRGBString', () => {
     )
   })
 
-  test("it normalizes and doesn't normalize properly", () => {
+  test("it normalizes and doesn't normalize properly", ({ expect }) => {
     expect(parseRGBString('rgb(255, 255, 255)', true)).toStrictEqual({
       red: 1,
       green: 1,
