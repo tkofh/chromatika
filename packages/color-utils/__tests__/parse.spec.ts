@@ -30,19 +30,19 @@ describe('parseHexString', () => {
 
   test('it throws for invalid hex strings', () => {
     expect(() => parseHexString('#00')).toThrowError(
-      'Invalid hex code #00: Please use a valid hex code (including the # at the start'
+      'Invalid hex code input #00: Please use a valid hex code (including the # at the start)'
     )
 
     expect(() => parseHexString('#00FF')).toThrowError(
-      'Invalid hex code #00FF: Please use a valid hex code (including the # at the start'
+      'Invalid hex code input #00FF: Please use a valid hex code (including the # at the start)'
     )
 
     expect(() => parseHexString('#0000000000')).toThrowError(
-      'Invalid hex code #0000000000: Please use a valid hex code (including the # at the start'
+      'Invalid hex code input #0000000000: Please use a valid hex code (including the # at the start)'
     )
 
     expect(() => parseHexString('#ggg')).toThrowError(
-      'Invalid hex code #ggg: Please use a valid hex code (including the # at the start'
+      'Invalid hex code input #ggg: Please use a valid hex code (including the # at the start)'
     )
   })
 

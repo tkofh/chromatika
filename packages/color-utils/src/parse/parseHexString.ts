@@ -1,7 +1,7 @@
 import { RGB } from '@chromatika/types'
-
-const shorthandHexPattern = /^#?([a-f\d])([a-f\d])([a-f\d])$/i
-const expandedHexPattern = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i
+import { assertHexString } from '../assertions'
+import { EXPANDED_HEX_PATTERN } from '../constants'
+import { expandHexString } from '../stringify'
 
 /**
  * parseHexString turns the string representation of a CSS hex code into an RGB object.
@@ -13,18 +13,11 @@ const expandedHexPattern = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i
  * @param normalize whether or not to normalize the numerical output
  */
 export const parseHexString = (hex: string, normalize = false): RGB => {
-  if (!shorthandHexPattern.test(hex) && !expandedHexPattern.test(hex)) {
-    throw new Error(
-      `Invalid hex code ${hex}: Please use a valid hex code (including the # at the start`
-    )
-  }
+  assertHexString(hex, 'hex code')
 
-  const expandedHex = hex.replace(
-    shorthandHexPattern,
-    (_, red, green, blue) => red + red + green + green + blue + blue
-  )
+  const expandedHex = expandHexString(hex)
 
-  const [, redString, greenString, blueString] = expandedHexPattern.exec(expandedHex)!
+  const [, redString, greenString, blueString] = EXPANDED_HEX_PATTERN.exec(expandedHex)!
 
   const scalar = normalize ? 1 / 255 : 1
 

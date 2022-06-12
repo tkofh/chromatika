@@ -1,5 +1,12 @@
 import { describe, test, expect } from 'vitest'
-import { getHexString, getHSLString, getRGBString } from '../src'
+import { expandHexString, getHexString, getHSLString, getRGBString } from '../src'
+
+describe('expandHexString', () => {
+  test('it expands hex strings', () => {
+    expect(expandHexString('#000')).toBe('#000000')
+    expect(expandHexString('#f6f6f6')).toBe('#f6f6f6')
+  })
+})
 
 describe('getHexString', () => {
   test('it generates hex strings', () => {
