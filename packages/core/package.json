@@ -29,19 +29,21 @@
   },
   "scripts": {
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:ui": "vitest --ui"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "devDependencies": {
-    "@chromatika/bezier": "0.0.0",
-    "@vitest/ui": "^0.9.3",
-    "tsup": "5.12.4",
-    "vitest": "^0.9.3"
+    "@vitest/ui": "^0.11.0",
+    "tsup": "^5.12.7",
+    "vitest": "^0.11.0"
   },
   "dependencies": {
-    "@chromatika/spline-utils": "0.0.0",
+    "@chromatika/color-utils": "0.0.0",
+    "@chromatika/dx": "0.0.0",
     "@chromatika/types": "0.0.0"
   }
 }
