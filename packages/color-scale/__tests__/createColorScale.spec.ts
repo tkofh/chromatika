@@ -1,7 +1,7 @@
 import { describe, test } from 'vitest'
 import { createColorFromHSL } from '@chromatika/color-utils'
 import { ColorRange } from '@chromatika/types'
-import { createColorScale } from '../src'
+import { createColorScale } from '../src/lib'
 
 describe('createColorScale', () => {
   const GREYSCALE = Array.from({ length: 11 }).map((_, i) => createColorFromHSL(0, 0, i * 10))

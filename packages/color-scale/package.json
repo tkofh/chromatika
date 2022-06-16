@@ -1,7 +1,7 @@
 {
-  "name": "@chromatika/core",
+  "name": "@chromatika/color-scale",
   "version": "0.0.0",
-  "description": "Generate colors with curves",
+  "description": "Generate colors with hue, saturation, and lightness curves",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",
@@ -44,6 +44,10 @@
   "dependencies": {
     "@chromatika/color-utils": "0.0.0",
     "@chromatika/dx": "0.0.0",
-    "@chromatika/types": "0.0.0"
+    "@chromatika/math": "0.0.0",
+    "@chromatika/types": "0.0.0",
+    "@curvy/bezier": "^0.6.1",
+    "@curvy/spline-utils": "^0.3.1",
+    "@curvy/types": "^0.6.1"
   }
 }
