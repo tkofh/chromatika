@@ -1,1 +1,0 @@
-export { createBezierSpline } from './createBezierSpline'
