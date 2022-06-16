@@ -29,7 +29,9 @@
   },
   "scripts": {
     "build": "tsup",
-    "test": "vitest run"
+    "test": "vitest run",
+    "test:watch": "vitest watch",
+    "test:ui": "vitest --ui"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
