@@ -1,7 +1,7 @@
 {
   "name": "@chromatika/types",
   "version": "0.1.1",
-  "description": "Shared code for Chromatika. Not meant for public consumption.",
+  "description": "Shared types for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
   "license": "MIT",

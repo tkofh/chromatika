@@ -2,7 +2,7 @@ import { Spline, Point } from '@curvy/types'
 import { createCubicBezierSpline } from '@curvy/bezier'
 import { getSplineAxisRanges } from '@curvy/spline-utils'
 import { ColorScale, ColorRange } from '@chromatika/types'
-import { clamp, mod } from '@chromatika/math'
+import { clamp, mod } from 'micro-math'
 import { createColorFromHSL } from '@chromatika/color-utils'
 import { createColorScale } from './lib'
 
