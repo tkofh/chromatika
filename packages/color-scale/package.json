@@ -31,7 +31,8 @@
     "build": "tsup",
     "test": "vitest run",
     "test:watch": "vitest watch",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "prepublish": "yarn test && yarn build"
   },
   "bugs": {
     "url": "https://github.com/tkofh/chromatika/issues"
