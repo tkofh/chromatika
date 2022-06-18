@@ -1,6 +1,5 @@
 import { RGB } from '@chromatika/types'
-
-const rgbPattern = /^rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)$/i
+import { RGB_PATTERN } from '../constants'
 
 /**
  * parseRGBString turns the string representation of a CSS rgb color into an RGB object.
@@ -12,7 +11,7 @@ const rgbPattern = /^rgb\((\d{1,3}), ?(\d{1,3}), ?(\d{1,3})\)$/i
  * @param normalize whether or not to normalize the numerical output
  */
 export const parseRGBString = (rgb: string, normalize = false): RGB => {
-  const result = rgbPattern.exec(rgb)
+  const result = RGB_PATTERN.exec(rgb)
   if (result === null) {
     throw new Error(`Invalid RGB ${rgb}: Input must be a valid CSS RGB String`)
   }
