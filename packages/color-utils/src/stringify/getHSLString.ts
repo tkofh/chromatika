@@ -1,4 +1,4 @@
-import { roundTo } from '@chromatika/math'
+import { roundTo } from 'micro-math'
 import { assertHSLInput } from '../assertions'
 
 /**
