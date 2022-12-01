@@ -13,12 +13,10 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
   const scaleStart = colors[0].start
   const scaleEnd = colors[colors.length - 1].end
 
-  const uniqueColors = new Set<Color>()
-  const uniqueHexCodes = new Set<string>()
+  const uniqueColors = new Map<string, Color>()
   for (const range of colors) {
-    if (!uniqueHexCodes.has(range.value.hex)) {
-      uniqueHexCodes.add(range.value.hex)
-      uniqueColors.add(range.value)
+    if (!uniqueColors.has(range.value.hex)) {
+      uniqueColors.set(range.value.hex, range.value)
     }
   }
 
@@ -211,7 +209,7 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
 
   return {
     colors,
-    uniqueColors,
+    uniqueColors: new Set(uniqueColors.values()),
     rangeFor,
     at,
     has,
