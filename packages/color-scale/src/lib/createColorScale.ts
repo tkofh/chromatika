@@ -91,17 +91,14 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
     return output
   }
 
-  const at = (input: number): Color | undefined => {
-    let output: Color | undefined
+  const at = (input: number): Color => {
     if (input < scaleStart || input > scaleEnd) {
-      warnDev(
+      throw new Error(
         `Cannot return color at ${input} because scale is undefined outside of [${scaleStart}, ${scaleEnd}]`
       )
     } else {
-      output = rangeFor(input)?.value
+      return rangeFor(input)!.value
     }
-
-    return output
   }
 
   const has = (input: ColorInput | number): boolean => rangeFor(input) !== undefined
