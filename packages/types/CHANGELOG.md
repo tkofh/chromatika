@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tkofh/chromatika/compare/@chromatika/types@0.1.2...@chromatika/types@0.2.0) (2022-12-01)
+
+
+### Features
+
+* **color-scale:** throw error for out of bounds color ([2fe3f82](https://github.com/tkofh/chromatika/commit/2fe3f82eb26a88de85ef6501e50d89319395a379))
+
+
+
+
+
 ## [0.1.2](https://github.com/tkofh/chromatika/compare/@chromatika/types@0.1.1...@chromatika/types@0.1.2) (2022-06-18)
 
 **Note:** Version bump only for package @chromatika/types

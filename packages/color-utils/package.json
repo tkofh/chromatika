@@ -1,6 +1,6 @@
 {
   "name": "@chromatika/color-utils",
-  "version": "0.1.2",
+  "version": "0.2.0",
   "description": "Color Conversion Utilities for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
@@ -38,7 +38,7 @@
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "dependencies": {
-    "@chromatika/types": "0.1.2",
+    "@chromatika/types": "0.2.0",
     "micro-math": "^0.3.0"
   },
   "devDependencies": {
