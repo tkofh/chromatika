@@ -8,7 +8,7 @@ export interface ColorScale {
   readonly colors: ReadonlyArray<ColorRange>
   readonly uniqueColors: ReadonlySet<Color>
 
-  readonly at: (x: number) => Color
+  readonly at: (x: number, alpha?: number) => Color
 
   readonly has: (value: ColorInput | number) => boolean
 

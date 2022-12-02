@@ -8,11 +8,12 @@ import { getHexString, getHSLString, getRGBString } from '../stringify'
  *
  * Red, Green, and Blue should be integers greater than or equal to 0, less than or equal to 255.
  *
- * @param red Red component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param green Green component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param blue Blue component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param red Red channel of the color to create. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param green Green channel of the color to create. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param blue Blue channel of the color to create. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param alpha Alpha channel of the color to create. Must be a float greater than or equal to 0, less than or equal to 1.
  */
-export const createColorFromRGB = (red: number, green: number, blue: number): Color => {
+export const createColorFromRGB = (red: number, green: number, blue: number, alpha = 1): Color => {
   const { hue, saturation, lightness } = convertRGBToHSL(red, green, blue)
   const relativeLuminance = getRelativeLuminance(red, green, blue)
   const hsl = getHSLString(hue, saturation, lightness)
@@ -30,5 +31,6 @@ export const createColorFromRGB = (red: number, green: number, blue: number): Co
     hex,
     hsl,
     relativeLuminance,
+    alpha,
   }
 }

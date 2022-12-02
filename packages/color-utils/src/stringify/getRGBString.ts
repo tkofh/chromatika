@@ -8,9 +8,10 @@ import { assertRGBInput } from '../assertions'
  * @param red Red component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255.
  * @param green Green component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255.
  * @param blue Blue component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param alpha Alpha channel of the color to stringify. If defined, must be greater than or equal to 0, less than or equal to 1.
  */
-export const getRGBString = (red: number, green: number, blue: number) => {
-  assertRGBInput(red, green, blue)
+export const getRGBString = (red: number, green: number, blue: number, alpha?: number) => {
+  assertRGBInput(red, green, blue, alpha)
 
-  return `rgb(${Math.round(red)}, ${Math.round(green)}, ${Math.round(blue)})`
+  return `rgb${alpha != null ? 'a' : ''}(${Math.round(red)}, ${Math.round(green)}, ${Math.round(blue)}${alpha != null ? `, ${alpha}` : ''})`
 }

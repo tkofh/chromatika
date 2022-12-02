@@ -13,6 +13,7 @@ const WHITE: Color = {
   hsl: 'hsl(0deg, 0%, 100%)',
   hex: '#ffffff',
   relativeLuminance: 1,
+  alpha: 1,
 }
 
 const GREY: Color = {
@@ -26,6 +27,7 @@ const GREY: Color = {
   hsl: 'hsl(0deg, 0%, 50%)',
   hex: '#808080',
   relativeLuminance: 0.2158605001138992,
+  alpha: 1,
 }
 
 const BLACK: Color = {
@@ -39,6 +41,12 @@ const BLACK: Color = {
   hsl: 'hsl(0deg, 0%, 0%)',
   hex: '#000000',
   relativeLuminance: 0,
+  alpha: 1,
+}
+
+const HALF_BLACK: Color = {
+  ...BLACK,
+  alpha: 0.5
 }
 
 describe('createColorFromHSL', () => {
@@ -46,6 +54,8 @@ describe('createColorFromHSL', () => {
     expect(createColorFromHSL(0, 0, 100)).toStrictEqual(WHITE)
     expect(createColorFromHSL(0, 0, 50)).toStrictEqual(GREY)
     expect(createColorFromHSL(0, 0, 0)).toStrictEqual(BLACK)
+    expect(createColorFromHSL(0, 0, 0, 1)).toStrictEqual(BLACK)
+    expect(createColorFromHSL(0, 0, 0, 0.5)).toStrictEqual(HALF_BLACK)
   })
 })
 
@@ -54,5 +64,7 @@ describe('createColorFromRGB', () => {
     expect(createColorFromRGB(255, 255, 255)).toStrictEqual(WHITE)
     expect(createColorFromRGB(128, 128, 128)).toStrictEqual(GREY)
     expect(createColorFromRGB(0, 0, 0)).toStrictEqual(BLACK)
+    expect(createColorFromRGB(0, 0, 0, 1)).toStrictEqual(BLACK)
+    expect(createColorFromRGB(0, 0, 0, 0.5)).toStrictEqual(HALF_BLACK)
   })
 })

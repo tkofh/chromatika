@@ -1,4 +1,4 @@
-import { HSL } from '@chromatika/types'
+import { HSLA } from '@chromatika/types'
 import { assertRGBInput } from '../assertions'
 
 /**
@@ -6,11 +6,12 @@ import { assertRGBInput } from '../assertions'
  *
  * Red, Green, and Blue should be integers greater than or equal to 0, less than or equal to 255.
  *
- * @param red Red component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param green Green component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param blue Blue component of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param red Red channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param green Green channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param blue Blue channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
+ * @param alpha Alpha channel of the color to convert. If defined, must be greater than or equal to 0, less than or equal to 1.
  */
-export const convertRGBToHSL = (red: number, green: number, blue: number): HSL => {
+export const convertRGBToHSL = (red: number, green: number, blue: number, alpha = 1): HSLA => {
   assertRGBInput(red, green, blue)
 
   // Source: https://www.rapidtables.com/convert/color/rgb-to-hsl.html
@@ -44,5 +45,6 @@ export const convertRGBToHSL = (red: number, green: number, blue: number): HSL =
     hue,
     saturation,
     lightness,
+    alpha
   }
 }

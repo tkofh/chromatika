@@ -11,6 +11,6 @@ export const expandHexString = (hex: string): string => {
 
   return hex.replace(
     SHORTHAND_HEX_PATTERN,
-    (_, red, green, blue) => '#' + red + red + green + green + blue + blue
+    (_, red, green, blue, alpha) => '#' + red + red + green + green + blue + blue + (alpha ? (alpha + alpha) : '')
   )
 }

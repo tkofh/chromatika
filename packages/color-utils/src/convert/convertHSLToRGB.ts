@@ -1,4 +1,4 @@
-import { RGB } from '@chromatika/types'
+import { RGBA } from '@chromatika/types'
 import { assertHSLInput } from '../assertions'
 
 /**
@@ -7,11 +7,12 @@ import { assertHSLInput } from '../assertions'
  * Hue should be in degrees, being an integer greater than or equal to 0 and less than 360.
  * Saturation and Lightness should be greater than or equal to 0, less than or equal to 100.
  *
- * @param hue Hue component of the color to convert. Must be greater than or equal to 0, and less than 360.
- * @param saturation Saturation component of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
- * @param lightness Lightness component of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
+ * @param hue Hue channel of the color to convert. Must be greater than or equal to 0, and less than 360.
+ * @param saturation Saturation channel of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
+ * @param lightness Lightness channel of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
+ * @param alpha Alpha channel of the color to convert. Must be greater than or equal to 0, less than or equal to 1.
  */
-export const convertHSLToRGB = (hue: number, saturation: number, lightness: number): RGB => {
+export const convertHSLToRGB = (hue: number, saturation: number, lightness: number, alpha = 1): RGBA => {
   assertHSLInput(hue, saturation, lightness)
 
   // Source: https://www.rapidtables.com/convert/color/hsl-to-rgb.html
@@ -48,5 +49,5 @@ export const convertHSLToRGB = (hue: number, saturation: number, lightness: numb
   green = Math.round(green * 255)
   blue = Math.round(blue * 255)
 
-  return { red, green, blue }
+  return { red, green, blue, alpha }
 }

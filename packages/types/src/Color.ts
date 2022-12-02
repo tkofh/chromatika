@@ -15,6 +15,13 @@ export interface RGB {
   readonly blue: number
 }
 
+export interface RGBA extends RGB {
+  /**
+   * Alpha channel of the color
+   */
+  readonly alpha: number
+}
+
 export interface HSL {
   /**
    * Hue component of the HSL form of a color. Represented in degrees (Greater than or equal to 0, less than to 360).
@@ -32,7 +39,14 @@ export interface HSL {
   readonly lightness: number
 }
 
-export interface Color extends HSL, RGB {
+export interface HSLA extends HSL {
+  /**
+   * Alpha channel of the color
+   */
+  readonly alpha: number
+}
+
+export interface Color extends HSLA, RGBA {
   readonly relativeLuminance: number
 
   /**

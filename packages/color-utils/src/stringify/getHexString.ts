@@ -5,16 +5,18 @@ import { assertRGBInput } from '../assertions'
  *
  * Red, Green, and Blue should be integers greater than or equal to 0, less than or equal to 255.
  *
- * @param red Red component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
- * @param green Green component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
- * @param blue Blue component of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
+ * @param red Red channel of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
+ * @param green Green channel of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
+ * @param blue Blue channel of the color to stringify. Must be an integer greater than or equal to 0, less than or equal to 255
+ * @param alpha Alpha channel of the color to stringify. If defined, must be a float greater than or equal to 0, less than or equal to 1
  */
-export const getHexString = (red: number, green: number, blue: number): string => {
-  assertRGBInput(red, green, blue)
+export const getHexString = (red: number, green: number, blue: number, alpha?: number): string => {
+  assertRGBInput(red, green, blue, alpha)
 
   const redHex = red.toString(16).padStart(2, '0')
   const greenHex = green.toString(16).padStart(2, '0')
   const blueHex = blue.toString(16).padStart(2, '0')
+  const alphaHex = alpha?.toString(16).padStart(2, '0') ?? ''
 
-  return `#${redHex}${greenHex}${blueHex}`
+  return `#${redHex}${greenHex}${blueHex}${alphaHex}`
 }

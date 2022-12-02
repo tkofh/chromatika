@@ -1,5 +1,5 @@
-import { RGB } from '@chromatika/types'
-import { RGB_PATTERN } from '../constants'
+import { RGBA } from '@chromatika/types'
+import { RGBA_PATTERN, RGB_PATTERN } from '../constants'
 
 /**
  * parseRGBString turns the string representation of a CSS rgb color into an RGB object.
@@ -10,13 +10,19 @@ import { RGB_PATTERN } from '../constants'
  * @param rgb input string representing a CSS rgb color
  * @param normalize whether or not to normalize the numerical output
  */
-export const parseRGBString = (rgb: string, normalize = false): RGB => {
-  const result = RGB_PATTERN.exec(rgb)
+export const parseRGBString = (rgb: string, normalize = false): RGBA => {
+  let result = new RegExp(RGB_PATTERN).exec(rgb)
+  let isRGBA = false
+  if(result === null) {
+    result = new RegExp(RGBA_PATTERN).exec(rgb)
+    isRGBA = true
+  }
   if (result === null) {
     throw new Error(`Invalid RGB ${rgb}: Input must be a valid CSS RGB String`)
   }
 
   const [, redString, greenString, blueString] = result
+  const alphaString = isRGBA ? result[4] : '1.0'
 
   const scalar = normalize ? 1 / 255 : 1
 
@@ -24,5 +30,6 @@ export const parseRGBString = (rgb: string, normalize = false): RGB => {
     red: parseInt(redString) * scalar,
     green: parseInt(greenString) * scalar,
     blue: parseInt(blueString) * scalar,
+    alpha: parseFloat(alphaString),
   }
 }

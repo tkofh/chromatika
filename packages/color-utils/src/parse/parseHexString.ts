@@ -1,4 +1,4 @@
-import { RGB } from '@chromatika/types'
+import { RGBA } from '@chromatika/types'
 import { assertHexString } from '../assertions'
 import { EXPANDED_HEX_PATTERN } from '../constants'
 import { expandHexString } from '../stringify'
@@ -12,12 +12,12 @@ import { expandHexString } from '../stringify'
  * @param hex input string representing a CSS hex code
  * @param normalize whether or not to normalize the numerical output
  */
-export const parseHexString = (hex: string, normalize = false): RGB => {
+export const parseHexString = (hex: string, normalize = false): RGBA => {
   assertHexString(hex, 'hex code')
 
   const expandedHex = expandHexString(hex)
 
-  const [, redString, greenString, blueString] = EXPANDED_HEX_PATTERN.exec(expandedHex)!
+  const [, redString, greenString, blueString, alphaString = 'FF'] = EXPANDED_HEX_PATTERN.exec(expandedHex)!
 
   const scalar = normalize ? 1 / 255 : 1
 
@@ -25,5 +25,6 @@ export const parseHexString = (hex: string, normalize = false): RGB => {
     red: parseInt(redString, 16) * scalar,
     green: parseInt(greenString, 16) * scalar,
     blue: parseInt(blueString, 16) * scalar,
+    alpha: parseInt(alphaString, 16) / 255,
   }
 }
