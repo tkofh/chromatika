@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.2.0...@chromatika/color-scale@0.3.0) (2022-12-05)
+
+
+### Features
+
+* **color-scale:** alpha channel support ([6007bf1](https://github.com/tkofh/chromatika/commit/6007bf1ff8fb175a54da4bc5df87003c77bc67a2))
+
+
+
+
+
 # [0.2.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.1.2...@chromatika/color-scale@0.2.0) (2022-12-01)
 
 

@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/tkofh/chromatika/compare/@chromatika/types@0.2.0...@chromatika/types@0.3.0) (2022-12-05)
+
+
+### Features
+
+* **color-utils:** support alpha channel ([903b386](https://github.com/tkofh/chromatika/commit/903b386157aa71ea56b75c17db69dc02f8e687b5))
+
+
+
+
+
 # [0.2.0](https://github.com/tkofh/chromatika/compare/@chromatika/types@0.1.2...@chromatika/types@0.2.0) (2022-12-01)
 
 
