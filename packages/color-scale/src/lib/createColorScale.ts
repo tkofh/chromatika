@@ -7,7 +7,7 @@ import {
   ScanTarget,
 } from '@chromatika/types'
 import { warnDev } from '@chromatika/dx'
-import { expandHexString, getContrastRatio } from '@chromatika/color-utils'
+import { expandHexString, getContrastRatio, setColorAlpha } from '@chromatika/color-utils'
 
 export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
   const scaleStart = colors[0].start
@@ -91,13 +91,14 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
     return output
   }
 
-  const at = (input: number): Color => {
+  const at = (input: number, alpha?: number): Color => {
     if (input < scaleStart || input > scaleEnd) {
       throw new Error(
         `Cannot return color at ${input} because scale is undefined outside of [${scaleStart}, ${scaleEnd}]`
       )
     } else {
-      return rangeFor(input)!.value
+      const color = rangeFor(input)!.value
+      return alpha != null ? setColorAlpha(color, alpha) : color
     }
   }
 

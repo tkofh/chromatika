@@ -1,5 +1,5 @@
 import { describe, test } from 'vitest'
-import { createColorFromHSL } from '@chromatika/color-utils'
+import { createColorFromHSL, setColorAlpha } from '@chromatika/color-utils'
 import { ColorRange } from '@chromatika/types'
 import { createColorScale } from '../src/lib'
 
@@ -144,6 +144,8 @@ describe('createColorScale', () => {
     expect(scale.at(2)).toBe(GREYSCALE[10])
     expect(scale.at(2.5)).toBe(GREYSCALE[10])
     expect(scale.at(3)).toBe(GREYSCALE[10])
+
+    expect(scale.at(0, 0.5)).toStrictEqual(setColorAlpha(GREYSCALE[0], 0.5))
   })
 
   test('it finds contrasting colors', ({ expect }) => {
