@@ -1,5 +1,6 @@
 export { convertRGBToHSL, convertHSLToRGB } from './convert'
 export { createColorFromHSL, createColorFromRGB } from './creators'
 export { getRelativeLuminance, getContrastRatio } from './inspect'
+export { setColorAlpha } from './operations'
 export { parseRGBString, parseHexString } from './parse'
 export { expandHexString, getHexString, getHSLString, getRGBString } from './stringify'

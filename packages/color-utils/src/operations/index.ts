@@ -1,0 +1,1 @@
+export { setColorAlpha } from './setColorAlpha'
