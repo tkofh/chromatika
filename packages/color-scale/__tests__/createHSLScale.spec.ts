@@ -245,4 +245,30 @@ describe('createHSLScale', () => {
       })
     ).toThrowError('Hue, Saturation, and Lightness curves must share X axis start and end values')
   })
+
+  test('it allows loop around hue', ({ expect }) => {
+    const scale = createHSLScale({
+      hue: [
+        [0, 350],
+        [0.25, 355],
+        [0.75, 360 + 10],
+        [1, 360 + 15]
+      ],
+      saturation: [
+        [0, 80],
+        [0.4, 70],
+        [0.6, 30],
+        [1, 20],
+      ],
+      lightness: [
+        [0, 100],
+        [0.25, 100],
+        [0.75, 20],
+        [1, 15],
+      ],
+    })
+
+    expect(scale.at(0).hue).toBe(350)
+    expect(scale.at(1).hue).toBe(15)
+  })
 })
