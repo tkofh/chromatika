@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tkofh/chromatika/compare/@chromatika/color-utils@0.3.0...@chromatika/color-utils@0.3.1) (2022-12-06)
+
+
+### Bug Fixes
+
+* **color-utils:** allow 360deg for hue input ([5adaff8](https://github.com/tkofh/chromatika/commit/5adaff8303300860fdb109ac07ed77bfe6608f94))
+
+
+
+
+
 # [0.3.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-utils@0.2.0...@chromatika/color-utils@0.3.0) (2022-12-05)
 
 

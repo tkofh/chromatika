@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.3.1](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.3.0...@chromatika/color-scale@0.3.1) (2022-12-06)
+
+
+### Bug Fixes
+
+* **color-scale:** ensure loop-around hues are allowed ([25815e8](https://github.com/tkofh/chromatika/commit/25815e842eb40ee59357ca3159975fae640b39b2))
+
+
+
+
+
 # [0.3.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.2.0...@chromatika/color-scale@0.3.0) (2022-12-05)
 
 

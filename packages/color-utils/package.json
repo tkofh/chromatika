@@ -1,6 +1,6 @@
 {
   "name": "@chromatika/color-utils",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Color Conversion Utilities for Chromatika",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
