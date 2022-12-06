@@ -3,7 +3,7 @@ import { assertRange } from './assertRange'
 
 export const assertHSLInput = (hue: number, saturation: number, lightness: number, alpha?: number): void => {
   assertInteger(hue, 'Hue')
-  assertRange(hue, 0, 359, 'Hue')
+  assertRange(hue, 0, 360, 'Hue')
   assertRange(saturation, 0, 100, 'Saturation')
   assertRange(lightness, 0, 100, 'Lightness')
   if(alpha != null) {
