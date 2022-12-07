@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-utils@0.3.1...@chromatika/color-utils@0.4.0) (2022-12-07)
+
+
+### Features
+
+* **color-utils:** support exclusive ranges for hue ([a510e07](https://github.com/tkofh/chromatika/commit/a510e0795d816a82286340dccd3166eb31283895))
+
+
+
+
+
 ## [0.3.1](https://github.com/tkofh/chromatika/compare/@chromatika/color-utils@0.3.0...@chromatika/color-utils@0.3.1) (2022-12-06)
 
 
