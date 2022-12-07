@@ -252,7 +252,7 @@ describe('createHSLScale', () => {
         [0, 350],
         [0.25, 355],
         [0.75, 360 + 10],
-        [1, 360 + 15]
+        [1, 360 + 15],
       ],
       saturation: [
         [0, 80],
@@ -270,5 +270,8 @@ describe('createHSLScale', () => {
 
     expect(scale.at(0).hue).toBe(350)
     expect(scale.at(1).hue).toBe(15)
+    for (const color of scale.uniqueColors.values()) {
+      expect(color.hue).not.toBe(360)
+    }
   })
 })

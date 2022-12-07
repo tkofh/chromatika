@@ -57,7 +57,7 @@ export const createHSLScale = (options: CreateHSLScaleOptions): ColorScale => {
 
   for (const range of hueRanges) {
     thresholds.add(range.start)
-    range.value = mod(range.value, 0, 360)
+    range.value = mod(range.value, 0, 360, 'max')
   }
   for (const range of saturationRanges) {
     thresholds.add(range.start)
