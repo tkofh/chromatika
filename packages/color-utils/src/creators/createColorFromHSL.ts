@@ -15,7 +15,12 @@ import { getHexString, getHSLString, getRGBString } from '../stringify'
  * @param lightness Lightness channel of the color to create. Must be greater than or equal to 0, less than or equal to 100.
  * @param alpha Alpha channel of the color to create. Must be greater than or equal to 0, less than or equal to 1.
  */
-export const createColorFromHSL = (hue: number, saturation: number, lightness: number, alpha = 1): Color => {
+export const createColorFromHSL = (
+  hue: number,
+  saturation: number,
+  lightness: number,
+  alpha = 1
+): Color => {
   assertHSLInput(hue, saturation, lightness)
 
   const { red, green, blue } = convertHSLToRGB(hue, saturation, lightness)

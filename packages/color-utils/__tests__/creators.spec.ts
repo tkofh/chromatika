@@ -46,7 +46,7 @@ const BLACK: Color = {
 
 const HALF_BLACK: Color = {
   ...BLACK,
-  alpha: 0.5
+  alpha: 0.5,
 }
 
 describe('createColorFromHSL', () => {

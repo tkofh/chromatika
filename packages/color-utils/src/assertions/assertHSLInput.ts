@@ -1,12 +1,15 @@
-import { assertInteger } from './assertInteger'
 import { assertRange } from './assertRange'
 
-export const assertHSLInput = (hue: number, saturation: number, lightness: number, alpha?: number): void => {
-  assertInteger(hue, 'Hue')
-  assertRange(hue, 0, 360, 'Hue')
-  assertRange(saturation, 0, 100, 'Saturation')
-  assertRange(lightness, 0, 100, 'Lightness')
-  if(alpha != null) {
-    assertRange(alpha, 0, 1, 'Alpha')
+export const assertHSLInput = (
+  hue: number,
+  saturation: number,
+  lightness: number,
+  alpha?: number
+): void => {
+  assertRange(hue, 'Hue', 0, 360, 'min')
+  assertRange(saturation, 'Saturation', 0, 100)
+  assertRange(lightness, 'Lightness', 0, 100)
+  if (alpha != null) {
+    assertRange(alpha, 'Alpha', 0, 1)
   }
 }

@@ -3,12 +3,12 @@ import { assertRange } from './assertRange'
 
 export const assertRGBInput = (red: number, green: number, blue: number, alpha?: number): void => {
   assertInteger(red, 'Red')
-  assertRange(red, 0, 255, 'Red')
+  assertRange(red, 'Red', 0, 255)
   assertInteger(green, 'Green')
-  assertRange(green, 0, 255, 'Green')
+  assertRange(green, 'green', 0, 255)
   assertInteger(blue, 'Blue')
-  assertRange(blue, 0, 255, 'Blue')
-  if(alpha != null) {
-    assertRange(alpha, 0, 1, 'Alpha')
+  assertRange(blue, 'Blue', 0, 255)
+  if (alpha != null) {
+    assertRange(alpha, 'Alpha', 0, 1)
   }
 }
