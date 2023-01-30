@@ -1,4 +1,4 @@
-import { Color, ColorInput, ColorRange } from './Color'
+import type { Color, ColorInput, ColorRange } from './Color'
 
 export type ContrastRatio = 'aa' | 'aa-large' | 'aaa' | 'aaa-large' | number
 

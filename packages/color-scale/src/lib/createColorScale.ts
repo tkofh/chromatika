@@ -1,15 +1,23 @@
-import {
+import type {
   Color,
   ColorInput,
   ColorScale,
   ColorRange,
   ContrastRatio,
   ScanTarget,
+  RGB,
+  RGBA,
 } from '@chromatika/types'
-import { warnDev } from '@chromatika/dx'
-import { expandHexString, getContrastRatio, setColorAlpha } from '@chromatika/color-utils'
+import { warnDev } from 'log-if-env'
+import {
+  convertHSLToRGB,
+  getContrastRatio,
+  parseToRGB,
+  setColorAlpha,
+} from '@chromatika/color-utils'
+import { roundTo } from 'micro-math'
 
-export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
+export const createColorScale = (colors: Array<ColorRange>, precision: number): ColorScale => {
   const scaleStart = colors[0].start
   const scaleEnd = colors[colors.length - 1].end
 
@@ -28,6 +36,21 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
     const effectiveStart = Math.max(start, scaleStart)
     const effectiveEnd = Math.min(end, scaleEnd)
 
+    let processedValue!: number | RGB
+    if (typeof value === 'number') {
+      processedValue = roundTo(value, precision)
+    } else if (typeof value === 'string') {
+      processedValue = parseToRGB(value)
+    } else if ('hue' in value) {
+      processedValue = convertHSLToRGB(value)
+    } else {
+      processedValue = value
+    }
+
+    if ((value as RGBA).alpha != null && (value as RGBA).alpha !== 1) {
+      warnDev('[Chromatika] Setting an alpha value other than 1 for scale.rangeFor() has no effect')
+    }
+
     let output: ColorRange | undefined
 
     if (typeof value === 'number' && (value < effectiveStart || value > effectiveEnd)) {
@@ -38,52 +61,17 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
       )
     } else {
       for (const range of colors) {
-        if (typeof value === 'number') {
-          if (
-            ((range.startInclusive && value >= range.start) ||
-              (!range.startInclusive && value > range.start)) &&
-            ((range.endInclusive && value <= range.end) ||
-              (!range.endInclusive && value < range.end))
-          ) {
+        if (typeof processedValue === 'number') {
+          if (processedValue >= range.start && processedValue <= range.end) {
             output = range
+            break
           }
-        } else if (typeof value === 'string') {
-          const whitespace = /\s/g
-          const compareValue = value.replace(whitespace, '').toLowerCase()
-          if (compareValue.startsWith('#')) {
-            try {
-              if (expandHexString(compareValue) === range.value.hex) {
-                output = range
-              }
-            } catch (e) {}
-          } else if (compareValue.startsWith('rgb')) {
-            if (range.value.rgb.replace(whitespace, '').toLowerCase() === compareValue) {
-              output = range
-            }
-          } else if (compareValue.startsWith('hsl')) {
-            if (range.value.hsl.replace(whitespace, '').toLowerCase() === compareValue) {
-              output = range
-            }
-          }
-        } else if ('red' in value) {
-          if (
-            range.value.red === value.red &&
-            range.value.green === value.green &&
-            range.value.blue === value.blue
-          ) {
-            output = range
-          }
-        } else if ('hue' in value) {
-          if (
-            range.value.hue === value.hue &&
-            range.value.saturation === value.saturation &&
-            range.value.lightness === value.lightness
-          ) {
-            output = range
-          }
-        }
-
-        if (output !== undefined) {
+        } else if (
+          range.value.red === processedValue.red &&
+          range.value.green === processedValue.green &&
+          range.value.blue === processedValue.blue
+        ) {
+          output = range
           break
         }
       }
@@ -92,12 +80,13 @@ export const createColorScale = (colors: Array<ColorRange>): ColorScale => {
   }
 
   const at = (input: number, alpha?: number): Color => {
-    if (input < scaleStart || input > scaleEnd) {
+    const roundedInput = roundTo(input, precision)
+    if (roundedInput < scaleStart || roundedInput > scaleEnd) {
       throw new Error(
         `Cannot return color at ${input} because scale is undefined outside of [${scaleStart}, ${scaleEnd}]`
       )
     } else {
-      const color = rangeFor(input)!.value
+      const color = rangeFor(roundedInput)!.value
       return alpha != null ? setColorAlpha(color, alpha) : color
     }
   }

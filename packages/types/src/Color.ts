@@ -69,8 +69,6 @@ export type ColorInput = RGB | HSL | string
 
 export interface ColorRange {
   start: number
-  startInclusive: boolean
   end: number
-  endInclusive: boolean
   value: Color
 }
