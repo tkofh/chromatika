@@ -39,12 +39,12 @@
   },
   "dependencies": {
     "@chromatika/types": "0.3.0",
-    "micro-math": "^0.6.0"
+    "micro-math": "^0.9.0"
   },
   "devDependencies": {
-    "@vitest/ui": "^0.25.5",
+    "@vitest/ui": "^0.27.3",
     "tsup": "^6.5.0",
-    "vite": "^3.2.5",
-    "vitest": "^0.25.5"
+    "vite": "^4.0.4",
+    "vitest": "^0.27.3"
   }
 }
