@@ -1,4 +1,4 @@
-import { HSLA } from '@chromatika/types'
+import type { HSLA } from '@chromatika/types'
 import { assertRGBInput } from '../assertions'
 
 /**
@@ -45,6 +45,6 @@ export const convertRGBToHSL = (red: number, green: number, blue: number, alpha 
     hue,
     saturation,
     lightness,
-    alpha
+    alpha,
   }
 }

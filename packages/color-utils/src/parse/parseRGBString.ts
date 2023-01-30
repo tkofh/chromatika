@@ -1,35 +1,37 @@
-import { RGBA } from '@chromatika/types'
-import { RGBA_PATTERN, RGB_PATTERN } from '../constants'
+import type { RGBA } from '@chromatika/types'
+import {
+  RGB_NUMBER_PATTERN,
+  RGB_PERCENTAGE_PATTERN,
+  RGB_LEGACY_NUMBER_PATTERN,
+  RGBA_LEGACY_NUMBER_PATTERN,
+  RGB_LEGACY_PERCENTAGE_PATTERN,
+  RGBA_LEGACY_PERCENTAGE_PATTERN,
+} from '../constants'
+import { throwResultantErrors } from '../util'
+import { parseAlphaValue, parseRGBChannel } from './dimensions'
 
 /**
  * parseRGBString turns the string representation of a CSS rgb color into an RGB object.
  *
- * When normalize is true, rgb(255, 255, 255) turns into { red: 1, green: 1, blue: 1 }.
- * When it is false, rgb(255, 255, 255) turns into { red: 255, green: 255, blue 255 }.
- *
  * @param rgb input string representing a CSS rgb color
- * @param normalize whether or not to normalize the numerical output
  */
-export const parseRGBString = (rgb: string, normalize = false): RGBA => {
-  let result = new RegExp(RGB_PATTERN).exec(rgb)
-  let isRGBA = false
-  if(result === null) {
-    result = new RegExp(RGBA_PATTERN).exec(rgb)
-    isRGBA = true
-  }
-  if (result === null) {
-    throw new Error(`Invalid RGB ${rgb}: Input must be a valid CSS RGB String`)
-  }
+export const tryParseRGBString = (rgb: string): RGBA | Error => {
+  const execResult =
+    RGB_NUMBER_PATTERN.exec(rgb) ??
+    RGB_LEGACY_NUMBER_PATTERN.exec(rgb) ??
+    RGBA_LEGACY_NUMBER_PATTERN.exec(rgb) ??
+    RGB_PERCENTAGE_PATTERN.exec(rgb) ??
+    RGB_LEGACY_PERCENTAGE_PATTERN.exec(rgb) ??
+    RGBA_LEGACY_PERCENTAGE_PATTERN.exec(rgb)
 
-  const [, redString, greenString, blueString] = result
-  const alphaString = isRGBA ? result[4] : '1.0'
-
-  const scalar = normalize ? 1 / 255 : 1
-
-  return {
-    red: parseInt(redString) * scalar,
-    green: parseInt(greenString) * scalar,
-    blue: parseInt(blueString) * scalar,
-    alpha: parseFloat(alphaString),
-  }
+  return execResult === null
+    ? new Error(`Cannot parse RGB ${rgb}`)
+    : {
+        red: parseRGBChannel(execResult[1], true),
+        green: parseRGBChannel(execResult[2], true),
+        blue: parseRGBChannel(execResult[3], true),
+        alpha: execResult[4] ? parseAlphaValue(execResult[4], true) : 1,
+      }
 }
+
+export const parseRGBString = throwResultantErrors(tryParseRGBString)

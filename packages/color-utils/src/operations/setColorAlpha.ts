@@ -1,4 +1,4 @@
-import { Color } from '@chromatika/types'
+import type { Color } from '@chromatika/types'
 import { assertRange } from '../assertions'
 import { getHexString, getHSLString, getRGBString } from '../stringify'
 

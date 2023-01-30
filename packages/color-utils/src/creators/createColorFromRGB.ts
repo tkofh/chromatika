@@ -1,7 +1,8 @@
-import { Color } from '@chromatika/types'
+import type { Color } from '@chromatika/types'
 import { convertRGBToHSL } from '../convert'
 import { getRelativeLuminance } from '../inspect'
 import { getHexString, getHSLString, getRGBString } from '../stringify'
+import { parseRGBString } from '../parse'
 
 /**
  * Create a Color object from the Red, Green, and Blue components of a Color.
@@ -33,4 +34,9 @@ export const createColorFromRGB = (red: number, green: number, blue: number, alp
     relativeLuminance,
     alpha,
   }
+}
+
+export const createColorFromRGBString = (rgb: string) => {
+  const parsed = parseRGBString(rgb)
+  return createColorFromRGB(parsed.red, parsed.green, parsed.blue, parsed.alpha)
 }

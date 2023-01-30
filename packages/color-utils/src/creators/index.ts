@@ -1,2 +1,2 @@
-export { createColorFromHSL } from './createColorFromHSL'
-export { createColorFromRGB } from './createColorFromRGB'
+export { createColorFromHSL, createColorFromHSLString } from './createColorFromHSL'
+export { createColorFromRGB, createColorFromRGBString } from './createColorFromRGB'

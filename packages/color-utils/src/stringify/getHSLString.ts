@@ -12,8 +12,15 @@ import { assertHSLInput } from '../assertions'
  * @param lightness Lightness channel of the color to stringify. Must be greater than or equal to 0, less than or equal to 100.
  * @param alpha Alpha channel of the color to stringify. If defined, must be greater than or equal to 0, less than or equal to 1.
  */
-export const getHSLString = (hue: number, saturation: number, lightness: number, alpha?: number): string => {
+export const getHSLString = (
+  hue: number,
+  saturation: number,
+  lightness: number,
+  alpha?: number
+): string => {
   assertHSLInput(hue, saturation, lightness, alpha)
 
-  return `hsl${alpha != null ? 'a' : ''}(${hue}deg, ${roundTo(saturation, 15)}%, ${roundTo(lightness, 15)}%${alpha != null ? `, ${alpha}` : ''})`
+  return `hsl(${hue}deg ${roundTo(saturation, 15)}% ${roundTo(lightness, 15)}%${
+    alpha != null ? ` / ${alpha}` : ''
+  })`
 }

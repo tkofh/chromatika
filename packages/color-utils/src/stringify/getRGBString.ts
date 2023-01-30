@@ -13,5 +13,7 @@ import { assertRGBInput } from '../assertions'
 export const getRGBString = (red: number, green: number, blue: number, alpha?: number) => {
   assertRGBInput(red, green, blue, alpha)
 
-  return `rgb${alpha != null ? 'a' : ''}(${Math.round(red)}, ${Math.round(green)}, ${Math.round(blue)}${alpha != null ? `, ${alpha}` : ''})`
+  return `rgb(${Math.round(red)} ${Math.round(green)} ${Math.round(blue)}${
+    alpha != null ? ` / ${alpha}` : ''
+  })`
 }

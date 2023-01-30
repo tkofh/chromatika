@@ -1,5 +1,5 @@
 import { describe, test } from 'vitest'
-import { Color } from '@chromatika/types'
+import type { Color } from '@chromatika/types'
 import { createColorFromHSL, createColorFromRGB } from '../src'
 
 const WHITE: Color = {
@@ -9,8 +9,8 @@ const WHITE: Color = {
   red: 255,
   green: 255,
   blue: 255,
-  rgb: 'rgb(255, 255, 255)',
-  hsl: 'hsl(0deg, 0%, 100%)',
+  rgb: 'rgb(255 255 255)',
+  hsl: 'hsl(0deg 0% 100%)',
   hex: '#ffffff',
   relativeLuminance: 1,
   alpha: 1,
@@ -23,8 +23,8 @@ const GREY: Color = {
   red: 128,
   green: 128,
   blue: 128,
-  rgb: 'rgb(128, 128, 128)',
-  hsl: 'hsl(0deg, 0%, 50%)',
+  rgb: 'rgb(128 128 128)',
+  hsl: 'hsl(0deg 0% 50%)',
   hex: '#808080',
   relativeLuminance: 0.2158605001138992,
   alpha: 1,
@@ -37,8 +37,8 @@ const BLACK: Color = {
   red: 0,
   green: 0,
   blue: 0,
-  rgb: 'rgb(0, 0, 0)',
-  hsl: 'hsl(0deg, 0%, 0%)',
+  rgb: 'rgb(0 0 0)',
+  hsl: 'hsl(0deg 0% 0%)',
   hex: '#000000',
   relativeLuminance: 0,
   alpha: 1,

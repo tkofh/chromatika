@@ -1,4 +1,4 @@
-import { RGBA } from '@chromatika/types'
+import type { RGBA } from '@chromatika/types'
 import { assertHSLInput } from '../assertions'
 
 /**
@@ -12,7 +12,12 @@ import { assertHSLInput } from '../assertions'
  * @param lightness Lightness channel of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
  * @param alpha Alpha channel of the color to convert. Must be greater than or equal to 0, less than or equal to 1.
  */
-export const convertHSLToRGB = (hue: number, saturation: number, lightness: number, alpha = 1): RGBA => {
+export const convertHSLToRGB = (
+  hue: number,
+  saturation: number,
+  lightness: number,
+  alpha = 1
+): RGBA => {
   assertHSLInput(hue, saturation, lightness)
 
   // Source: https://www.rapidtables.com/convert/color/hsl-to-rgb.html

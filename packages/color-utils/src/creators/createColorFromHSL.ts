@@ -1,8 +1,9 @@
-import { Color } from '@chromatika/types'
+import type { Color } from '@chromatika/types'
 import { assertHSLInput } from '../assertions'
 import { convertHSLToRGB } from '../convert'
 import { getRelativeLuminance } from '../inspect'
 import { getHexString, getHSLString, getRGBString } from '../stringify'
+import { parseHSLString } from '../parse'
 
 /**
  * Create a Color object from the Hue, Saturation, and Lightness components of a color.
@@ -42,4 +43,9 @@ export const createColorFromHSL = (
     relativeLuminance,
     alpha,
   }
+}
+
+export const createColorFromHSLString = (hsl: string) => {
+  const parsed = parseHSLString(hsl)
+  return createColorFromHSL(parsed.hue, parsed.saturation, parsed.lightness, parsed.alpha)
 }
