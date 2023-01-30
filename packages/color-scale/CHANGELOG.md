@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.1](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.5.0...@chromatika/color-scale@0.5.1) (2023-01-30)
+
+### Bug Fixes
+
+- **@chromatika/color-utils:** round hsl values ([fe71a62](https://github.com/tkofh/chromatika/commit/fe71a6267503c403eae02f5a1feb966b82390081))
+
 # [0.5.0](https://github.com/tkofh/chromatika/compare/@chromatika/color-scale@0.4.0...@chromatika/color-scale@0.5.0) (2023-01-30)
 
 ### Features
