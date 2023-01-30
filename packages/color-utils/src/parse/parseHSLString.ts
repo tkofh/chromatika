@@ -16,8 +16,8 @@ export const tryParseHSLString = (hsl: string): HSLA | Error => {
     ? new Error(`Cannot parse HSL ${hsl}`)
     : {
         hue: parseHue(execResult[1]),
-        saturation: parsePercentage(execResult[2], true, false),
-        lightness: parsePercentage(execResult[3], true, false),
+        saturation: Math.round(parsePercentage(execResult[2], true, false)),
+        lightness: Math.round(parsePercentage(execResult[3], true, false)),
         alpha: execResult[4] ? parseAlphaValue(execResult[4]) : 1,
       }
 }

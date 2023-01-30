@@ -38,7 +38,7 @@
     "url": "https://github.com/tkofh/chromatika/issues"
   },
   "dependencies": {
-    "@chromatika/types": "0.4.0",
+    "@chromatika/types": "^0.4.0",
     "micro-math": "^0.9.0"
   },
   "devDependencies": {

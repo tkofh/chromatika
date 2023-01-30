@@ -28,8 +28,8 @@ importers:
 
   packages/color-scale:
     specifiers:
-      '@chromatika/color-utils': workspace:^0.4.0
-      '@chromatika/types': workspace:0.3.0
+      '@chromatika/color-utils': ^0.5.0
+      '@chromatika/types': ^0.4.0
       '@curvy/catmull-rom': ^0.2.2
       '@curvy/types': ^0.7.5
       '@vitest/ui': ^0.27.3
@@ -53,7 +53,7 @@ importers:
 
   packages/color-utils:
     specifiers:
-      '@chromatika/types': 0.3.0
+      '@chromatika/types': 0.4.0
       '@vitest/ui': ^0.27.3
       micro-math: ^0.9.0
       tsup: ^6.5.0
@@ -67,6 +67,17 @@ importers:
       tsup: 6.5.0
       vite: 4.0.4
       vitest: 0.27.3_@vitest+ui@0.27.3
+
+  packages/tailwind-palette:
+    specifiers:
+      '@chromatika/color-scale': ^0.5.0
+      '@chromatika/color-utils': workspace:^0.5.0
+      tsup: ^6.5.0
+    dependencies:
+      '@chromatika/color-scale': link:../color-scale
+    devDependencies:
+      '@chromatika/color-utils': link:../color-utils
+      tsup: 6.5.0
 
   packages/types:
     specifiers:

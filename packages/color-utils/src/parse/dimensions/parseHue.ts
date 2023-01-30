@@ -3,15 +3,15 @@ import { throwResultantErrors } from '../../util'
 import { tryParseAngle } from './parseAngle'
 import { tryParseNumber } from './parseNumber'
 
-export const tryParseHue = (alpha: string, mod = true): number | Error => {
-  let result: number | Error = tryParseAngle(alpha, 'deg', mod)
+export const tryParseHue = (alpha: string): number | Error => {
+  let result: number | Error = tryParseAngle(alpha, 'deg', true)
   if (result instanceof Error) {
     result = tryParseNumber(alpha)
   }
   if (result instanceof Error) {
     result = new Error(`Cannot parse alpha ${alpha}`)
-  } else if (mod) {
-    result = _mod(result, 0, 360, 'max')
+  } else {
+    result = _mod(Math.round(result), 0, 360, 'max')
   }
 
   return result
