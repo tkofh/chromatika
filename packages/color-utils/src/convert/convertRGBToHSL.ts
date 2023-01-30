@@ -1,18 +1,40 @@
-import type { HSLA } from '@chromatika/types'
-import { assertRGBInput } from '../assertions'
+import type { HSLA, RGB, RGBA } from '@chromatika/types'
+import { assertRange, assertRGBInput } from '../assertions'
+
+interface ConvertRGBToHSL {
+  (rgb: RGB | RGBA): HSLA
+
+  (red: number, green: number, blue: number, alpha?: number): HSLA
+}
 
 /**
  * Converts the RGB form of a color to the HSL form of the same color.
  *
  * Red, Green, and Blue should be integers greater than or equal to 0, less than or equal to 255.
  *
- * @param red Red channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param green Green channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param blue Blue channel of the color to convert. Must be an integer greater than or equal to 0, less than or equal to 255.
- * @param alpha Alpha channel of the color to convert. If defined, must be greater than or equal to 0, less than or equal to 1.
  */
-export const convertRGBToHSL = (red: number, green: number, blue: number, alpha = 1): HSLA => {
+export const convertRGBToHSL: ConvertRGBToHSL = (
+  param0: RGBA | RGB | number,
+  param1?: number,
+  param2?: number,
+  param3?: number
+): HSLA => {
+  let red!: number, green!: number, blue!: number, alpha!: number
+
+  if (typeof param0 === 'object') {
+    red = param0.red
+    green = param0.green
+    blue = param0.blue
+    alpha = 'alpha' in param0 ? param0.alpha : 1
+  } else {
+    red = param0
+    green = param1!
+    blue = param2!
+    alpha = param3 ?? 1
+  }
+
   assertRGBInput(red, green, blue)
+  assertRange(alpha, 'alpha', 0, 1)
 
   // Source: https://www.rapidtables.com/convert/color/rgb-to-hsl.html
 

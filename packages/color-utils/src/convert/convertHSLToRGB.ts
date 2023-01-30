@@ -1,24 +1,40 @@
-import type { RGBA } from '@chromatika/types'
-import { assertHSLInput } from '../assertions'
+import type { HSL, HSLA, RGBA } from '@chromatika/types'
+import { assertHSLInput, assertRange } from '../assertions'
+
+interface ConvertHSLToRGB {
+  (hsl: HSL | HSLA): RGBA
+
+  (hue: number, saturation: number, lightness: number, alpha?: number | undefined): RGBA
+}
 
 /**
  * Converts the HSL form of a color to the RGB form of the same color.
  *
  * Hue should be in degrees, being an integer greater than or equal to 0 and less than 360.
  * Saturation and Lightness should be greater than or equal to 0, less than or equal to 100.
- *
- * @param hue Hue channel of the color to convert. Must be greater than or equal to 0, and less than 360.
- * @param saturation Saturation channel of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
- * @param lightness Lightness channel of the color to convert. Must be greater than or equal to 0, less than or equal to 100.
- * @param alpha Alpha channel of the color to convert. Must be greater than or equal to 0, less than or equal to 1.
  */
-export const convertHSLToRGB = (
-  hue: number,
-  saturation: number,
-  lightness: number,
-  alpha = 1
+export const convertHSLToRGB: ConvertHSLToRGB = (
+  param0: HSL | HSLA | number,
+  param1?: number,
+  param2?: number,
+  param3?: number
 ): RGBA => {
+  let hue!: number, saturation!: number, lightness!: number, alpha!: number
+
+  if (typeof param0 === 'object') {
+    hue = param0.hue
+    saturation = param0.saturation
+    lightness = param0.lightness
+    alpha = 'alpha' in param0 ? param0.alpha : 1
+  } else {
+    hue = param0
+    saturation = param1!
+    lightness = param2!
+    alpha = param3 ?? 1
+  }
+
   assertHSLInput(hue, saturation, lightness)
+  assertRange(alpha, 'alpha', 0, 1)
 
   // Source: https://www.rapidtables.com/convert/color/hsl-to-rgb.html
 
