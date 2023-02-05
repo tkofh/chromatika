@@ -1,1 +1,0 @@
-export { createColorScale } from './createColorScale'
