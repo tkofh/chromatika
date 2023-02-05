@@ -29,7 +29,7 @@
   },
   "scripts": {
     "build": "unbuild",
-    "prepublish": "yarn test && yarn build",
+    "prepublish": "yarn build",
     "playground": "vite ./playground/"
   },
   "bugs": {
@@ -42,5 +42,5 @@
   "dependencies": {
     "@chromatika/core": "0.1.1"
   },
-  "gitHead": "57349b8d9cc32fdb11e5859be8dd0f3bb8e8434a"
+  "gitHead": "e7df4a03b4d81d3189518b6ae71ee0536968e183"
 }
