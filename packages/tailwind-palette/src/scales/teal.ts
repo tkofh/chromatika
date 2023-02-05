@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const teal = createHSLScale({
+  hue: [
+    { shade: 50, hue: 166 },
+    { shade: 100, hue: 167 },
+    { shade: 200, hue: 168 },
+    { shade: 300, hue: 171 },
+    { shade: 400, hue: 172 },
+    { shade: 500, hue: 173 },
+    { shade: 600, hue: 175 },
+    { shade: 700, hue: 175 },
+    { shade: 800, hue: 176 },
+    { shade: 900, hue: 176 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 76 },
+    { shade: 100, saturation: 85 },
+    { shade: 200, saturation: 84 },
+    { shade: 300, saturation: 77 },
+    { shade: 400, saturation: 66 },
+    { shade: 500, saturation: 80 },
+    { shade: 600, saturation: 84 },
+    { shade: 700, saturation: 77 },
+    { shade: 800, saturation: 69 },
+    { shade: 900, saturation: 61 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 97 },
+    { shade: 100, lightness: 89 },
+    { shade: 200, lightness: 78 },
+    { shade: 300, lightness: 64 },
+    { shade: 400, lightness: 50 },
+    { shade: 500, lightness: 40 },
+    { shade: 600, lightness: 32 },
+    { shade: 700, lightness: 26 },
+    { shade: 800, lightness: 22 },
+    { shade: 900, lightness: 19 },
+  ],
+})

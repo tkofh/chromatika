@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const green = createHSLScale({
+  hue: [
+    { shade: 50, hue: 138 },
+    { shade: 100, hue: 141 },
+    { shade: 200, hue: 141 },
+    { shade: 300, hue: 142 },
+    { shade: 400, hue: 142 },
+    { shade: 500, hue: 142 },
+    { shade: 600, hue: 142 },
+    { shade: 700, hue: 142 },
+    { shade: 800, hue: 143 },
+    { shade: 900, hue: 144 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 76 },
+    { shade: 100, saturation: 84 },
+    { shade: 200, saturation: 79 },
+    { shade: 300, saturation: 77 },
+    { shade: 400, saturation: 69 },
+    { shade: 500, saturation: 71 },
+    { shade: 600, saturation: 76 },
+    { shade: 700, saturation: 72 },
+    { shade: 800, saturation: 64 },
+    { shade: 900, saturation: 61 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 97 },
+    { shade: 100, lightness: 93 },
+    { shade: 200, lightness: 85 },
+    { shade: 300, lightness: 73 },
+    { shade: 400, lightness: 58 },
+    { shade: 500, lightness: 45 },
+    { shade: 600, lightness: 36 },
+    { shade: 700, lightness: 29 },
+    { shade: 800, lightness: 24 },
+    { shade: 900, lightness: 20 },
+  ],
+})

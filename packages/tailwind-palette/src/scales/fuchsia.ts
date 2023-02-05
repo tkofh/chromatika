@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const fuchsia = createHSLScale({
+  hue: [
+    { shade: 50, hue: 289 },
+    { shade: 100, hue: 287 },
+    { shade: 200, hue: 288 },
+    { shade: 300, hue: 291 },
+    { shade: 400, hue: 292 },
+    { shade: 500, hue: 292 },
+    { shade: 600, hue: 293 },
+    { shade: 700, hue: 295 },
+    { shade: 800, hue: 295 },
+    { shade: 900, hue: 297 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 100 },
+    { shade: 100, saturation: 100 },
+    { shade: 200, saturation: 96 },
+    { shade: 300, saturation: 93 },
+    { shade: 400, saturation: 91 },
+    { shade: 500, saturation: 84 },
+    { shade: 600, saturation: 69 },
+    { shade: 700, saturation: 72 },
+    { shade: 800, saturation: 70 },
+    { shade: 900, saturation: 64 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 98 },
+    { shade: 100, lightness: 95 },
+    { shade: 200, lightness: 91 },
+    { shade: 300, lightness: 83 },
+    { shade: 400, lightness: 73 },
+    { shade: 500, lightness: 61 },
+    { shade: 600, lightness: 49 },
+    { shade: 700, lightness: 40 },
+    { shade: 800, lightness: 33 },
+    { shade: 900, lightness: 28 },
+  ],
+})

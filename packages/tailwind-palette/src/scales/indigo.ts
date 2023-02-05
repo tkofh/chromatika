@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const indigo = createHSLScale({
+  hue: [
+    { shade: 50, hue: 226 },
+    { shade: 100, hue: 226 },
+    { shade: 200, hue: 228 },
+    { shade: 300, hue: 230 },
+    { shade: 400, hue: 234 },
+    { shade: 500, hue: 239 },
+    { shade: 600, hue: 243 },
+    { shade: 700, hue: 245 },
+    { shade: 800, hue: 244 },
+    { shade: 900, hue: 242 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 100 },
+    { shade: 100, saturation: 100 },
+    { shade: 200, saturation: 96 },
+    { shade: 300, saturation: 94 },
+    { shade: 400, saturation: 89 },
+    { shade: 500, saturation: 84 },
+    { shade: 600, saturation: 75 },
+    { shade: 700, saturation: 58 },
+    { shade: 800, saturation: 55 },
+    { shade: 900, saturation: 47 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 97 },
+    { shade: 100, lightness: 94 },
+    { shade: 200, lightness: 89 },
+    { shade: 300, lightness: 82 },
+    { shade: 400, lightness: 74 },
+    { shade: 500, lightness: 67 },
+    { shade: 600, lightness: 59 },
+    { shade: 700, lightness: 51 },
+    { shade: 800, lightness: 41 },
+    { shade: 900, lightness: 34 },
+  ],
+})

@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const slate = createHSLScale({
+  hue: [
+    { shade: 50, hue: 210 },
+    { shade: 100, hue: 210 },
+    { shade: 200, hue: 214 },
+    { shade: 300, hue: 213 },
+    { shade: 400, hue: 215 },
+    { shade: 500, hue: 215 },
+    { shade: 600, hue: 215 },
+    { shade: 700, hue: 215 },
+    { shade: 800, hue: 217 },
+    { shade: 900, hue: 222 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 40 },
+    { shade: 100, saturation: 40 },
+    { shade: 200, saturation: 32 },
+    { shade: 300, saturation: 27 },
+    { shade: 400, saturation: 20 },
+    { shade: 500, saturation: 16 },
+    { shade: 600, saturation: 19 },
+    { shade: 700, saturation: 25 },
+    { shade: 800, saturation: 33 },
+    { shade: 900, saturation: 47 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 98 },
+    { shade: 100, lightness: 96 },
+    { shade: 200, lightness: 91 },
+    { shade: 300, lightness: 84 },
+    { shade: 400, lightness: 65 },
+    { shade: 500, lightness: 47 },
+    { shade: 600, lightness: 35 },
+    { shade: 700, lightness: 27 },
+    { shade: 800, lightness: 17 },
+    { shade: 900, lightness: 11 },
+  ],
+})

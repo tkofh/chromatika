@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const violet = createHSLScale({
+  hue: [
+    { shade: 50, hue: 250 },
+    { shade: 100, hue: 251 },
+    { shade: 200, hue: 251 },
+    { shade: 300, hue: 252 },
+    { shade: 400, hue: 255 },
+    { shade: 500, hue: 258 },
+    { shade: 600, hue: 262 },
+    { shade: 700, hue: 263 },
+    { shade: 800, hue: 263 },
+    { shade: 900, hue: 264 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 100 },
+    { shade: 100, saturation: 91 },
+    { shade: 200, saturation: 95 },
+    { shade: 300, saturation: 95 },
+    { shade: 400, saturation: 92 },
+    { shade: 500, saturation: 90 },
+    { shade: 600, saturation: 83 },
+    { shade: 700, saturation: 70 },
+    { shade: 800, saturation: 69 },
+    { shade: 900, saturation: 67 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 98 },
+    { shade: 100, lightness: 95 },
+    { shade: 200, lightness: 92 },
+    { shade: 300, lightness: 85 },
+    { shade: 400, lightness: 76 },
+    { shade: 500, lightness: 66 },
+    { shade: 600, lightness: 58 },
+    { shade: 700, lightness: 50 },
+    { shade: 800, lightness: 42 },
+    { shade: 900, lightness: 35 },
+  ],
+})

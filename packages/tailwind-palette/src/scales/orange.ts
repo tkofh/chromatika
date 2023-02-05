@@ -1,0 +1,40 @@
+import { createHSLScale } from '@chromatika/core'
+
+export const orange = createHSLScale({
+  hue: [
+    { shade: 50, hue: 33 },
+    { shade: 100, hue: 34 },
+    { shade: 200, hue: 32 },
+    { shade: 300, hue: 31 },
+    { shade: 400, hue: 27 },
+    { shade: 500, hue: 25 },
+    { shade: 600, hue: 21 },
+    { shade: 700, hue: 17 },
+    { shade: 800, hue: 15 },
+    { shade: 900, hue: 15 },
+  ],
+  saturation: [
+    { shade: 50, saturation: 100 },
+    { shade: 100, saturation: 100 },
+    { shade: 200, saturation: 98 },
+    { shade: 300, saturation: 97 },
+    { shade: 400, saturation: 96 },
+    { shade: 500, saturation: 95 },
+    { shade: 600, saturation: 90 },
+    { shade: 700, saturation: 88 },
+    { shade: 800, saturation: 79 },
+    { shade: 900, saturation: 75 },
+  ],
+  lightness: [
+    { shade: 50, lightness: 96 },
+    { shade: 100, lightness: 92 },
+    { shade: 200, lightness: 83 },
+    { shade: 300, lightness: 72 },
+    { shade: 400, lightness: 61 },
+    { shade: 500, lightness: 53 },
+    { shade: 600, lightness: 48 },
+    { shade: 700, lightness: 40 },
+    { shade: 800, lightness: 34 },
+    { shade: 900, lightness: 28 },
+  ],
+})
