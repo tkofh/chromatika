@@ -48,5 +48,6 @@
     "@curvy/types": "^0.7.5",
     "log-if-env": "^0.1.0",
     "micro-math": "^0.9.0"
-  }
+  },
+  "gitHead": "57349b8d9cc32fdb11e5859be8dd0f3bb8e8434a"
 }
