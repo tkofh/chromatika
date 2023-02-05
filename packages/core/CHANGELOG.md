@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.0...@chromatika/core@0.1.1) (2023-02-05)
+
+
+### Bug Fixes
+
+* **@chromatika/tailwind-palette:** fix prepublish command ([c74ebc7](https://github.com/tkofh/chromatika/commit/c74ebc7abe2620fefec8443624c82894902c3e74))
+
+
+
+
+
 # 0.1.0 (2023-02-05)
 
 
