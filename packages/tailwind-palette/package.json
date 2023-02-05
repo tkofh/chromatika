@@ -1,6 +1,6 @@
 {
   "name": "@chromatika/tailwind-palette",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Tailwind color palette as Chromatika color scales",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
@@ -40,7 +40,7 @@
     "vite": "^4.1.1"
   },
   "dependencies": {
-    "@chromatika/core": "0.1.1"
+    "@chromatika/core": "0.1.2"
   },
   "gitHead": "e7df4a03b4d81d3189518b6ae71ee0536968e183"
 }
