@@ -1,6 +1,6 @@
 {
   "name": "@chromatika/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Generate colors with hue, saturation, and lightness curves",
   "author": "Tim Morris <timthewebguy@gmail.com>",
   "homepage": "https://github.com/tkofh/chromatika#readme",
