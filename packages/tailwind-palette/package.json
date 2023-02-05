@@ -29,9 +29,6 @@
   },
   "scripts": {
     "build": "unbuild",
-    "test": "vitest run",
-    "test:watch": "vitest watch",
-    "test:ui": "vitest --ui",
     "prepublish": "yarn test && yarn build",
     "playground": "vite ./playground/"
   },
@@ -44,5 +41,6 @@
   },
   "dependencies": {
     "@chromatika/core": "0.1.0"
-  }
+  },
+  "gitHead": "57349b8d9cc32fdb11e5859be8dd0f3bb8e8434a"
 }
