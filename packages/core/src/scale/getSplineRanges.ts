@@ -72,7 +72,7 @@ export const getSplineRanges = <
   allRanges[allRanges.length - 1].end = spline.extrema[spline.extrema.length - 1].value[input]
 
   let index = 0
-  const indexScalar = 1 / (allRanges.length - 1)
+  const indexScalar = allRanges.length === 1 ? 1 : 1 / (allRanges.length - 1)
 
   const ranges: AxisRange[] = []
   while (allRanges.length > 0) {

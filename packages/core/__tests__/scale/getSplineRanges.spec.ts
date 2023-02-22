@@ -34,4 +34,19 @@ describe('getSplineRanges', () => {
     expect(ranges[ranges.length - 1].end).toBe(spline.solveT(1).x)
     expect(ranges[ranges.length - 1].value).toBe(spline.solveT(1).y)
   })
+
+  test('it handles horizontal lines', ({ expect }) => {
+    const spline = createCubicCatmullRomSpline<'x' | 'y'>([
+      [
+        { x: 0, y: 0 },
+        { x: 0, y: 0 },
+        { x: 100, y: 0 },
+        { x: 100, y: 0 },
+      ],
+    ])
+
+    const ranges = getSplineRanges(spline, 'x', 'y')
+
+    expect(ranges).toStrictEqual([{ start: 0, end: 100, value: 0 }])
+  })
 })

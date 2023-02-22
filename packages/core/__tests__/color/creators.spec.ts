@@ -1,5 +1,5 @@
 import { describe, test } from 'vitest'
-import type { Color } from '@chromatika/types'
+import type { Color } from '../../src'
 import { createColorFromHSL, createColorFromRGB } from '../../src'
 
 const WHITE: Color = {
