@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.3](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.2...@chromatika/core@0.1.3) (2023-02-22)
+
+
+### Bug Fixes
+
+* **@chromatika/core:** handle horizontal lines ([35e8de0](https://github.com/tkofh/chromatika/commit/35e8de096ad04bf5ec1a8fee716708a85d4bac07))
+
+
+
+
+
 ## [0.1.2](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.1...@chromatika/core@0.1.2) (2023-02-05)
 
 
