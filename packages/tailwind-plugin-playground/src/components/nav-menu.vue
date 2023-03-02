@@ -73,5 +73,11 @@
       to="/tailwind-plugin/text"
       >text</NuxtLink
     >
+    <NuxtLink
+      class="block h-10 capitalize"
+      active-class="font-semibold text-blue-400"
+      to="/tailwind-plugin/just-blue"
+      >just blue</NuxtLink
+    >
   </nav>
 </template>

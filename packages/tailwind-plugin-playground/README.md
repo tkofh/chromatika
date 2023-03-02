@@ -1,4 +1,12 @@
-# Nuxt 3 Minimal Starter
+# Tailwind Plugin Playground
+
+> [deployed here](https://enchanting-kelpie-05e0d6.netlify.app/tailwind-plugin/accent)
+
+Playground to test out `@chromatika/tailwind-plugin` using nuxt.
+
+<details>
+
+<summary>Nuxt 3 Minimal Starter</summary>
 
 Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
 
@@ -40,3 +48,5 @@ npm run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+</details>

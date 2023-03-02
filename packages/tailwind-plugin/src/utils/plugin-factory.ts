@@ -1,5 +1,6 @@
-import { ColorScale } from '@chromatika/core'
+import { Color, ColorScale } from '@chromatika/core'
 import { PluginCreator } from 'tailwindcss/types/config'
+import { DefaultColorSamplePoints } from '.'
 import { ColorPalette } from '../types/color-palette'
 
 import { typedEntries } from './entries'
@@ -17,7 +18,7 @@ export const coreColorPluginFactory =
   (pluginParams: CoreColorPluginFactoryParams) =>
   (createPluginParams: {
     colorPalette: ColorPalette
-    colorSamplePoints: Record<string, string | number>
+    colorSamplePoints?: Record<string, string | number>
   }) => {
     return (params: Parameters<PluginCreator>['0']) => {
       params.matchUtilities(
@@ -28,7 +29,7 @@ export const coreColorPluginFactory =
           }
           return acc
         }, {} as Record<string, (value: unknown) => any>),
-        { values: createPluginParams.colorSamplePoints }
+        { values: createPluginParams.colorSamplePoints ?? DefaultColorSamplePoints }
       )
     }
   }
