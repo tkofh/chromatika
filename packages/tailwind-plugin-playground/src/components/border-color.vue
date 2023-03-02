@@ -1,0 +1,493 @@
+<template>
+  <SampleRow title="border-amber"
+    ><BorderSample
+      class="border-4 border-dashed border-amber-[25]"
+      text="border-amber-[25]" /><BorderSample
+      class="border-4 border-dashed border-amber-[150]"
+      text="border-amber-[150]" /><BorderSample
+      class="border-4 border-dashed border-amber-[250]"
+      text="border-amber-[250]" /><BorderSample
+      class="border-4 border-dashed border-amber-[350]"
+      text="border-amber-[350]" /><BorderSample
+      class="border-4 border-dashed border-amber-[450]"
+      text="border-amber-[450]" /><BorderSample
+      class="border-4 border-dashed border-amber-[550]"
+      text="border-amber-[550]" /><BorderSample
+      class="border-4 border-dashed border-amber-[650]"
+      text="border-amber-[650]" /><BorderSample
+      class="border-4 border-dashed border-amber-[750]"
+      text="border-amber-[750]" /><BorderSample
+      class="border-4 border-dashed border-amber-[850]"
+      text="border-amber-[850]"
+  /></SampleRow>
+  <SampleRow title="border-blue"
+    ><BorderSample
+      class="border-4 border-dashed border-blue-[25]"
+      text="border-blue-[25]" /><BorderSample
+      class="border-4 border-dashed border-blue-[150]"
+      text="border-blue-[150]" /><BorderSample
+      class="border-4 border-dashed border-blue-[250]"
+      text="border-blue-[250]" /><BorderSample
+      class="border-4 border-dashed border-blue-[350]"
+      text="border-blue-[350]" /><BorderSample
+      class="border-4 border-dashed border-blue-[450]"
+      text="border-blue-[450]" /><BorderSample
+      class="border-4 border-dashed border-blue-[550]"
+      text="border-blue-[550]" /><BorderSample
+      class="border-4 border-dashed border-blue-[650]"
+      text="border-blue-[650]" /><BorderSample
+      class="border-4 border-dashed border-blue-[750]"
+      text="border-blue-[750]" /><BorderSample
+      class="border-4 border-dashed border-blue-[850]"
+      text="border-blue-[850]"
+  /></SampleRow>
+  <SampleRow title="border-cyan"
+    ><BorderSample
+      class="border-4 border-dashed border-cyan-[25]"
+      text="border-cyan-[25]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[150]"
+      text="border-cyan-[150]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[250]"
+      text="border-cyan-[250]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[350]"
+      text="border-cyan-[350]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[450]"
+      text="border-cyan-[450]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[550]"
+      text="border-cyan-[550]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[650]"
+      text="border-cyan-[650]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[750]"
+      text="border-cyan-[750]" /><BorderSample
+      class="border-4 border-dashed border-cyan-[850]"
+      text="border-cyan-[850]"
+  /></SampleRow>
+  <SampleRow title="border-emerald"
+    ><BorderSample
+      class="border-4 border-dashed border-emerald-[25]"
+      text="border-emerald-[25]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[150]"
+      text="border-emerald-[150]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[250]"
+      text="border-emerald-[250]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[350]"
+      text="border-emerald-[350]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[450]"
+      text="border-emerald-[450]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[550]"
+      text="border-emerald-[550]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[650]"
+      text="border-emerald-[650]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[750]"
+      text="border-emerald-[750]" /><BorderSample
+      class="border-4 border-dashed border-emerald-[850]"
+      text="border-emerald-[850]"
+  /></SampleRow>
+  <SampleRow title="border-fuchsia"
+    ><BorderSample
+      class="border-4 border-dashed border-fuchsia-[25]"
+      text="border-fuchsia-[25]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[150]"
+      text="border-fuchsia-[150]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[250]"
+      text="border-fuchsia-[250]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[350]"
+      text="border-fuchsia-[350]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[450]"
+      text="border-fuchsia-[450]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[550]"
+      text="border-fuchsia-[550]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[650]"
+      text="border-fuchsia-[650]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[750]"
+      text="border-fuchsia-[750]" /><BorderSample
+      class="border-4 border-dashed border-fuchsia-[850]"
+      text="border-fuchsia-[850]"
+  /></SampleRow>
+  <SampleRow title="border-gray"
+    ><BorderSample
+      class="border-4 border-dashed border-gray-[25]"
+      text="border-gray-[25]" /><BorderSample
+      class="border-4 border-dashed border-gray-[150]"
+      text="border-gray-[150]" /><BorderSample
+      class="border-4 border-dashed border-gray-[250]"
+      text="border-gray-[250]" /><BorderSample
+      class="border-4 border-dashed border-gray-[350]"
+      text="border-gray-[350]" /><BorderSample
+      class="border-4 border-dashed border-gray-[450]"
+      text="border-gray-[450]" /><BorderSample
+      class="border-4 border-dashed border-gray-[550]"
+      text="border-gray-[550]" /><BorderSample
+      class="border-4 border-dashed border-gray-[650]"
+      text="border-gray-[650]" /><BorderSample
+      class="border-4 border-dashed border-gray-[750]"
+      text="border-gray-[750]" /><BorderSample
+      class="border-4 border-dashed border-gray-[850]"
+      text="border-gray-[850]"
+  /></SampleRow>
+  <SampleRow title="border-green"
+    ><BorderSample
+      class="border-4 border-dashed border-green-[25]"
+      text="border-green-[25]" /><BorderSample
+      class="border-4 border-dashed border-green-[150]"
+      text="border-green-[150]" /><BorderSample
+      class="border-4 border-dashed border-green-[250]"
+      text="border-green-[250]" /><BorderSample
+      class="border-4 border-dashed border-green-[350]"
+      text="border-green-[350]" /><BorderSample
+      class="border-4 border-dashed border-green-[450]"
+      text="border-green-[450]" /><BorderSample
+      class="border-4 border-dashed border-green-[550]"
+      text="border-green-[550]" /><BorderSample
+      class="border-4 border-dashed border-green-[650]"
+      text="border-green-[650]" /><BorderSample
+      class="border-4 border-dashed border-green-[750]"
+      text="border-green-[750]" /><BorderSample
+      class="border-4 border-dashed border-green-[850]"
+      text="border-green-[850]"
+  /></SampleRow>
+  <SampleRow title="border-grey"
+    ><BorderSample
+      class="border-4 border-dashed border-grey-[25]"
+      text="border-grey-[25]" /><BorderSample
+      class="border-4 border-dashed border-grey-[150]"
+      text="border-grey-[150]" /><BorderSample
+      class="border-4 border-dashed border-grey-[250]"
+      text="border-grey-[250]" /><BorderSample
+      class="border-4 border-dashed border-grey-[350]"
+      text="border-grey-[350]" /><BorderSample
+      class="border-4 border-dashed border-grey-[450]"
+      text="border-grey-[450]" /><BorderSample
+      class="border-4 border-dashed border-grey-[550]"
+      text="border-grey-[550]" /><BorderSample
+      class="border-4 border-dashed border-grey-[650]"
+      text="border-grey-[650]" /><BorderSample
+      class="border-4 border-dashed border-grey-[750]"
+      text="border-grey-[750]" /><BorderSample
+      class="border-4 border-dashed border-grey-[850]"
+      text="border-grey-[850]"
+  /></SampleRow>
+  <SampleRow title="border-indigo"
+    ><BorderSample
+      class="border-4 border-dashed border-indigo-[25]"
+      text="border-indigo-[25]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[150]"
+      text="border-indigo-[150]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[250]"
+      text="border-indigo-[250]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[350]"
+      text="border-indigo-[350]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[450]"
+      text="border-indigo-[450]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[550]"
+      text="border-indigo-[550]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[650]"
+      text="border-indigo-[650]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[750]"
+      text="border-indigo-[750]" /><BorderSample
+      class="border-4 border-dashed border-indigo-[850]"
+      text="border-indigo-[850]"
+  /></SampleRow>
+  <SampleRow title="border-lime"
+    ><BorderSample
+      class="border-4 border-dashed border-lime-[25]"
+      text="border-lime-[25]" /><BorderSample
+      class="border-4 border-dashed border-lime-[150]"
+      text="border-lime-[150]" /><BorderSample
+      class="border-4 border-dashed border-lime-[250]"
+      text="border-lime-[250]" /><BorderSample
+      class="border-4 border-dashed border-lime-[350]"
+      text="border-lime-[350]" /><BorderSample
+      class="border-4 border-dashed border-lime-[450]"
+      text="border-lime-[450]" /><BorderSample
+      class="border-4 border-dashed border-lime-[550]"
+      text="border-lime-[550]" /><BorderSample
+      class="border-4 border-dashed border-lime-[650]"
+      text="border-lime-[650]" /><BorderSample
+      class="border-4 border-dashed border-lime-[750]"
+      text="border-lime-[750]" /><BorderSample
+      class="border-4 border-dashed border-lime-[850]"
+      text="border-lime-[850]"
+  /></SampleRow>
+  <SampleRow title="border-neutral"
+    ><BorderSample
+      class="border-4 border-dashed border-neutral-[25]"
+      text="border-neutral-[25]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[150]"
+      text="border-neutral-[150]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[250]"
+      text="border-neutral-[250]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[350]"
+      text="border-neutral-[350]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[450]"
+      text="border-neutral-[450]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[550]"
+      text="border-neutral-[550]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[650]"
+      text="border-neutral-[650]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[750]"
+      text="border-neutral-[750]" /><BorderSample
+      class="border-4 border-dashed border-neutral-[850]"
+      text="border-neutral-[850]"
+  /></SampleRow>
+  <SampleRow title="border-orange"
+    ><BorderSample
+      class="border-4 border-dashed border-orange-[25]"
+      text="border-orange-[25]" /><BorderSample
+      class="border-4 border-dashed border-orange-[150]"
+      text="border-orange-[150]" /><BorderSample
+      class="border-4 border-dashed border-orange-[250]"
+      text="border-orange-[250]" /><BorderSample
+      class="border-4 border-dashed border-orange-[350]"
+      text="border-orange-[350]" /><BorderSample
+      class="border-4 border-dashed border-orange-[450]"
+      text="border-orange-[450]" /><BorderSample
+      class="border-4 border-dashed border-orange-[550]"
+      text="border-orange-[550]" /><BorderSample
+      class="border-4 border-dashed border-orange-[650]"
+      text="border-orange-[650]" /><BorderSample
+      class="border-4 border-dashed border-orange-[750]"
+      text="border-orange-[750]" /><BorderSample
+      class="border-4 border-dashed border-orange-[850]"
+      text="border-orange-[850]"
+  /></SampleRow>
+  <SampleRow title="border-pink"
+    ><BorderSample
+      class="border-4 border-dashed border-pink-[25]"
+      text="border-pink-[25]" /><BorderSample
+      class="border-4 border-dashed border-pink-[150]"
+      text="border-pink-[150]" /><BorderSample
+      class="border-4 border-dashed border-pink-[250]"
+      text="border-pink-[250]" /><BorderSample
+      class="border-4 border-dashed border-pink-[350]"
+      text="border-pink-[350]" /><BorderSample
+      class="border-4 border-dashed border-pink-[450]"
+      text="border-pink-[450]" /><BorderSample
+      class="border-4 border-dashed border-pink-[550]"
+      text="border-pink-[550]" /><BorderSample
+      class="border-4 border-dashed border-pink-[650]"
+      text="border-pink-[650]" /><BorderSample
+      class="border-4 border-dashed border-pink-[750]"
+      text="border-pink-[750]" /><BorderSample
+      class="border-4 border-dashed border-pink-[850]"
+      text="border-pink-[850]"
+  /></SampleRow>
+  <SampleRow title="border-purple"
+    ><BorderSample
+      class="border-4 border-dashed border-purple-[25]"
+      text="border-purple-[25]" /><BorderSample
+      class="border-4 border-dashed border-purple-[150]"
+      text="border-purple-[150]" /><BorderSample
+      class="border-4 border-dashed border-purple-[250]"
+      text="border-purple-[250]" /><BorderSample
+      class="border-4 border-dashed border-purple-[350]"
+      text="border-purple-[350]" /><BorderSample
+      class="border-4 border-dashed border-purple-[450]"
+      text="border-purple-[450]" /><BorderSample
+      class="border-4 border-dashed border-purple-[550]"
+      text="border-purple-[550]" /><BorderSample
+      class="border-4 border-dashed border-purple-[650]"
+      text="border-purple-[650]" /><BorderSample
+      class="border-4 border-dashed border-purple-[750]"
+      text="border-purple-[750]" /><BorderSample
+      class="border-4 border-dashed border-purple-[850]"
+      text="border-purple-[850]"
+  /></SampleRow>
+  <SampleRow title="border-red"
+    ><BorderSample
+      class="border-4 border-dashed border-red-[25]"
+      text="border-red-[25]" /><BorderSample
+      class="border-4 border-dashed border-red-[150]"
+      text="border-red-[150]" /><BorderSample
+      class="border-4 border-dashed border-red-[250]"
+      text="border-red-[250]" /><BorderSample
+      class="border-4 border-dashed border-red-[350]"
+      text="border-red-[350]" /><BorderSample
+      class="border-4 border-dashed border-red-[450]"
+      text="border-red-[450]" /><BorderSample
+      class="border-4 border-dashed border-red-[550]"
+      text="border-red-[550]" /><BorderSample
+      class="border-4 border-dashed border-red-[650]"
+      text="border-red-[650]" /><BorderSample
+      class="border-4 border-dashed border-red-[750]"
+      text="border-red-[750]" /><BorderSample
+      class="border-4 border-dashed border-red-[850]"
+      text="border-red-[850]"
+  /></SampleRow>
+  <SampleRow title="border-rose"
+    ><BorderSample
+      class="border-4 border-dashed border-rose-[25]"
+      text="border-rose-[25]" /><BorderSample
+      class="border-4 border-dashed border-rose-[150]"
+      text="border-rose-[150]" /><BorderSample
+      class="border-4 border-dashed border-rose-[250]"
+      text="border-rose-[250]" /><BorderSample
+      class="border-4 border-dashed border-rose-[350]"
+      text="border-rose-[350]" /><BorderSample
+      class="border-4 border-dashed border-rose-[450]"
+      text="border-rose-[450]" /><BorderSample
+      class="border-4 border-dashed border-rose-[550]"
+      text="border-rose-[550]" /><BorderSample
+      class="border-4 border-dashed border-rose-[650]"
+      text="border-rose-[650]" /><BorderSample
+      class="border-4 border-dashed border-rose-[750]"
+      text="border-rose-[750]" /><BorderSample
+      class="border-4 border-dashed border-rose-[850]"
+      text="border-rose-[850]"
+  /></SampleRow>
+  <SampleRow title="border-sky"
+    ><BorderSample
+      class="border-4 border-dashed border-sky-[25]"
+      text="border-sky-[25]" /><BorderSample
+      class="border-4 border-dashed border-sky-[150]"
+      text="border-sky-[150]" /><BorderSample
+      class="border-4 border-dashed border-sky-[250]"
+      text="border-sky-[250]" /><BorderSample
+      class="border-4 border-dashed border-sky-[350]"
+      text="border-sky-[350]" /><BorderSample
+      class="border-4 border-dashed border-sky-[450]"
+      text="border-sky-[450]" /><BorderSample
+      class="border-4 border-dashed border-sky-[550]"
+      text="border-sky-[550]" /><BorderSample
+      class="border-4 border-dashed border-sky-[650]"
+      text="border-sky-[650]" /><BorderSample
+      class="border-4 border-dashed border-sky-[750]"
+      text="border-sky-[750]" /><BorderSample
+      class="border-4 border-dashed border-sky-[850]"
+      text="border-sky-[850]"
+  /></SampleRow>
+  <SampleRow title="border-slate"
+    ><BorderSample
+      class="border-4 border-dashed border-slate-[25]"
+      text="border-slate-[25]" /><BorderSample
+      class="border-4 border-dashed border-slate-[150]"
+      text="border-slate-[150]" /><BorderSample
+      class="border-4 border-dashed border-slate-[250]"
+      text="border-slate-[250]" /><BorderSample
+      class="border-4 border-dashed border-slate-[350]"
+      text="border-slate-[350]" /><BorderSample
+      class="border-4 border-dashed border-slate-[450]"
+      text="border-slate-[450]" /><BorderSample
+      class="border-4 border-dashed border-slate-[550]"
+      text="border-slate-[550]" /><BorderSample
+      class="border-4 border-dashed border-slate-[650]"
+      text="border-slate-[650]" /><BorderSample
+      class="border-4 border-dashed border-slate-[750]"
+      text="border-slate-[750]" /><BorderSample
+      class="border-4 border-dashed border-slate-[850]"
+      text="border-slate-[850]"
+  /></SampleRow>
+  <SampleRow title="border-stone"
+    ><BorderSample
+      class="border-4 border-dashed border-stone-[25]"
+      text="border-stone-[25]" /><BorderSample
+      class="border-4 border-dashed border-stone-[150]"
+      text="border-stone-[150]" /><BorderSample
+      class="border-4 border-dashed border-stone-[250]"
+      text="border-stone-[250]" /><BorderSample
+      class="border-4 border-dashed border-stone-[350]"
+      text="border-stone-[350]" /><BorderSample
+      class="border-4 border-dashed border-stone-[450]"
+      text="border-stone-[450]" /><BorderSample
+      class="border-4 border-dashed border-stone-[550]"
+      text="border-stone-[550]" /><BorderSample
+      class="border-4 border-dashed border-stone-[650]"
+      text="border-stone-[650]" /><BorderSample
+      class="border-4 border-dashed border-stone-[750]"
+      text="border-stone-[750]" /><BorderSample
+      class="border-4 border-dashed border-stone-[850]"
+      text="border-stone-[850]"
+  /></SampleRow>
+  <SampleRow title="border-teal"
+    ><BorderSample
+      class="border-4 border-dashed border-teal-[25]"
+      text="border-teal-[25]" /><BorderSample
+      class="border-4 border-dashed border-teal-[150]"
+      text="border-teal-[150]" /><BorderSample
+      class="border-4 border-dashed border-teal-[250]"
+      text="border-teal-[250]" /><BorderSample
+      class="border-4 border-dashed border-teal-[350]"
+      text="border-teal-[350]" /><BorderSample
+      class="border-4 border-dashed border-teal-[450]"
+      text="border-teal-[450]" /><BorderSample
+      class="border-4 border-dashed border-teal-[550]"
+      text="border-teal-[550]" /><BorderSample
+      class="border-4 border-dashed border-teal-[650]"
+      text="border-teal-[650]" /><BorderSample
+      class="border-4 border-dashed border-teal-[750]"
+      text="border-teal-[750]" /><BorderSample
+      class="border-4 border-dashed border-teal-[850]"
+      text="border-teal-[850]"
+  /></SampleRow>
+  <SampleRow title="border-violet"
+    ><BorderSample
+      class="border-4 border-dashed border-violet-[25]"
+      text="border-violet-[25]" /><BorderSample
+      class="border-4 border-dashed border-violet-[150]"
+      text="border-violet-[150]" /><BorderSample
+      class="border-4 border-dashed border-violet-[250]"
+      text="border-violet-[250]" /><BorderSample
+      class="border-4 border-dashed border-violet-[350]"
+      text="border-violet-[350]" /><BorderSample
+      class="border-4 border-dashed border-violet-[450]"
+      text="border-violet-[450]" /><BorderSample
+      class="border-4 border-dashed border-violet-[550]"
+      text="border-violet-[550]" /><BorderSample
+      class="border-4 border-dashed border-violet-[650]"
+      text="border-violet-[650]" /><BorderSample
+      class="border-4 border-dashed border-violet-[750]"
+      text="border-violet-[750]" /><BorderSample
+      class="border-4 border-dashed border-violet-[850]"
+      text="border-violet-[850]"
+  /></SampleRow>
+  <SampleRow title="border-yellow"
+    ><BorderSample
+      class="border-4 border-dashed border-yellow-[25]"
+      text="border-yellow-[25]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[150]"
+      text="border-yellow-[150]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[250]"
+      text="border-yellow-[250]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[350]"
+      text="border-yellow-[350]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[450]"
+      text="border-yellow-[450]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[550]"
+      text="border-yellow-[550]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[650]"
+      text="border-yellow-[650]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[750]"
+      text="border-yellow-[750]" /><BorderSample
+      class="border-4 border-dashed border-yellow-[850]"
+      text="border-yellow-[850]"
+  /></SampleRow>
+  <SampleRow title="border-zinc"
+    ><BorderSample
+      class="border-4 border-dashed border-zinc-[25]"
+      text="border-zinc-[25]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[150]"
+      text="border-zinc-[150]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[250]"
+      text="border-zinc-[250]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[350]"
+      text="border-zinc-[350]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[450]"
+      text="border-zinc-[450]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[550]"
+      text="border-zinc-[550]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[650]"
+      text="border-zinc-[650]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[750]"
+      text="border-zinc-[750]" /><BorderSample
+      class="border-4 border-dashed border-zinc-[850]"
+      text="border-zinc-[850]"
+  /></SampleRow>
+</template>
+
+<script setup lang="tsx">
+const BorderSample = ({ text }: { text: string }) => (
+  <div class={'w-40 h-40 text-xs font-mono font-semibold flex items-end p-2 rounded-lg '}>
+    {text}
+  </div>
+)
+</script>

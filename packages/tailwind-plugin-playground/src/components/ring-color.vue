@@ -1,0 +1,389 @@
+<template>
+  <SampleRow title="ring-amber"
+    ><RingSample class="ring-amber-[25]" text="ring-amber-[25]" /><RingSample
+      class="ring-amber-[150]"
+      text="ring-amber-[150]" /><RingSample
+      class="ring-amber-[250]"
+      text="ring-amber-[250]" /><RingSample
+      class="ring-amber-[350]"
+      text="ring-amber-[350]" /><RingSample
+      class="ring-amber-[450]"
+      text="ring-amber-[450]" /><RingSample
+      class="ring-amber-[550]"
+      text="ring-amber-[550]" /><RingSample
+      class="ring-amber-[650]"
+      text="ring-amber-[650]" /><RingSample
+      class="ring-amber-[750]"
+      text="ring-amber-[750]" /><RingSample class="ring-amber-[850]" text="ring-amber-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-blue"
+    ><RingSample class="ring-blue-[25]" text="ring-blue-[25]" /><RingSample
+      class="ring-blue-[150]"
+      text="ring-blue-[150]" /><RingSample
+      class="ring-blue-[250]"
+      text="ring-blue-[250]" /><RingSample
+      class="ring-blue-[350]"
+      text="ring-blue-[350]" /><RingSample
+      class="ring-blue-[450]"
+      text="ring-blue-[450]" /><RingSample
+      class="ring-blue-[550]"
+      text="ring-blue-[550]" /><RingSample
+      class="ring-blue-[650]"
+      text="ring-blue-[650]" /><RingSample
+      class="ring-blue-[750]"
+      text="ring-blue-[750]" /><RingSample class="ring-blue-[850]" text="ring-blue-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-cyan"
+    ><RingSample class="ring-cyan-[25]" text="ring-cyan-[25]" /><RingSample
+      class="ring-cyan-[150]"
+      text="ring-cyan-[150]" /><RingSample
+      class="ring-cyan-[250]"
+      text="ring-cyan-[250]" /><RingSample
+      class="ring-cyan-[350]"
+      text="ring-cyan-[350]" /><RingSample
+      class="ring-cyan-[450]"
+      text="ring-cyan-[450]" /><RingSample
+      class="ring-cyan-[550]"
+      text="ring-cyan-[550]" /><RingSample
+      class="ring-cyan-[650]"
+      text="ring-cyan-[650]" /><RingSample
+      class="ring-cyan-[750]"
+      text="ring-cyan-[750]" /><RingSample class="ring-cyan-[850]" text="ring-cyan-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-emerald"
+    ><RingSample class="ring-emerald-[25]" text="ring-emerald-[25]" /><RingSample
+      class="ring-emerald-[150]"
+      text="ring-emerald-[150]" /><RingSample
+      class="ring-emerald-[250]"
+      text="ring-emerald-[250]" /><RingSample
+      class="ring-emerald-[350]"
+      text="ring-emerald-[350]" /><RingSample
+      class="ring-emerald-[450]"
+      text="ring-emerald-[450]" /><RingSample
+      class="ring-emerald-[550]"
+      text="ring-emerald-[550]" /><RingSample
+      class="ring-emerald-[650]"
+      text="ring-emerald-[650]" /><RingSample
+      class="ring-emerald-[750]"
+      text="ring-emerald-[750]" /><RingSample class="ring-emerald-[850]" text="ring-emerald-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-fuchsia"
+    ><RingSample class="ring-fuchsia-[25]" text="ring-fuchsia-[25]" /><RingSample
+      class="ring-fuchsia-[150]"
+      text="ring-fuchsia-[150]" /><RingSample
+      class="ring-fuchsia-[250]"
+      text="ring-fuchsia-[250]" /><RingSample
+      class="ring-fuchsia-[350]"
+      text="ring-fuchsia-[350]" /><RingSample
+      class="ring-fuchsia-[450]"
+      text="ring-fuchsia-[450]" /><RingSample
+      class="ring-fuchsia-[550]"
+      text="ring-fuchsia-[550]" /><RingSample
+      class="ring-fuchsia-[650]"
+      text="ring-fuchsia-[650]" /><RingSample
+      class="ring-fuchsia-[750]"
+      text="ring-fuchsia-[750]" /><RingSample class="ring-fuchsia-[850]" text="ring-fuchsia-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-gray"
+    ><RingSample class="ring-gray-[25]" text="ring-gray-[25]" /><RingSample
+      class="ring-gray-[150]"
+      text="ring-gray-[150]" /><RingSample
+      class="ring-gray-[250]"
+      text="ring-gray-[250]" /><RingSample
+      class="ring-gray-[350]"
+      text="ring-gray-[350]" /><RingSample
+      class="ring-gray-[450]"
+      text="ring-gray-[450]" /><RingSample
+      class="ring-gray-[550]"
+      text="ring-gray-[550]" /><RingSample
+      class="ring-gray-[650]"
+      text="ring-gray-[650]" /><RingSample
+      class="ring-gray-[750]"
+      text="ring-gray-[750]" /><RingSample class="ring-gray-[850]" text="ring-gray-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-green"
+    ><RingSample class="ring-green-[25]" text="ring-green-[25]" /><RingSample
+      class="ring-green-[150]"
+      text="ring-green-[150]" /><RingSample
+      class="ring-green-[250]"
+      text="ring-green-[250]" /><RingSample
+      class="ring-green-[350]"
+      text="ring-green-[350]" /><RingSample
+      class="ring-green-[450]"
+      text="ring-green-[450]" /><RingSample
+      class="ring-green-[550]"
+      text="ring-green-[550]" /><RingSample
+      class="ring-green-[650]"
+      text="ring-green-[650]" /><RingSample
+      class="ring-green-[750]"
+      text="ring-green-[750]" /><RingSample class="ring-green-[850]" text="ring-green-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-grey"
+    ><RingSample class="ring-grey-[25]" text="ring-grey-[25]" /><RingSample
+      class="ring-grey-[150]"
+      text="ring-grey-[150]" /><RingSample
+      class="ring-grey-[250]"
+      text="ring-grey-[250]" /><RingSample
+      class="ring-grey-[350]"
+      text="ring-grey-[350]" /><RingSample
+      class="ring-grey-[450]"
+      text="ring-grey-[450]" /><RingSample
+      class="ring-grey-[550]"
+      text="ring-grey-[550]" /><RingSample
+      class="ring-grey-[650]"
+      text="ring-grey-[650]" /><RingSample
+      class="ring-grey-[750]"
+      text="ring-grey-[750]" /><RingSample class="ring-grey-[850]" text="ring-grey-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-indigo"
+    ><RingSample class="ring-indigo-[25]" text="ring-indigo-[25]" /><RingSample
+      class="ring-indigo-[150]"
+      text="ring-indigo-[150]" /><RingSample
+      class="ring-indigo-[250]"
+      text="ring-indigo-[250]" /><RingSample
+      class="ring-indigo-[350]"
+      text="ring-indigo-[350]" /><RingSample
+      class="ring-indigo-[450]"
+      text="ring-indigo-[450]" /><RingSample
+      class="ring-indigo-[550]"
+      text="ring-indigo-[550]" /><RingSample
+      class="ring-indigo-[650]"
+      text="ring-indigo-[650]" /><RingSample
+      class="ring-indigo-[750]"
+      text="ring-indigo-[750]" /><RingSample class="ring-indigo-[850]" text="ring-indigo-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-lime"
+    ><RingSample class="ring-lime-[25]" text="ring-lime-[25]" /><RingSample
+      class="ring-lime-[150]"
+      text="ring-lime-[150]" /><RingSample
+      class="ring-lime-[250]"
+      text="ring-lime-[250]" /><RingSample
+      class="ring-lime-[350]"
+      text="ring-lime-[350]" /><RingSample
+      class="ring-lime-[450]"
+      text="ring-lime-[450]" /><RingSample
+      class="ring-lime-[550]"
+      text="ring-lime-[550]" /><RingSample
+      class="ring-lime-[650]"
+      text="ring-lime-[650]" /><RingSample
+      class="ring-lime-[750]"
+      text="ring-lime-[750]" /><RingSample class="ring-lime-[850]" text="ring-lime-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-neutral"
+    ><RingSample class="ring-neutral-[25]" text="ring-neutral-[25]" /><RingSample
+      class="ring-neutral-[150]"
+      text="ring-neutral-[150]" /><RingSample
+      class="ring-neutral-[250]"
+      text="ring-neutral-[250]" /><RingSample
+      class="ring-neutral-[350]"
+      text="ring-neutral-[350]" /><RingSample
+      class="ring-neutral-[450]"
+      text="ring-neutral-[450]" /><RingSample
+      class="ring-neutral-[550]"
+      text="ring-neutral-[550]" /><RingSample
+      class="ring-neutral-[650]"
+      text="ring-neutral-[650]" /><RingSample
+      class="ring-neutral-[750]"
+      text="ring-neutral-[750]" /><RingSample class="ring-neutral-[850]" text="ring-neutral-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-orange"
+    ><RingSample class="ring-orange-[25]" text="ring-orange-[25]" /><RingSample
+      class="ring-orange-[150]"
+      text="ring-orange-[150]" /><RingSample
+      class="ring-orange-[250]"
+      text="ring-orange-[250]" /><RingSample
+      class="ring-orange-[350]"
+      text="ring-orange-[350]" /><RingSample
+      class="ring-orange-[450]"
+      text="ring-orange-[450]" /><RingSample
+      class="ring-orange-[550]"
+      text="ring-orange-[550]" /><RingSample
+      class="ring-orange-[650]"
+      text="ring-orange-[650]" /><RingSample
+      class="ring-orange-[750]"
+      text="ring-orange-[750]" /><RingSample class="ring-orange-[850]" text="ring-orange-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-pink"
+    ><RingSample class="ring-pink-[25]" text="ring-pink-[25]" /><RingSample
+      class="ring-pink-[150]"
+      text="ring-pink-[150]" /><RingSample
+      class="ring-pink-[250]"
+      text="ring-pink-[250]" /><RingSample
+      class="ring-pink-[350]"
+      text="ring-pink-[350]" /><RingSample
+      class="ring-pink-[450]"
+      text="ring-pink-[450]" /><RingSample
+      class="ring-pink-[550]"
+      text="ring-pink-[550]" /><RingSample
+      class="ring-pink-[650]"
+      text="ring-pink-[650]" /><RingSample
+      class="ring-pink-[750]"
+      text="ring-pink-[750]" /><RingSample class="ring-pink-[850]" text="ring-pink-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-purple"
+    ><RingSample class="ring-purple-[25]" text="ring-purple-[25]" /><RingSample
+      class="ring-purple-[150]"
+      text="ring-purple-[150]" /><RingSample
+      class="ring-purple-[250]"
+      text="ring-purple-[250]" /><RingSample
+      class="ring-purple-[350]"
+      text="ring-purple-[350]" /><RingSample
+      class="ring-purple-[450]"
+      text="ring-purple-[450]" /><RingSample
+      class="ring-purple-[550]"
+      text="ring-purple-[550]" /><RingSample
+      class="ring-purple-[650]"
+      text="ring-purple-[650]" /><RingSample
+      class="ring-purple-[750]"
+      text="ring-purple-[750]" /><RingSample class="ring-purple-[850]" text="ring-purple-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-red"
+    ><RingSample class="ring-red-[25]" text="ring-red-[25]" /><RingSample
+      class="ring-red-[150]"
+      text="ring-red-[150]" /><RingSample class="ring-red-[250]" text="ring-red-[250]" /><RingSample
+      class="ring-red-[350]"
+      text="ring-red-[350]" /><RingSample class="ring-red-[450]" text="ring-red-[450]" /><RingSample
+      class="ring-red-[550]"
+      text="ring-red-[550]" /><RingSample class="ring-red-[650]" text="ring-red-[650]" /><RingSample
+      class="ring-red-[750]"
+      text="ring-red-[750]" /><RingSample class="ring-red-[850]" text="ring-red-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-rose"
+    ><RingSample class="ring-rose-[25]" text="ring-rose-[25]" /><RingSample
+      class="ring-rose-[150]"
+      text="ring-rose-[150]" /><RingSample
+      class="ring-rose-[250]"
+      text="ring-rose-[250]" /><RingSample
+      class="ring-rose-[350]"
+      text="ring-rose-[350]" /><RingSample
+      class="ring-rose-[450]"
+      text="ring-rose-[450]" /><RingSample
+      class="ring-rose-[550]"
+      text="ring-rose-[550]" /><RingSample
+      class="ring-rose-[650]"
+      text="ring-rose-[650]" /><RingSample
+      class="ring-rose-[750]"
+      text="ring-rose-[750]" /><RingSample class="ring-rose-[850]" text="ring-rose-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-sky"
+    ><RingSample class="ring-sky-[25]" text="ring-sky-[25]" /><RingSample
+      class="ring-sky-[150]"
+      text="ring-sky-[150]" /><RingSample class="ring-sky-[250]" text="ring-sky-[250]" /><RingSample
+      class="ring-sky-[350]"
+      text="ring-sky-[350]" /><RingSample class="ring-sky-[450]" text="ring-sky-[450]" /><RingSample
+      class="ring-sky-[550]"
+      text="ring-sky-[550]" /><RingSample class="ring-sky-[650]" text="ring-sky-[650]" /><RingSample
+      class="ring-sky-[750]"
+      text="ring-sky-[750]" /><RingSample class="ring-sky-[850]" text="ring-sky-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-slate"
+    ><RingSample class="ring-slate-[25]" text="ring-slate-[25]" /><RingSample
+      class="ring-slate-[150]"
+      text="ring-slate-[150]" /><RingSample
+      class="ring-slate-[250]"
+      text="ring-slate-[250]" /><RingSample
+      class="ring-slate-[350]"
+      text="ring-slate-[350]" /><RingSample
+      class="ring-slate-[450]"
+      text="ring-slate-[450]" /><RingSample
+      class="ring-slate-[550]"
+      text="ring-slate-[550]" /><RingSample
+      class="ring-slate-[650]"
+      text="ring-slate-[650]" /><RingSample
+      class="ring-slate-[750]"
+      text="ring-slate-[750]" /><RingSample class="ring-slate-[850]" text="ring-slate-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-stone"
+    ><RingSample class="ring-stone-[25]" text="ring-stone-[25]" /><RingSample
+      class="ring-stone-[150]"
+      text="ring-stone-[150]" /><RingSample
+      class="ring-stone-[250]"
+      text="ring-stone-[250]" /><RingSample
+      class="ring-stone-[350]"
+      text="ring-stone-[350]" /><RingSample
+      class="ring-stone-[450]"
+      text="ring-stone-[450]" /><RingSample
+      class="ring-stone-[550]"
+      text="ring-stone-[550]" /><RingSample
+      class="ring-stone-[650]"
+      text="ring-stone-[650]" /><RingSample
+      class="ring-stone-[750]"
+      text="ring-stone-[750]" /><RingSample class="ring-stone-[850]" text="ring-stone-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-teal"
+    ><RingSample class="ring-teal-[25]" text="ring-teal-[25]" /><RingSample
+      class="ring-teal-[150]"
+      text="ring-teal-[150]" /><RingSample
+      class="ring-teal-[250]"
+      text="ring-teal-[250]" /><RingSample
+      class="ring-teal-[350]"
+      text="ring-teal-[350]" /><RingSample
+      class="ring-teal-[450]"
+      text="ring-teal-[450]" /><RingSample
+      class="ring-teal-[550]"
+      text="ring-teal-[550]" /><RingSample
+      class="ring-teal-[650]"
+      text="ring-teal-[650]" /><RingSample
+      class="ring-teal-[750]"
+      text="ring-teal-[750]" /><RingSample class="ring-teal-[850]" text="ring-teal-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-violet"
+    ><RingSample class="ring-violet-[25]" text="ring-violet-[25]" /><RingSample
+      class="ring-violet-[150]"
+      text="ring-violet-[150]" /><RingSample
+      class="ring-violet-[250]"
+      text="ring-violet-[250]" /><RingSample
+      class="ring-violet-[350]"
+      text="ring-violet-[350]" /><RingSample
+      class="ring-violet-[450]"
+      text="ring-violet-[450]" /><RingSample
+      class="ring-violet-[550]"
+      text="ring-violet-[550]" /><RingSample
+      class="ring-violet-[650]"
+      text="ring-violet-[650]" /><RingSample
+      class="ring-violet-[750]"
+      text="ring-violet-[750]" /><RingSample class="ring-violet-[850]" text="ring-violet-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-yellow"
+    ><RingSample class="ring-yellow-[25]" text="ring-yellow-[25]" /><RingSample
+      class="ring-yellow-[150]"
+      text="ring-yellow-[150]" /><RingSample
+      class="ring-yellow-[250]"
+      text="ring-yellow-[250]" /><RingSample
+      class="ring-yellow-[350]"
+      text="ring-yellow-[350]" /><RingSample
+      class="ring-yellow-[450]"
+      text="ring-yellow-[450]" /><RingSample
+      class="ring-yellow-[550]"
+      text="ring-yellow-[550]" /><RingSample
+      class="ring-yellow-[650]"
+      text="ring-yellow-[650]" /><RingSample
+      class="ring-yellow-[750]"
+      text="ring-yellow-[750]" /><RingSample class="ring-yellow-[850]" text="ring-yellow-[850]"
+  /></SampleRow>
+  <SampleRow title="ring-zinc"
+    ><RingSample class="ring-zinc-[25]" text="ring-zinc-[25]" /><RingSample
+      class="ring-zinc-[150]"
+      text="ring-zinc-[150]" /><RingSample
+      class="ring-zinc-[250]"
+      text="ring-zinc-[250]" /><RingSample
+      class="ring-zinc-[350]"
+      text="ring-zinc-[350]" /><RingSample
+      class="ring-zinc-[450]"
+      text="ring-zinc-[450]" /><RingSample
+      class="ring-zinc-[550]"
+      text="ring-zinc-[550]" /><RingSample
+      class="ring-zinc-[650]"
+      text="ring-zinc-[650]" /><RingSample
+      class="ring-zinc-[750]"
+      text="ring-zinc-[750]" /><RingSample class="ring-zinc-[850]" text="ring-zinc-[850]"
+  /></SampleRow>
+</template>
+
+<script setup lang="tsx">
+const RingSample = ({ text }: { text: string }) => (
+  <div class={'w-40 h-40 ring-4 text-xs font-mono font-semibold flex items-end p-2 rounded-lg '}>
+    {text}
+  </div>
+)
+</script>
