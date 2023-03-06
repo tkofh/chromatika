@@ -1,26 +1,486 @@
 <template>
   <SampleHeader label="Placeholder Color Samples" />
-  <SampleRow title="placeholder-amber"><PlaceholderSample class="placeholder-amber-[25]" text="placeholder-amber-[25]" /><PlaceholderSample class="placeholder-amber-[150]" text="placeholder-amber-[150]" /><PlaceholderSample class="placeholder-amber-[250]" text="placeholder-amber-[250]" /><PlaceholderSample class="placeholder-amber-[350]" text="placeholder-amber-[350]" /><PlaceholderSample class="placeholder-amber-[450]" text="placeholder-amber-[450]" /><PlaceholderSample class="placeholder-amber-[550]" text="placeholder-amber-[550]" /><PlaceholderSample class="placeholder-amber-[650]" text="placeholder-amber-[650]" /><PlaceholderSample class="placeholder-amber-[750]" text="placeholder-amber-[750]" /><PlaceholderSample class="placeholder-amber-[850]" text="placeholder-amber-[850]" /></SampleRow>
-<SampleRow title="placeholder-blue"><PlaceholderSample class="placeholder-blue-[25]" text="placeholder-blue-[25]" /><PlaceholderSample class="placeholder-blue-[150]" text="placeholder-blue-[150]" /><PlaceholderSample class="placeholder-blue-[250]" text="placeholder-blue-[250]" /><PlaceholderSample class="placeholder-blue-[350]" text="placeholder-blue-[350]" /><PlaceholderSample class="placeholder-blue-[450]" text="placeholder-blue-[450]" /><PlaceholderSample class="placeholder-blue-[550]" text="placeholder-blue-[550]" /><PlaceholderSample class="placeholder-blue-[650]" text="placeholder-blue-[650]" /><PlaceholderSample class="placeholder-blue-[750]" text="placeholder-blue-[750]" /><PlaceholderSample class="placeholder-blue-[850]" text="placeholder-blue-[850]" /></SampleRow>
-<SampleRow title="placeholder-cyan"><PlaceholderSample class="placeholder-cyan-[25]" text="placeholder-cyan-[25]" /><PlaceholderSample class="placeholder-cyan-[150]" text="placeholder-cyan-[150]" /><PlaceholderSample class="placeholder-cyan-[250]" text="placeholder-cyan-[250]" /><PlaceholderSample class="placeholder-cyan-[350]" text="placeholder-cyan-[350]" /><PlaceholderSample class="placeholder-cyan-[450]" text="placeholder-cyan-[450]" /><PlaceholderSample class="placeholder-cyan-[550]" text="placeholder-cyan-[550]" /><PlaceholderSample class="placeholder-cyan-[650]" text="placeholder-cyan-[650]" /><PlaceholderSample class="placeholder-cyan-[750]" text="placeholder-cyan-[750]" /><PlaceholderSample class="placeholder-cyan-[850]" text="placeholder-cyan-[850]" /></SampleRow>
-<SampleRow title="placeholder-emerald"><PlaceholderSample class="placeholder-emerald-[25]" text="placeholder-emerald-[25]" /><PlaceholderSample class="placeholder-emerald-[150]" text="placeholder-emerald-[150]" /><PlaceholderSample class="placeholder-emerald-[250]" text="placeholder-emerald-[250]" /><PlaceholderSample class="placeholder-emerald-[350]" text="placeholder-emerald-[350]" /><PlaceholderSample class="placeholder-emerald-[450]" text="placeholder-emerald-[450]" /><PlaceholderSample class="placeholder-emerald-[550]" text="placeholder-emerald-[550]" /><PlaceholderSample class="placeholder-emerald-[650]" text="placeholder-emerald-[650]" /><PlaceholderSample class="placeholder-emerald-[750]" text="placeholder-emerald-[750]" /><PlaceholderSample class="placeholder-emerald-[850]" text="placeholder-emerald-[850]" /></SampleRow>
-<SampleRow title="placeholder-fuchsia"><PlaceholderSample class="placeholder-fuchsia-[25]" text="placeholder-fuchsia-[25]" /><PlaceholderSample class="placeholder-fuchsia-[150]" text="placeholder-fuchsia-[150]" /><PlaceholderSample class="placeholder-fuchsia-[250]" text="placeholder-fuchsia-[250]" /><PlaceholderSample class="placeholder-fuchsia-[350]" text="placeholder-fuchsia-[350]" /><PlaceholderSample class="placeholder-fuchsia-[450]" text="placeholder-fuchsia-[450]" /><PlaceholderSample class="placeholder-fuchsia-[550]" text="placeholder-fuchsia-[550]" /><PlaceholderSample class="placeholder-fuchsia-[650]" text="placeholder-fuchsia-[650]" /><PlaceholderSample class="placeholder-fuchsia-[750]" text="placeholder-fuchsia-[750]" /><PlaceholderSample class="placeholder-fuchsia-[850]" text="placeholder-fuchsia-[850]" /></SampleRow>
-<SampleRow title="placeholder-gray"><PlaceholderSample class="placeholder-gray-[25]" text="placeholder-gray-[25]" /><PlaceholderSample class="placeholder-gray-[150]" text="placeholder-gray-[150]" /><PlaceholderSample class="placeholder-gray-[250]" text="placeholder-gray-[250]" /><PlaceholderSample class="placeholder-gray-[350]" text="placeholder-gray-[350]" /><PlaceholderSample class="placeholder-gray-[450]" text="placeholder-gray-[450]" /><PlaceholderSample class="placeholder-gray-[550]" text="placeholder-gray-[550]" /><PlaceholderSample class="placeholder-gray-[650]" text="placeholder-gray-[650]" /><PlaceholderSample class="placeholder-gray-[750]" text="placeholder-gray-[750]" /><PlaceholderSample class="placeholder-gray-[850]" text="placeholder-gray-[850]" /></SampleRow>
-<SampleRow title="placeholder-green"><PlaceholderSample class="placeholder-green-[25]" text="placeholder-green-[25]" /><PlaceholderSample class="placeholder-green-[150]" text="placeholder-green-[150]" /><PlaceholderSample class="placeholder-green-[250]" text="placeholder-green-[250]" /><PlaceholderSample class="placeholder-green-[350]" text="placeholder-green-[350]" /><PlaceholderSample class="placeholder-green-[450]" text="placeholder-green-[450]" /><PlaceholderSample class="placeholder-green-[550]" text="placeholder-green-[550]" /><PlaceholderSample class="placeholder-green-[650]" text="placeholder-green-[650]" /><PlaceholderSample class="placeholder-green-[750]" text="placeholder-green-[750]" /><PlaceholderSample class="placeholder-green-[850]" text="placeholder-green-[850]" /></SampleRow>
-<SampleRow title="placeholder-grey"><PlaceholderSample class="placeholder-grey-[25]" text="placeholder-grey-[25]" /><PlaceholderSample class="placeholder-grey-[150]" text="placeholder-grey-[150]" /><PlaceholderSample class="placeholder-grey-[250]" text="placeholder-grey-[250]" /><PlaceholderSample class="placeholder-grey-[350]" text="placeholder-grey-[350]" /><PlaceholderSample class="placeholder-grey-[450]" text="placeholder-grey-[450]" /><PlaceholderSample class="placeholder-grey-[550]" text="placeholder-grey-[550]" /><PlaceholderSample class="placeholder-grey-[650]" text="placeholder-grey-[650]" /><PlaceholderSample class="placeholder-grey-[750]" text="placeholder-grey-[750]" /><PlaceholderSample class="placeholder-grey-[850]" text="placeholder-grey-[850]" /></SampleRow>
-<SampleRow title="placeholder-indigo"><PlaceholderSample class="placeholder-indigo-[25]" text="placeholder-indigo-[25]" /><PlaceholderSample class="placeholder-indigo-[150]" text="placeholder-indigo-[150]" /><PlaceholderSample class="placeholder-indigo-[250]" text="placeholder-indigo-[250]" /><PlaceholderSample class="placeholder-indigo-[350]" text="placeholder-indigo-[350]" /><PlaceholderSample class="placeholder-indigo-[450]" text="placeholder-indigo-[450]" /><PlaceholderSample class="placeholder-indigo-[550]" text="placeholder-indigo-[550]" /><PlaceholderSample class="placeholder-indigo-[650]" text="placeholder-indigo-[650]" /><PlaceholderSample class="placeholder-indigo-[750]" text="placeholder-indigo-[750]" /><PlaceholderSample class="placeholder-indigo-[850]" text="placeholder-indigo-[850]" /></SampleRow>
-<SampleRow title="placeholder-lime"><PlaceholderSample class="placeholder-lime-[25]" text="placeholder-lime-[25]" /><PlaceholderSample class="placeholder-lime-[150]" text="placeholder-lime-[150]" /><PlaceholderSample class="placeholder-lime-[250]" text="placeholder-lime-[250]" /><PlaceholderSample class="placeholder-lime-[350]" text="placeholder-lime-[350]" /><PlaceholderSample class="placeholder-lime-[450]" text="placeholder-lime-[450]" /><PlaceholderSample class="placeholder-lime-[550]" text="placeholder-lime-[550]" /><PlaceholderSample class="placeholder-lime-[650]" text="placeholder-lime-[650]" /><PlaceholderSample class="placeholder-lime-[750]" text="placeholder-lime-[750]" /><PlaceholderSample class="placeholder-lime-[850]" text="placeholder-lime-[850]" /></SampleRow>
-<SampleRow title="placeholder-neutral"><PlaceholderSample class="placeholder-neutral-[25]" text="placeholder-neutral-[25]" /><PlaceholderSample class="placeholder-neutral-[150]" text="placeholder-neutral-[150]" /><PlaceholderSample class="placeholder-neutral-[250]" text="placeholder-neutral-[250]" /><PlaceholderSample class="placeholder-neutral-[350]" text="placeholder-neutral-[350]" /><PlaceholderSample class="placeholder-neutral-[450]" text="placeholder-neutral-[450]" /><PlaceholderSample class="placeholder-neutral-[550]" text="placeholder-neutral-[550]" /><PlaceholderSample class="placeholder-neutral-[650]" text="placeholder-neutral-[650]" /><PlaceholderSample class="placeholder-neutral-[750]" text="placeholder-neutral-[750]" /><PlaceholderSample class="placeholder-neutral-[850]" text="placeholder-neutral-[850]" /></SampleRow>
-<SampleRow title="placeholder-orange"><PlaceholderSample class="placeholder-orange-[25]" text="placeholder-orange-[25]" /><PlaceholderSample class="placeholder-orange-[150]" text="placeholder-orange-[150]" /><PlaceholderSample class="placeholder-orange-[250]" text="placeholder-orange-[250]" /><PlaceholderSample class="placeholder-orange-[350]" text="placeholder-orange-[350]" /><PlaceholderSample class="placeholder-orange-[450]" text="placeholder-orange-[450]" /><PlaceholderSample class="placeholder-orange-[550]" text="placeholder-orange-[550]" /><PlaceholderSample class="placeholder-orange-[650]" text="placeholder-orange-[650]" /><PlaceholderSample class="placeholder-orange-[750]" text="placeholder-orange-[750]" /><PlaceholderSample class="placeholder-orange-[850]" text="placeholder-orange-[850]" /></SampleRow>
-<SampleRow title="placeholder-pink"><PlaceholderSample class="placeholder-pink-[25]" text="placeholder-pink-[25]" /><PlaceholderSample class="placeholder-pink-[150]" text="placeholder-pink-[150]" /><PlaceholderSample class="placeholder-pink-[250]" text="placeholder-pink-[250]" /><PlaceholderSample class="placeholder-pink-[350]" text="placeholder-pink-[350]" /><PlaceholderSample class="placeholder-pink-[450]" text="placeholder-pink-[450]" /><PlaceholderSample class="placeholder-pink-[550]" text="placeholder-pink-[550]" /><PlaceholderSample class="placeholder-pink-[650]" text="placeholder-pink-[650]" /><PlaceholderSample class="placeholder-pink-[750]" text="placeholder-pink-[750]" /><PlaceholderSample class="placeholder-pink-[850]" text="placeholder-pink-[850]" /></SampleRow>
-<SampleRow title="placeholder-purple"><PlaceholderSample class="placeholder-purple-[25]" text="placeholder-purple-[25]" /><PlaceholderSample class="placeholder-purple-[150]" text="placeholder-purple-[150]" /><PlaceholderSample class="placeholder-purple-[250]" text="placeholder-purple-[250]" /><PlaceholderSample class="placeholder-purple-[350]" text="placeholder-purple-[350]" /><PlaceholderSample class="placeholder-purple-[450]" text="placeholder-purple-[450]" /><PlaceholderSample class="placeholder-purple-[550]" text="placeholder-purple-[550]" /><PlaceholderSample class="placeholder-purple-[650]" text="placeholder-purple-[650]" /><PlaceholderSample class="placeholder-purple-[750]" text="placeholder-purple-[750]" /><PlaceholderSample class="placeholder-purple-[850]" text="placeholder-purple-[850]" /></SampleRow>
-<SampleRow title="placeholder-red"><PlaceholderSample class="placeholder-red-[25]" text="placeholder-red-[25]" /><PlaceholderSample class="placeholder-red-[150]" text="placeholder-red-[150]" /><PlaceholderSample class="placeholder-red-[250]" text="placeholder-red-[250]" /><PlaceholderSample class="placeholder-red-[350]" text="placeholder-red-[350]" /><PlaceholderSample class="placeholder-red-[450]" text="placeholder-red-[450]" /><PlaceholderSample class="placeholder-red-[550]" text="placeholder-red-[550]" /><PlaceholderSample class="placeholder-red-[650]" text="placeholder-red-[650]" /><PlaceholderSample class="placeholder-red-[750]" text="placeholder-red-[750]" /><PlaceholderSample class="placeholder-red-[850]" text="placeholder-red-[850]" /></SampleRow>
-<SampleRow title="placeholder-rose"><PlaceholderSample class="placeholder-rose-[25]" text="placeholder-rose-[25]" /><PlaceholderSample class="placeholder-rose-[150]" text="placeholder-rose-[150]" /><PlaceholderSample class="placeholder-rose-[250]" text="placeholder-rose-[250]" /><PlaceholderSample class="placeholder-rose-[350]" text="placeholder-rose-[350]" /><PlaceholderSample class="placeholder-rose-[450]" text="placeholder-rose-[450]" /><PlaceholderSample class="placeholder-rose-[550]" text="placeholder-rose-[550]" /><PlaceholderSample class="placeholder-rose-[650]" text="placeholder-rose-[650]" /><PlaceholderSample class="placeholder-rose-[750]" text="placeholder-rose-[750]" /><PlaceholderSample class="placeholder-rose-[850]" text="placeholder-rose-[850]" /></SampleRow>
-<SampleRow title="placeholder-sky"><PlaceholderSample class="placeholder-sky-[25]" text="placeholder-sky-[25]" /><PlaceholderSample class="placeholder-sky-[150]" text="placeholder-sky-[150]" /><PlaceholderSample class="placeholder-sky-[250]" text="placeholder-sky-[250]" /><PlaceholderSample class="placeholder-sky-[350]" text="placeholder-sky-[350]" /><PlaceholderSample class="placeholder-sky-[450]" text="placeholder-sky-[450]" /><PlaceholderSample class="placeholder-sky-[550]" text="placeholder-sky-[550]" /><PlaceholderSample class="placeholder-sky-[650]" text="placeholder-sky-[650]" /><PlaceholderSample class="placeholder-sky-[750]" text="placeholder-sky-[750]" /><PlaceholderSample class="placeholder-sky-[850]" text="placeholder-sky-[850]" /></SampleRow>
-<SampleRow title="placeholder-slate"><PlaceholderSample class="placeholder-slate-[25]" text="placeholder-slate-[25]" /><PlaceholderSample class="placeholder-slate-[150]" text="placeholder-slate-[150]" /><PlaceholderSample class="placeholder-slate-[250]" text="placeholder-slate-[250]" /><PlaceholderSample class="placeholder-slate-[350]" text="placeholder-slate-[350]" /><PlaceholderSample class="placeholder-slate-[450]" text="placeholder-slate-[450]" /><PlaceholderSample class="placeholder-slate-[550]" text="placeholder-slate-[550]" /><PlaceholderSample class="placeholder-slate-[650]" text="placeholder-slate-[650]" /><PlaceholderSample class="placeholder-slate-[750]" text="placeholder-slate-[750]" /><PlaceholderSample class="placeholder-slate-[850]" text="placeholder-slate-[850]" /></SampleRow>
-<SampleRow title="placeholder-stone"><PlaceholderSample class="placeholder-stone-[25]" text="placeholder-stone-[25]" /><PlaceholderSample class="placeholder-stone-[150]" text="placeholder-stone-[150]" /><PlaceholderSample class="placeholder-stone-[250]" text="placeholder-stone-[250]" /><PlaceholderSample class="placeholder-stone-[350]" text="placeholder-stone-[350]" /><PlaceholderSample class="placeholder-stone-[450]" text="placeholder-stone-[450]" /><PlaceholderSample class="placeholder-stone-[550]" text="placeholder-stone-[550]" /><PlaceholderSample class="placeholder-stone-[650]" text="placeholder-stone-[650]" /><PlaceholderSample class="placeholder-stone-[750]" text="placeholder-stone-[750]" /><PlaceholderSample class="placeholder-stone-[850]" text="placeholder-stone-[850]" /></SampleRow>
-<SampleRow title="placeholder-teal"><PlaceholderSample class="placeholder-teal-[25]" text="placeholder-teal-[25]" /><PlaceholderSample class="placeholder-teal-[150]" text="placeholder-teal-[150]" /><PlaceholderSample class="placeholder-teal-[250]" text="placeholder-teal-[250]" /><PlaceholderSample class="placeholder-teal-[350]" text="placeholder-teal-[350]" /><PlaceholderSample class="placeholder-teal-[450]" text="placeholder-teal-[450]" /><PlaceholderSample class="placeholder-teal-[550]" text="placeholder-teal-[550]" /><PlaceholderSample class="placeholder-teal-[650]" text="placeholder-teal-[650]" /><PlaceholderSample class="placeholder-teal-[750]" text="placeholder-teal-[750]" /><PlaceholderSample class="placeholder-teal-[850]" text="placeholder-teal-[850]" /></SampleRow>
-<SampleRow title="placeholder-violet"><PlaceholderSample class="placeholder-violet-[25]" text="placeholder-violet-[25]" /><PlaceholderSample class="placeholder-violet-[150]" text="placeholder-violet-[150]" /><PlaceholderSample class="placeholder-violet-[250]" text="placeholder-violet-[250]" /><PlaceholderSample class="placeholder-violet-[350]" text="placeholder-violet-[350]" /><PlaceholderSample class="placeholder-violet-[450]" text="placeholder-violet-[450]" /><PlaceholderSample class="placeholder-violet-[550]" text="placeholder-violet-[550]" /><PlaceholderSample class="placeholder-violet-[650]" text="placeholder-violet-[650]" /><PlaceholderSample class="placeholder-violet-[750]" text="placeholder-violet-[750]" /><PlaceholderSample class="placeholder-violet-[850]" text="placeholder-violet-[850]" /></SampleRow>
-<SampleRow title="placeholder-yellow"><PlaceholderSample class="placeholder-yellow-[25]" text="placeholder-yellow-[25]" /><PlaceholderSample class="placeholder-yellow-[150]" text="placeholder-yellow-[150]" /><PlaceholderSample class="placeholder-yellow-[250]" text="placeholder-yellow-[250]" /><PlaceholderSample class="placeholder-yellow-[350]" text="placeholder-yellow-[350]" /><PlaceholderSample class="placeholder-yellow-[450]" text="placeholder-yellow-[450]" /><PlaceholderSample class="placeholder-yellow-[550]" text="placeholder-yellow-[550]" /><PlaceholderSample class="placeholder-yellow-[650]" text="placeholder-yellow-[650]" /><PlaceholderSample class="placeholder-yellow-[750]" text="placeholder-yellow-[750]" /><PlaceholderSample class="placeholder-yellow-[850]" text="placeholder-yellow-[850]" /></SampleRow>
-<SampleRow title="placeholder-zinc"><PlaceholderSample class="placeholder-zinc-[25]" text="placeholder-zinc-[25]" /><PlaceholderSample class="placeholder-zinc-[150]" text="placeholder-zinc-[150]" /><PlaceholderSample class="placeholder-zinc-[250]" text="placeholder-zinc-[250]" /><PlaceholderSample class="placeholder-zinc-[350]" text="placeholder-zinc-[350]" /><PlaceholderSample class="placeholder-zinc-[450]" text="placeholder-zinc-[450]" /><PlaceholderSample class="placeholder-zinc-[550]" text="placeholder-zinc-[550]" /><PlaceholderSample class="placeholder-zinc-[650]" text="placeholder-zinc-[650]" /><PlaceholderSample class="placeholder-zinc-[750]" text="placeholder-zinc-[750]" /><PlaceholderSample class="placeholder-zinc-[850]" text="placeholder-zinc-[850]" /></SampleRow>
+  <SampleRow title="placeholder-amber"
+    ><PlaceholderSample
+      class="placeholder-amber-[25]"
+      text="placeholder-amber-[25]" /><PlaceholderSample
+      class="placeholder-amber-[150]"
+      text="placeholder-amber-[150]" /><PlaceholderSample
+      class="placeholder-amber-[250]"
+      text="placeholder-amber-[250]" /><PlaceholderSample
+      class="placeholder-amber-[350]"
+      text="placeholder-amber-[350]" /><PlaceholderSample
+      class="placeholder-amber-[450]"
+      text="placeholder-amber-[450]" /><PlaceholderSample
+      class="placeholder-amber-[550]"
+      text="placeholder-amber-[550]" /><PlaceholderSample
+      class="placeholder-amber-[650]"
+      text="placeholder-amber-[650]" /><PlaceholderSample
+      class="placeholder-amber-[750]"
+      text="placeholder-amber-[750]" /><PlaceholderSample
+      class="placeholder-amber-[850]"
+      text="placeholder-amber-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-blue"
+    ><PlaceholderSample
+      class="placeholder-blue-[25]"
+      text="placeholder-blue-[25]" /><PlaceholderSample
+      class="placeholder-blue-[150]"
+      text="placeholder-blue-[150]" /><PlaceholderSample
+      class="placeholder-blue-[250]"
+      text="placeholder-blue-[250]" /><PlaceholderSample
+      class="placeholder-blue-[350]"
+      text="placeholder-blue-[350]" /><PlaceholderSample
+      class="placeholder-blue-[450]"
+      text="placeholder-blue-[450]" /><PlaceholderSample
+      class="placeholder-blue-[550]"
+      text="placeholder-blue-[550]" /><PlaceholderSample
+      class="placeholder-blue-[650]"
+      text="placeholder-blue-[650]" /><PlaceholderSample
+      class="placeholder-blue-[750]"
+      text="placeholder-blue-[750]" /><PlaceholderSample
+      class="placeholder-blue-[850]"
+      text="placeholder-blue-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-cyan"
+    ><PlaceholderSample
+      class="placeholder-cyan-[25]"
+      text="placeholder-cyan-[25]" /><PlaceholderSample
+      class="placeholder-cyan-[150]"
+      text="placeholder-cyan-[150]" /><PlaceholderSample
+      class="placeholder-cyan-[250]"
+      text="placeholder-cyan-[250]" /><PlaceholderSample
+      class="placeholder-cyan-[350]"
+      text="placeholder-cyan-[350]" /><PlaceholderSample
+      class="placeholder-cyan-[450]"
+      text="placeholder-cyan-[450]" /><PlaceholderSample
+      class="placeholder-cyan-[550]"
+      text="placeholder-cyan-[550]" /><PlaceholderSample
+      class="placeholder-cyan-[650]"
+      text="placeholder-cyan-[650]" /><PlaceholderSample
+      class="placeholder-cyan-[750]"
+      text="placeholder-cyan-[750]" /><PlaceholderSample
+      class="placeholder-cyan-[850]"
+      text="placeholder-cyan-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-emerald"
+    ><PlaceholderSample
+      class="placeholder-emerald-[25]"
+      text="placeholder-emerald-[25]" /><PlaceholderSample
+      class="placeholder-emerald-[150]"
+      text="placeholder-emerald-[150]" /><PlaceholderSample
+      class="placeholder-emerald-[250]"
+      text="placeholder-emerald-[250]" /><PlaceholderSample
+      class="placeholder-emerald-[350]"
+      text="placeholder-emerald-[350]" /><PlaceholderSample
+      class="placeholder-emerald-[450]"
+      text="placeholder-emerald-[450]" /><PlaceholderSample
+      class="placeholder-emerald-[550]"
+      text="placeholder-emerald-[550]" /><PlaceholderSample
+      class="placeholder-emerald-[650]"
+      text="placeholder-emerald-[650]" /><PlaceholderSample
+      class="placeholder-emerald-[750]"
+      text="placeholder-emerald-[750]" /><PlaceholderSample
+      class="placeholder-emerald-[850]"
+      text="placeholder-emerald-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-fuchsia"
+    ><PlaceholderSample
+      class="placeholder-fuchsia-[25]"
+      text="placeholder-fuchsia-[25]" /><PlaceholderSample
+      class="placeholder-fuchsia-[150]"
+      text="placeholder-fuchsia-[150]" /><PlaceholderSample
+      class="placeholder-fuchsia-[250]"
+      text="placeholder-fuchsia-[250]" /><PlaceholderSample
+      class="placeholder-fuchsia-[350]"
+      text="placeholder-fuchsia-[350]" /><PlaceholderSample
+      class="placeholder-fuchsia-[450]"
+      text="placeholder-fuchsia-[450]" /><PlaceholderSample
+      class="placeholder-fuchsia-[550]"
+      text="placeholder-fuchsia-[550]" /><PlaceholderSample
+      class="placeholder-fuchsia-[650]"
+      text="placeholder-fuchsia-[650]" /><PlaceholderSample
+      class="placeholder-fuchsia-[750]"
+      text="placeholder-fuchsia-[750]" /><PlaceholderSample
+      class="placeholder-fuchsia-[850]"
+      text="placeholder-fuchsia-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-gray"
+    ><PlaceholderSample
+      class="placeholder-gray-[25]"
+      text="placeholder-gray-[25]" /><PlaceholderSample
+      class="placeholder-gray-[150]"
+      text="placeholder-gray-[150]" /><PlaceholderSample
+      class="placeholder-gray-[250]"
+      text="placeholder-gray-[250]" /><PlaceholderSample
+      class="placeholder-gray-[350]"
+      text="placeholder-gray-[350]" /><PlaceholderSample
+      class="placeholder-gray-[450]"
+      text="placeholder-gray-[450]" /><PlaceholderSample
+      class="placeholder-gray-[550]"
+      text="placeholder-gray-[550]" /><PlaceholderSample
+      class="placeholder-gray-[650]"
+      text="placeholder-gray-[650]" /><PlaceholderSample
+      class="placeholder-gray-[750]"
+      text="placeholder-gray-[750]" /><PlaceholderSample
+      class="placeholder-gray-[850]"
+      text="placeholder-gray-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-green"
+    ><PlaceholderSample
+      class="placeholder-green-[25]"
+      text="placeholder-green-[25]" /><PlaceholderSample
+      class="placeholder-green-[150]"
+      text="placeholder-green-[150]" /><PlaceholderSample
+      class="placeholder-green-[250]"
+      text="placeholder-green-[250]" /><PlaceholderSample
+      class="placeholder-green-[350]"
+      text="placeholder-green-[350]" /><PlaceholderSample
+      class="placeholder-green-[450]"
+      text="placeholder-green-[450]" /><PlaceholderSample
+      class="placeholder-green-[550]"
+      text="placeholder-green-[550]" /><PlaceholderSample
+      class="placeholder-green-[650]"
+      text="placeholder-green-[650]" /><PlaceholderSample
+      class="placeholder-green-[750]"
+      text="placeholder-green-[750]" /><PlaceholderSample
+      class="placeholder-green-[850]"
+      text="placeholder-green-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-grey"
+    ><PlaceholderSample
+      class="placeholder-grey-[25]"
+      text="placeholder-grey-[25]" /><PlaceholderSample
+      class="placeholder-grey-[150]"
+      text="placeholder-grey-[150]" /><PlaceholderSample
+      class="placeholder-grey-[250]"
+      text="placeholder-grey-[250]" /><PlaceholderSample
+      class="placeholder-grey-[350]"
+      text="placeholder-grey-[350]" /><PlaceholderSample
+      class="placeholder-grey-[450]"
+      text="placeholder-grey-[450]" /><PlaceholderSample
+      class="placeholder-grey-[550]"
+      text="placeholder-grey-[550]" /><PlaceholderSample
+      class="placeholder-grey-[650]"
+      text="placeholder-grey-[650]" /><PlaceholderSample
+      class="placeholder-grey-[750]"
+      text="placeholder-grey-[750]" /><PlaceholderSample
+      class="placeholder-grey-[850]"
+      text="placeholder-grey-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-indigo"
+    ><PlaceholderSample
+      class="placeholder-indigo-[25]"
+      text="placeholder-indigo-[25]" /><PlaceholderSample
+      class="placeholder-indigo-[150]"
+      text="placeholder-indigo-[150]" /><PlaceholderSample
+      class="placeholder-indigo-[250]"
+      text="placeholder-indigo-[250]" /><PlaceholderSample
+      class="placeholder-indigo-[350]"
+      text="placeholder-indigo-[350]" /><PlaceholderSample
+      class="placeholder-indigo-[450]"
+      text="placeholder-indigo-[450]" /><PlaceholderSample
+      class="placeholder-indigo-[550]"
+      text="placeholder-indigo-[550]" /><PlaceholderSample
+      class="placeholder-indigo-[650]"
+      text="placeholder-indigo-[650]" /><PlaceholderSample
+      class="placeholder-indigo-[750]"
+      text="placeholder-indigo-[750]" /><PlaceholderSample
+      class="placeholder-indigo-[850]"
+      text="placeholder-indigo-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-lime"
+    ><PlaceholderSample
+      class="placeholder-lime-[25]"
+      text="placeholder-lime-[25]" /><PlaceholderSample
+      class="placeholder-lime-[150]"
+      text="placeholder-lime-[150]" /><PlaceholderSample
+      class="placeholder-lime-[250]"
+      text="placeholder-lime-[250]" /><PlaceholderSample
+      class="placeholder-lime-[350]"
+      text="placeholder-lime-[350]" /><PlaceholderSample
+      class="placeholder-lime-[450]"
+      text="placeholder-lime-[450]" /><PlaceholderSample
+      class="placeholder-lime-[550]"
+      text="placeholder-lime-[550]" /><PlaceholderSample
+      class="placeholder-lime-[650]"
+      text="placeholder-lime-[650]" /><PlaceholderSample
+      class="placeholder-lime-[750]"
+      text="placeholder-lime-[750]" /><PlaceholderSample
+      class="placeholder-lime-[850]"
+      text="placeholder-lime-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-neutral"
+    ><PlaceholderSample
+      class="placeholder-neutral-[25]"
+      text="placeholder-neutral-[25]" /><PlaceholderSample
+      class="placeholder-neutral-[150]"
+      text="placeholder-neutral-[150]" /><PlaceholderSample
+      class="placeholder-neutral-[250]"
+      text="placeholder-neutral-[250]" /><PlaceholderSample
+      class="placeholder-neutral-[350]"
+      text="placeholder-neutral-[350]" /><PlaceholderSample
+      class="placeholder-neutral-[450]"
+      text="placeholder-neutral-[450]" /><PlaceholderSample
+      class="placeholder-neutral-[550]"
+      text="placeholder-neutral-[550]" /><PlaceholderSample
+      class="placeholder-neutral-[650]"
+      text="placeholder-neutral-[650]" /><PlaceholderSample
+      class="placeholder-neutral-[750]"
+      text="placeholder-neutral-[750]" /><PlaceholderSample
+      class="placeholder-neutral-[850]"
+      text="placeholder-neutral-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-orange"
+    ><PlaceholderSample
+      class="placeholder-orange-[25]"
+      text="placeholder-orange-[25]" /><PlaceholderSample
+      class="placeholder-orange-[150]"
+      text="placeholder-orange-[150]" /><PlaceholderSample
+      class="placeholder-orange-[250]"
+      text="placeholder-orange-[250]" /><PlaceholderSample
+      class="placeholder-orange-[350]"
+      text="placeholder-orange-[350]" /><PlaceholderSample
+      class="placeholder-orange-[450]"
+      text="placeholder-orange-[450]" /><PlaceholderSample
+      class="placeholder-orange-[550]"
+      text="placeholder-orange-[550]" /><PlaceholderSample
+      class="placeholder-orange-[650]"
+      text="placeholder-orange-[650]" /><PlaceholderSample
+      class="placeholder-orange-[750]"
+      text="placeholder-orange-[750]" /><PlaceholderSample
+      class="placeholder-orange-[850]"
+      text="placeholder-orange-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-pink"
+    ><PlaceholderSample
+      class="placeholder-pink-[25]"
+      text="placeholder-pink-[25]" /><PlaceholderSample
+      class="placeholder-pink-[150]"
+      text="placeholder-pink-[150]" /><PlaceholderSample
+      class="placeholder-pink-[250]"
+      text="placeholder-pink-[250]" /><PlaceholderSample
+      class="placeholder-pink-[350]"
+      text="placeholder-pink-[350]" /><PlaceholderSample
+      class="placeholder-pink-[450]"
+      text="placeholder-pink-[450]" /><PlaceholderSample
+      class="placeholder-pink-[550]"
+      text="placeholder-pink-[550]" /><PlaceholderSample
+      class="placeholder-pink-[650]"
+      text="placeholder-pink-[650]" /><PlaceholderSample
+      class="placeholder-pink-[750]"
+      text="placeholder-pink-[750]" /><PlaceholderSample
+      class="placeholder-pink-[850]"
+      text="placeholder-pink-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-purple"
+    ><PlaceholderSample
+      class="placeholder-purple-[25]"
+      text="placeholder-purple-[25]" /><PlaceholderSample
+      class="placeholder-purple-[150]"
+      text="placeholder-purple-[150]" /><PlaceholderSample
+      class="placeholder-purple-[250]"
+      text="placeholder-purple-[250]" /><PlaceholderSample
+      class="placeholder-purple-[350]"
+      text="placeholder-purple-[350]" /><PlaceholderSample
+      class="placeholder-purple-[450]"
+      text="placeholder-purple-[450]" /><PlaceholderSample
+      class="placeholder-purple-[550]"
+      text="placeholder-purple-[550]" /><PlaceholderSample
+      class="placeholder-purple-[650]"
+      text="placeholder-purple-[650]" /><PlaceholderSample
+      class="placeholder-purple-[750]"
+      text="placeholder-purple-[750]" /><PlaceholderSample
+      class="placeholder-purple-[850]"
+      text="placeholder-purple-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-red"
+    ><PlaceholderSample
+      class="placeholder-red-[25]"
+      text="placeholder-red-[25]" /><PlaceholderSample
+      class="placeholder-red-[150]"
+      text="placeholder-red-[150]" /><PlaceholderSample
+      class="placeholder-red-[250]"
+      text="placeholder-red-[250]" /><PlaceholderSample
+      class="placeholder-red-[350]"
+      text="placeholder-red-[350]" /><PlaceholderSample
+      class="placeholder-red-[450]"
+      text="placeholder-red-[450]" /><PlaceholderSample
+      class="placeholder-red-[550]"
+      text="placeholder-red-[550]" /><PlaceholderSample
+      class="placeholder-red-[650]"
+      text="placeholder-red-[650]" /><PlaceholderSample
+      class="placeholder-red-[750]"
+      text="placeholder-red-[750]" /><PlaceholderSample
+      class="placeholder-red-[850]"
+      text="placeholder-red-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-rose"
+    ><PlaceholderSample
+      class="placeholder-rose-[25]"
+      text="placeholder-rose-[25]" /><PlaceholderSample
+      class="placeholder-rose-[150]"
+      text="placeholder-rose-[150]" /><PlaceholderSample
+      class="placeholder-rose-[250]"
+      text="placeholder-rose-[250]" /><PlaceholderSample
+      class="placeholder-rose-[350]"
+      text="placeholder-rose-[350]" /><PlaceholderSample
+      class="placeholder-rose-[450]"
+      text="placeholder-rose-[450]" /><PlaceholderSample
+      class="placeholder-rose-[550]"
+      text="placeholder-rose-[550]" /><PlaceholderSample
+      class="placeholder-rose-[650]"
+      text="placeholder-rose-[650]" /><PlaceholderSample
+      class="placeholder-rose-[750]"
+      text="placeholder-rose-[750]" /><PlaceholderSample
+      class="placeholder-rose-[850]"
+      text="placeholder-rose-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-sky"
+    ><PlaceholderSample
+      class="placeholder-sky-[25]"
+      text="placeholder-sky-[25]" /><PlaceholderSample
+      class="placeholder-sky-[150]"
+      text="placeholder-sky-[150]" /><PlaceholderSample
+      class="placeholder-sky-[250]"
+      text="placeholder-sky-[250]" /><PlaceholderSample
+      class="placeholder-sky-[350]"
+      text="placeholder-sky-[350]" /><PlaceholderSample
+      class="placeholder-sky-[450]"
+      text="placeholder-sky-[450]" /><PlaceholderSample
+      class="placeholder-sky-[550]"
+      text="placeholder-sky-[550]" /><PlaceholderSample
+      class="placeholder-sky-[650]"
+      text="placeholder-sky-[650]" /><PlaceholderSample
+      class="placeholder-sky-[750]"
+      text="placeholder-sky-[750]" /><PlaceholderSample
+      class="placeholder-sky-[850]"
+      text="placeholder-sky-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-slate"
+    ><PlaceholderSample
+      class="placeholder-slate-[25]"
+      text="placeholder-slate-[25]" /><PlaceholderSample
+      class="placeholder-slate-[150]"
+      text="placeholder-slate-[150]" /><PlaceholderSample
+      class="placeholder-slate-[250]"
+      text="placeholder-slate-[250]" /><PlaceholderSample
+      class="placeholder-slate-[350]"
+      text="placeholder-slate-[350]" /><PlaceholderSample
+      class="placeholder-slate-[450]"
+      text="placeholder-slate-[450]" /><PlaceholderSample
+      class="placeholder-slate-[550]"
+      text="placeholder-slate-[550]" /><PlaceholderSample
+      class="placeholder-slate-[650]"
+      text="placeholder-slate-[650]" /><PlaceholderSample
+      class="placeholder-slate-[750]"
+      text="placeholder-slate-[750]" /><PlaceholderSample
+      class="placeholder-slate-[850]"
+      text="placeholder-slate-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-stone"
+    ><PlaceholderSample
+      class="placeholder-stone-[25]"
+      text="placeholder-stone-[25]" /><PlaceholderSample
+      class="placeholder-stone-[150]"
+      text="placeholder-stone-[150]" /><PlaceholderSample
+      class="placeholder-stone-[250]"
+      text="placeholder-stone-[250]" /><PlaceholderSample
+      class="placeholder-stone-[350]"
+      text="placeholder-stone-[350]" /><PlaceholderSample
+      class="placeholder-stone-[450]"
+      text="placeholder-stone-[450]" /><PlaceholderSample
+      class="placeholder-stone-[550]"
+      text="placeholder-stone-[550]" /><PlaceholderSample
+      class="placeholder-stone-[650]"
+      text="placeholder-stone-[650]" /><PlaceholderSample
+      class="placeholder-stone-[750]"
+      text="placeholder-stone-[750]" /><PlaceholderSample
+      class="placeholder-stone-[850]"
+      text="placeholder-stone-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-teal"
+    ><PlaceholderSample
+      class="placeholder-teal-[25]"
+      text="placeholder-teal-[25]" /><PlaceholderSample
+      class="placeholder-teal-[150]"
+      text="placeholder-teal-[150]" /><PlaceholderSample
+      class="placeholder-teal-[250]"
+      text="placeholder-teal-[250]" /><PlaceholderSample
+      class="placeholder-teal-[350]"
+      text="placeholder-teal-[350]" /><PlaceholderSample
+      class="placeholder-teal-[450]"
+      text="placeholder-teal-[450]" /><PlaceholderSample
+      class="placeholder-teal-[550]"
+      text="placeholder-teal-[550]" /><PlaceholderSample
+      class="placeholder-teal-[650]"
+      text="placeholder-teal-[650]" /><PlaceholderSample
+      class="placeholder-teal-[750]"
+      text="placeholder-teal-[750]" /><PlaceholderSample
+      class="placeholder-teal-[850]"
+      text="placeholder-teal-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-violet"
+    ><PlaceholderSample
+      class="placeholder-violet-[25]"
+      text="placeholder-violet-[25]" /><PlaceholderSample
+      class="placeholder-violet-[150]"
+      text="placeholder-violet-[150]" /><PlaceholderSample
+      class="placeholder-violet-[250]"
+      text="placeholder-violet-[250]" /><PlaceholderSample
+      class="placeholder-violet-[350]"
+      text="placeholder-violet-[350]" /><PlaceholderSample
+      class="placeholder-violet-[450]"
+      text="placeholder-violet-[450]" /><PlaceholderSample
+      class="placeholder-violet-[550]"
+      text="placeholder-violet-[550]" /><PlaceholderSample
+      class="placeholder-violet-[650]"
+      text="placeholder-violet-[650]" /><PlaceholderSample
+      class="placeholder-violet-[750]"
+      text="placeholder-violet-[750]" /><PlaceholderSample
+      class="placeholder-violet-[850]"
+      text="placeholder-violet-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-yellow"
+    ><PlaceholderSample
+      class="placeholder-yellow-[25]"
+      text="placeholder-yellow-[25]" /><PlaceholderSample
+      class="placeholder-yellow-[150]"
+      text="placeholder-yellow-[150]" /><PlaceholderSample
+      class="placeholder-yellow-[250]"
+      text="placeholder-yellow-[250]" /><PlaceholderSample
+      class="placeholder-yellow-[350]"
+      text="placeholder-yellow-[350]" /><PlaceholderSample
+      class="placeholder-yellow-[450]"
+      text="placeholder-yellow-[450]" /><PlaceholderSample
+      class="placeholder-yellow-[550]"
+      text="placeholder-yellow-[550]" /><PlaceholderSample
+      class="placeholder-yellow-[650]"
+      text="placeholder-yellow-[650]" /><PlaceholderSample
+      class="placeholder-yellow-[750]"
+      text="placeholder-yellow-[750]" /><PlaceholderSample
+      class="placeholder-yellow-[850]"
+      text="placeholder-yellow-[850]"
+  /></SampleRow>
+  <SampleRow title="placeholder-zinc"
+    ><PlaceholderSample
+      class="placeholder-zinc-[25]"
+      text="placeholder-zinc-[25]" /><PlaceholderSample
+      class="placeholder-zinc-[150]"
+      text="placeholder-zinc-[150]" /><PlaceholderSample
+      class="placeholder-zinc-[250]"
+      text="placeholder-zinc-[250]" /><PlaceholderSample
+      class="placeholder-zinc-[350]"
+      text="placeholder-zinc-[350]" /><PlaceholderSample
+      class="placeholder-zinc-[450]"
+      text="placeholder-zinc-[450]" /><PlaceholderSample
+      class="placeholder-zinc-[550]"
+      text="placeholder-zinc-[550]" /><PlaceholderSample
+      class="placeholder-zinc-[650]"
+      text="placeholder-zinc-[650]" /><PlaceholderSample
+      class="placeholder-zinc-[750]"
+      text="placeholder-zinc-[750]" /><PlaceholderSample
+      class="placeholder-zinc-[850]"
+      text="placeholder-zinc-[850]"
+  /></SampleRow>
 </template>

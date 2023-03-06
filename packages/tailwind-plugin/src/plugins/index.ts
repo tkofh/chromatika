@@ -1,4 +1,4 @@
-import { ColorPalette } from '../types/color-palette'
+import type { ColorPalette } from '../types/colorPalette'
 import { DefaultColorSamplePoints } from '../utils'
 import { createAccentColorPlugin } from './accentColor'
 import { createBackgroundColorPlugin } from './backgroundColor'

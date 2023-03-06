@@ -5,7 +5,7 @@ declare module 'tailwindcss/lib/util/flattenColorPalette' {
 }
 declare module 'tailwindcss/lib/util/toColorValue' {
   export default function toColorValue(
-    maybeFunction: unknown | ((...args: any[]) => unknown)
+    maybeFunction: unknown | ((...args: unknown[]) => unknown)
   ): unknown
 }
 declare module 'tailwindcss/lib/util/withAlphaVariable' {

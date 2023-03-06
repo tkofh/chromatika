@@ -1,5 +1,5 @@
 export * from './entries'
-export * from './plugin-factory'
+export * from './pluginFactory'
 
 export const DefaultColorSamplePoints = {
   50: 50,

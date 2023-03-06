@@ -1,4 +1,6 @@
 {
+  "name": "@chromatika/tailwind-plugin-playground",
+  "description": "playground for tailwind plugin",
   "private": true,
   "scripts": {
     "build": "nuxt build",
