@@ -6,14 +6,19 @@ declare module 'tailwindcss/lib/util/flattenColorPalette' {
 declare module 'tailwindcss/lib/util/toColorValue' {
   export default function toColorValue(
     maybeFunction: unknown | ((...args: unknown[]) => unknown)
-  ): unknown
+  ): null | string | string[]
 }
 declare module 'tailwindcss/lib/util/withAlphaVariable' {
-  export function withAlphaValue(color: unknown, property: unknown, variable: unknown): unknown
+  import type { CSSRuleObject } from 'tailwindcss/types/config'
+  export function withAlphaValue(
+    color: unknown,
+    property: unknown,
+    variable: unknown
+  ): CSSRuleObject | null
 
   export default function (params: {
     color: unknown
     property: unknown
     variable: unknown
-  }): unknown
+  }): CSSRuleObject | null
 }
