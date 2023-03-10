@@ -16,7 +16,12 @@ export const getHexString = (red: number, green: number, blue: number, alpha?: n
   const redHex = red.toString(16).padStart(2, '0')
   const greenHex = green.toString(16).padStart(2, '0')
   const blueHex = blue.toString(16).padStart(2, '0')
-  const alphaHex = alpha != null ? Math.round(alpha * 255).toString(16).padStart(2, '0') : ''
+  const alphaHex =
+    alpha != null
+      ? Math.round(alpha * 255)
+          .toString(16)
+          .padStart(2, '0')
+      : ''
 
   return `#${redHex}${greenHex}${blueHex}${alphaHex}`
 }
