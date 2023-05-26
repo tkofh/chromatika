@@ -113,7 +113,6 @@ export const createHSLScale = (options: HSLScaleInput) => {
     }
 
     const nearestEnd = Math.min(hueRange.end, saturationRange.end, lightnessRange.end)
-    console.log(nearestEnd, hueRange.end, saturationRange.end, lightnessRange.end)
 
     colorRanges.push({
       value: createColorFromHSL(
