@@ -1,6 +1,6 @@
 import type { Point, CubicSpline } from '@curvy/types'
 import { createCubicCatmullRomSpline } from '@curvy/catmull-rom'
-import { clamp, mod, roundTo } from 'micro-math'
+import { clamp, mod, roundTo, precision } from 'micro-math'
 import type { ColorRange } from '../types'
 import { createColorFromHSL } from '../color'
 import { getSplineRanges } from './getSplineRanges'
@@ -25,41 +25,41 @@ interface SplinesInput {
 export type HSLScaleInput = PointListsInput | SplinesInput
 
 export const createHSLScale = (options: HSLScaleInput) => {
-  const hue = Array.isArray(options.hue)
-    ? createCubicCatmullRomSpline(
-        [options.hue[0], ...options.hue, options.hue[options.hue.length - 1]],
-        {
-          shade: 4,
-          hue: 0,
-        }
-      )
-    : options.hue
-  const saturation = Array.isArray(options.saturation)
-    ? createCubicCatmullRomSpline(
-        [
-          options.saturation[0],
-          ...options.saturation,
-          options.saturation[options.saturation.length - 1],
-        ],
-        {
-          shade: 4,
-          saturation: 0,
-        }
-      )
-    : options.saturation
-  const lightness = Array.isArray(options.lightness)
-    ? createCubicCatmullRomSpline(
-        [
-          options.lightness[0],
-          ...options.lightness,
-          options.lightness[options.lightness.length - 1],
-        ],
-        {
-          shade: 4,
-          lightness: 0,
-        }
-      )
-    : options.lightness
+  let hue!: CubicSpline<HueAxes>,
+    saturation!: CubicSpline<SaturationAxes>,
+    lightness!: CubicSpline<LightnessAxes>
+
+  if (Array.isArray(options.hue)) {
+    const {
+      hue: huePoints,
+      saturation: saturationPoints,
+      lightness: lightnessPoints,
+    } = options as PointListsInput
+
+    const shadePrecision =
+      Math.max(
+        ...[...huePoints, ...saturationPoints, ...lightnessPoints].map(({ shade }) =>
+          precision(shade)
+        )
+      ) + 1
+
+    hue = createCubicCatmullRomSpline(
+      [huePoints[0], ...huePoints, huePoints[huePoints.length - 1]],
+      { shade: shadePrecision, hue: 0 }
+    )
+    saturation = createCubicCatmullRomSpline(
+      [saturationPoints[0], ...saturationPoints, saturationPoints[saturationPoints.length - 1]],
+      { shade: shadePrecision, saturation: 0 }
+    )
+    lightness = createCubicCatmullRomSpline(
+      [lightnessPoints[0], ...lightnessPoints, lightnessPoints[lightnessPoints.length - 1]],
+      { shade: shadePrecision, lightness: 0 }
+    )
+  } else {
+    hue = (options as SplinesInput).hue
+    saturation = (options as SplinesInput).saturation
+    lightness = (options as SplinesInput).lightness
+  }
 
   if (hue.monotonicity.shade !== 'positive') {
     throw new Error("Hue curve's shade axis must be monotonically positive")
@@ -76,11 +76,9 @@ export const createHSLScale = (options: HSLScaleInput) => {
     hue.bounds.shade.max !== saturation.bounds.shade.max ||
     saturation.bounds.shade.min !== lightness.bounds.shade.min ||
     saturation.bounds.shade.max !== lightness.bounds.shade.max
-    // lightness.bounds.shade.min !== hue.bounds.shade.min ||
-    // lightness.bounds.shade.max !== hue.bounds.shade.max
   ) {
     throw new Error(
-      'Hue, Saturation, and Lightness curves must share shade axis start and end dimensions'
+      `Hue, Saturation, and Lightness curves must share shade axis start and end dimensions. Hue: [${hue.bounds.shade.min}, ${hue.bounds.shade.max}], Saturation: [${saturation.bounds.shade.min}, ${saturation.bounds.shade.max}], Lightness: [${lightness.bounds.shade.min}, ${lightness.bounds.shade.max}]`
     )
   }
 
@@ -103,18 +101,19 @@ export const createHSLScale = (options: HSLScaleInput) => {
 
   const colorRanges: ColorRange[] = []
 
-  while (shade < hue.bounds.shade.max) {
-    if (hueRange.end < shade) {
+  while (shade <= hue.bounds.shade.max) {
+    if (hueRange.end < shade && hueRanges.length > 0) {
       hueRange = hueRanges.shift()!
     }
-    if (saturationRange.end < shade) {
+    if (saturationRange.end < shade && saturationRanges.length > 0) {
       saturationRange = saturationRanges.shift()!
     }
-    if (lightnessRange.end < shade) {
+    if (lightnessRange.end < shade && lightnessRanges.length > 0) {
       lightnessRange = lightnessRanges.shift()!
     }
 
     const nearestEnd = Math.min(hueRange.end, saturationRange.end, lightnessRange.end)
+    console.log(nearestEnd, hueRange.end, saturationRange.end, lightnessRange.end)
 
     colorRanges.push({
       value: createColorFromHSL(
