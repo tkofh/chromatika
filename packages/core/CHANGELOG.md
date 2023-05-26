@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.5](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.4...@chromatika/core@0.1.5) (2023-05-26)
+
+### Bug Fixes
+
+- **@chromatika/core:** remove console.log ([d4bea94](https://github.com/tkofh/chromatika/commit/d4bea940fe3982f1f0c93e97e9b0979973ece933))
+
 ## [0.1.4](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.3...@chromatika/core@0.1.4) (2023-05-26)
 
 ### Bug Fixes
