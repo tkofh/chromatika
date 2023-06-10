@@ -12,6 +12,7 @@ export const zinc = createHSLScale({
     { shade: 700, hue: 240 },
     { shade: 800, hue: 240 },
     { shade: 900, hue: 240 },
+    { shade: 950, hue: 240 },
   ],
   saturation: [
     { shade: 50, saturation: 0 },
@@ -24,6 +25,7 @@ export const zinc = createHSLScale({
     { shade: 700, saturation: 5 },
     { shade: 800, saturation: 4 },
     { shade: 900, saturation: 6 },
+    { shade: 950, saturation: 10 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +38,6 @@ export const zinc = createHSLScale({
     { shade: 700, lightness: 26 },
     { shade: 800, lightness: 16 },
     { shade: 900, lightness: 10 },
+    { shade: 950, lightness: 4 },
   ],
 })

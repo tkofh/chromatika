@@ -12,6 +12,7 @@ export const indigo = createHSLScale({
     { shade: 700, hue: 245 },
     { shade: 800, hue: 244 },
     { shade: 900, hue: 242 },
+    { shade: 950, hue: 244 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const indigo = createHSLScale({
     { shade: 700, saturation: 58 },
     { shade: 800, saturation: 55 },
     { shade: 900, saturation: 47 },
+    { shade: 950, saturation: 47 },
   ],
   lightness: [
     { shade: 50, lightness: 97 },
@@ -36,5 +38,6 @@ export const indigo = createHSLScale({
     { shade: 700, lightness: 51 },
     { shade: 800, lightness: 41 },
     { shade: 900, lightness: 34 },
+    { shade: 950, lightness: 20 },
   ],
 })

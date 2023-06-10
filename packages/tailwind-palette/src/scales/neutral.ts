@@ -3,15 +3,16 @@ import { createHSLScale } from '@chromatika/core'
 export const neutral = createHSLScale({
   hue: [
     { shade: 50, hue: 0 },
-    { shade: 100, hue: 0 },
-    { shade: 200, hue: 0 },
-    { shade: 300, hue: 0 },
-    { shade: 400, hue: 0 },
-    { shade: 500, hue: 0 },
-    { shade: 600, hue: 0 },
-    { shade: 700, hue: 0 },
-    { shade: 800, hue: 0 },
-    { shade: 900, hue: 0 },
+    // { shade: 100, hue: 0 },
+    // { shade: 200, hue: 0 },
+    // { shade: 300, hue: 0 },
+    // { shade: 400, hue: 0 },
+    // { shade: 500, hue: 0 },
+    // { shade: 600, hue: 0 },
+    // { shade: 700, hue: 0 },
+    // { shade: 800, hue: 0 },
+    // { shade: 900, hue: 0 },
+    { shade: 950, hue: 0 },
   ],
   saturation: [
     { shade: 50, saturation: 0 },
@@ -23,7 +24,7 @@ export const neutral = createHSLScale({
     // { shade: 600, saturation: 0 },
     // { shade: 700, saturation: 0 },
     // { shade: 800, saturation: 0 },
-    { shade: 900, saturation: 0 },
+    { shade: 950, saturation: 0 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +37,6 @@ export const neutral = createHSLScale({
     { shade: 700, lightness: 25 },
     { shade: 800, lightness: 15 },
     { shade: 900, lightness: 9 },
+    { shade: 950, lightness: 4 },
   ],
 })

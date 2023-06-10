@@ -12,6 +12,7 @@ export const pink = createHSLScale({
     { shade: 700, hue: 335 },
     { shade: 800, hue: 336 },
     { shade: 900, hue: 336 },
+    { shade: 950, hue: 336 },
   ],
   saturation: [
     { shade: 50, saturation: 73 },
@@ -24,6 +25,7 @@ export const pink = createHSLScale({
     { shade: 700, saturation: 78 },
     { shade: 800, saturation: 74 },
     { shade: 900, saturation: 69 },
+    { shade: 950, saturation: 84 },
   ],
   lightness: [
     { shade: 50, lightness: 97 },
@@ -36,5 +38,6 @@ export const pink = createHSLScale({
     { shade: 700, lightness: 42 },
     { shade: 800, lightness: 35 },
     { shade: 900, lightness: 30 },
+    { shade: 950, lightness: 17 },
   ],
 })

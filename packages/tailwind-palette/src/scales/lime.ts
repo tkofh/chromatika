@@ -12,6 +12,7 @@ export const lime = createHSLScale({
     { shade: 700, hue: 86 },
     { shade: 800, hue: 86 },
     { shade: 900, hue: 88 },
+    { shade: 950, hue: 89 },
   ],
   saturation: [
     { shade: 50, saturation: 92 },
@@ -24,6 +25,7 @@ export const lime = createHSLScale({
     { shade: 700, saturation: 78 },
     { shade: 800, saturation: 69 },
     { shade: 900, saturation: 61 },
+    { shade: 950, saturation: 80 },
   ],
   lightness: [
     { shade: 50, lightness: 95 },
@@ -36,5 +38,6 @@ export const lime = createHSLScale({
     { shade: 700, lightness: 27 },
     { shade: 800, lightness: 23 },
     { shade: 900, lightness: 20 },
+    { shade: 950, lightness: 10 },
   ],
 })

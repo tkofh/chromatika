@@ -12,6 +12,7 @@ export const stone = createHSLScale({
     { shade: 700, hue: 30 },
     { shade: 800, hue: 12 },
     { shade: 900, hue: 24 },
+    { shade: 950, hue: 20 },
   ],
   saturation: [
     { shade: 50, saturation: 9 },
@@ -24,6 +25,7 @@ export const stone = createHSLScale({
     { shade: 700, saturation: 6 },
     { shade: 800, saturation: 6 },
     { shade: 900, saturation: 10 },
+    { shade: 950, saturation: 14 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +38,6 @@ export const stone = createHSLScale({
     { shade: 700, lightness: 25 },
     { shade: 800, lightness: 15 },
     { shade: 900, lightness: 10 },
+    { shade: 950, lightness: 4 },
   ],
 })

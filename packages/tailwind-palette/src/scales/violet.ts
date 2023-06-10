@@ -12,6 +12,7 @@ export const violet = createHSLScale({
     { shade: 700, hue: 263 },
     { shade: 800, hue: 263 },
     { shade: 900, hue: 264 },
+    { shade: 950, hue: 264 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const violet = createHSLScale({
     { shade: 700, saturation: 70 },
     { shade: 800, saturation: 69 },
     { shade: 900, saturation: 67 },
+    { shade: 950, saturation: 73 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +38,6 @@ export const violet = createHSLScale({
     { shade: 700, lightness: 50 },
     { shade: 800, lightness: 42 },
     { shade: 900, lightness: 35 },
+    { shade: 950, lightness: 23 },
   ],
 })

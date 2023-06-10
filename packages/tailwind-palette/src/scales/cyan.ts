@@ -12,6 +12,7 @@ export const cyan = createHSLScale({
     { shade: 700, hue: 193 },
     { shade: 800, hue: 194 },
     { shade: 900, hue: 196 },
+    { shade: 950, hue: 197 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const cyan = createHSLScale({
     { shade: 700, saturation: 82 },
     { shade: 800, saturation: 70 },
     { shade: 900, saturation: 64 },
+    { shade: 950, saturation: 79 },
   ],
   lightness: [
     { shade: 50, lightness: 96 },
@@ -36,5 +38,6 @@ export const cyan = createHSLScale({
     { shade: 700, lightness: 31 },
     { shade: 800, lightness: 27 },
     { shade: 900, lightness: 24 },
+    { shade: 950, lightness: 15 },
   ],
 })

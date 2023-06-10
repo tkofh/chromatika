@@ -12,6 +12,7 @@ export const emerald = createHSLScale({
     { shade: 700, hue: 163 },
     { shade: 800, hue: 163 },
     { shade: 900, hue: 164 },
+    { shade: 950, hue: 166 },
   ],
   saturation: [
     { shade: 50, saturation: 81 },
@@ -24,6 +25,7 @@ export const emerald = createHSLScale({
     { shade: 700, saturation: 94 },
     { shade: 800, saturation: 88 },
     { shade: 900, saturation: 86 },
+    { shade: 950, saturation: 91 },
   ],
   lightness: [
     { shade: 50, lightness: 96 },
@@ -36,5 +38,6 @@ export const emerald = createHSLScale({
     { shade: 700, lightness: 24 },
     { shade: 800, lightness: 20 },
     { shade: 900, lightness: 16 },
+    { shade: 950, lightness: 9 },
   ],
 })

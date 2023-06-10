@@ -12,6 +12,7 @@ export const teal = createHSLScale({
     { shade: 700, hue: 175 },
     { shade: 800, hue: 176 },
     { shade: 900, hue: 176 },
+    { shade: 950, hue: 179 },
   ],
   saturation: [
     { shade: 50, saturation: 76 },
@@ -24,6 +25,7 @@ export const teal = createHSLScale({
     { shade: 700, saturation: 77 },
     { shade: 800, saturation: 69 },
     { shade: 900, saturation: 61 },
+    { shade: 950, saturation: 84 },
   ],
   lightness: [
     { shade: 50, lightness: 97 },
@@ -36,5 +38,6 @@ export const teal = createHSLScale({
     { shade: 700, lightness: 26 },
     { shade: 800, lightness: 22 },
     { shade: 900, lightness: 19 },
+    { shade: 950, lightness: 10 },
   ],
 })

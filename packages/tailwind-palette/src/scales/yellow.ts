@@ -12,6 +12,7 @@ export const yellow = createHSLScale({
     { shade: 700, hue: 35 },
     { shade: 800, hue: 32 },
     { shade: 900, hue: 28 },
+    { shade: 950, hue: 26 },
   ],
   saturation: [
     { shade: 50, saturation: 92 },
@@ -24,6 +25,7 @@ export const yellow = createHSLScale({
     { shade: 700, saturation: 92 },
     { shade: 800, saturation: 81 },
     { shade: 900, saturation: 73 },
+    { shade: 950, saturation: 83 },
   ],
   lightness: [
     { shade: 50, lightness: 95 },
@@ -36,5 +38,6 @@ export const yellow = createHSLScale({
     { shade: 700, lightness: 33 },
     { shade: 800, lightness: 29 },
     { shade: 900, lightness: 26 },
+    { shade: 950, lightness: 14 },
   ],
 })

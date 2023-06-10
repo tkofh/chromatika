@@ -12,6 +12,7 @@ export const slate = createHSLScale({
     { shade: 700, hue: 215 },
     { shade: 800, hue: 217 },
     { shade: 900, hue: 222 },
+    { shade: 950, hue: 229 },
   ],
   saturation: [
     { shade: 50, saturation: 40 },
@@ -24,6 +25,7 @@ export const slate = createHSLScale({
     { shade: 700, saturation: 25 },
     { shade: 800, saturation: 33 },
     { shade: 900, saturation: 47 },
+    { shade: 950, saturation: 84 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +38,6 @@ export const slate = createHSLScale({
     { shade: 700, lightness: 27 },
     { shade: 800, lightness: 17 },
     { shade: 900, lightness: 11 },
+    { shade: 950, lightness: 5 },
   ],
 })

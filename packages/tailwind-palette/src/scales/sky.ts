@@ -12,6 +12,7 @@ export const sky = createHSLScale({
     { shade: 700, hue: 201 },
     { shade: 800, hue: 201 },
     { shade: 900, hue: 202 },
+    { shade: 950, hue: 204 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const sky = createHSLScale({
     { shade: 700, saturation: 96 },
     { shade: 800, saturation: 90 },
     { shade: 900, saturation: 80 },
+    { shade: 950, saturation: 80 },
   ],
   lightness: [
     { shade: 50, lightness: 97 },
@@ -36,5 +38,6 @@ export const sky = createHSLScale({
     { shade: 700, lightness: 32 },
     { shade: 800, lightness: 27 },
     { shade: 900, lightness: 24 },
+    { shade: 950, lightness: 16 },
   ],
 })

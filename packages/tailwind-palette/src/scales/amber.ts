@@ -12,6 +12,7 @@ export const amber = createHSLScale({
     { shade: 700, hue: 26 },
     { shade: 800, hue: 23 },
     { shade: 900, hue: 22 },
+    { shade: 950, hue: 21 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const amber = createHSLScale({
     { shade: 700, saturation: 90 },
     { shade: 800, saturation: 83 },
     { shade: 900, saturation: 78 },
+    { shade: 950, saturation: 92 },
   ],
   lightness: [
     { shade: 50, lightness: 96 },
@@ -36,5 +38,6 @@ export const amber = createHSLScale({
     { shade: 700, lightness: 37 },
     { shade: 800, lightness: 31 },
     { shade: 900, lightness: 26 },
+    { shade: 950, lightness: 14 },
   ],
 })

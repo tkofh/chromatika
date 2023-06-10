@@ -12,6 +12,7 @@ export const fuchsia = createHSLScale({
     { shade: 700, hue: 295 },
     { shade: 800, hue: 295 },
     { shade: 900, hue: 297 },
+    { shade: 950, hue: 297 },
   ],
   saturation: [
     { shade: 50, saturation: 100 },
@@ -24,6 +25,7 @@ export const fuchsia = createHSLScale({
     { shade: 700, saturation: 72 },
     { shade: 800, saturation: 70 },
     { shade: 900, saturation: 64 },
+    { shade: 950, saturation: 90 },
   ],
   lightness: [
     { shade: 50, lightness: 98 },
@@ -36,5 +38,6 @@ export const fuchsia = createHSLScale({
     { shade: 700, lightness: 40 },
     { shade: 800, lightness: 33 },
     { shade: 900, lightness: 28 },
+    { shade: 950, lightness: 16 },
   ],
 })
