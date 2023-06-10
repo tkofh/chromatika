@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.2.0](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.5...@chromatika/core@0.2.0) (2023-06-10)
+
+### Features
+
+- **@chromatika/tailwind-palette:** add 950 shades ([d9f3edf](https://github.com/tkofh/chromatika/commit/d9f3edf1f615e1fa5d76156e450a056ca87265ed))
+
 ## [0.1.5](https://github.com/tkofh/chromatika/compare/@chromatika/core@0.1.4...@chromatika/core@0.1.5) (2023-05-26)
 
 ### Bug Fixes
